@@ -29,9 +29,12 @@ export default defineConfig({
                 text: '视图管理',
                 items: [
                   { text: '表格视图', link: '/zh-CN/user-guide/views/table-view.html' },
+                  { text: '分组视图', link: '/zh-CN/user-guide/views/grouped-view.html' },
                   { text: '看板视图', link: '/zh-CN/user-guide/views/kanban-view.html' },
                   { text: '甘特图', link: '/zh-CN/user-guide/views/gantt-view.html' },
-                  { text: '日历视图', link: '/zh-CN/user-guide/views/calendar-view.html' }
+                  { text: '日历视图', link: '/zh-CN/user-guide/views/calendar-view.html' },
+                  { text: '画册视图', link: '/zh-CN/user-guide/views/gallery-view.html' },
+                  { text: '表单视图', link: '/zh-CN/user-guide/views/form-view.html' }
                 ]
               },
               { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
@@ -74,9 +77,12 @@ export default defineConfig({
                 collapsed: false,
                 items: [
                   { text: '表格视图', link: 'views/table-view.html' },
+                  { text: '分组视图', link: 'views/grouped-view.html' },
                   { text: '看板视图', link: 'views/kanban-view.html' },
                   { text: '甘特图', link: 'views/gantt-view.html' },
-                  { text: '日历视图', link: 'views/calendar-view.html' }
+                  { text: '日历视图', link: 'views/calendar-view.html' },
+                  { text: '画册视图', link: 'views/gallery-view.html' },
+                  { text: '表单视图', link: 'views/form-view.html' }
                 ]
               },
               { text: '字段类型', link: 'field-types.html' },
@@ -159,10 +165,13 @@ export default defineConfig({
               {
                 text: 'Views',
                 items: [
-                  { text: 'Table View', link: '/en-US/user-guide/views/table-view.html' },
+                  { text: 'Grid View', link: '/en-US/user-guide/views/table-view.html' },
+                  { text: 'Grouped View', link: '/en-US/user-guide/views/grouped-view.html' },
                   { text: 'Kanban View', link: '/en-US/user-guide/views/kanban-view.html' },
                   { text: 'Gantt Chart', link: '/en-US/user-guide/views/gantt-view.html' },
-                  { text: 'Calendar View', link: '/en-US/user-guide/views/calendar-view.html' }
+                  { text: 'Calendar View', link: '/en-US/user-guide/views/calendar-view.html' },
+                  { text: 'Gallery View', link: '/en-US/user-guide/views/gallery-view.html' },
+                  { text: 'Form View', link: '/en-US/user-guide/views/form-view.html' }
                 ]
               },
               { text: 'Field Types', link: '/en-US/user-guide/field-types.html' },
@@ -204,10 +213,13 @@ export default defineConfig({
                 text: 'Views',
                 collapsed: false,
                 items: [
-                  { text: 'Table View', link: 'views/table-view.html' },
+                  { text: 'Grid View', link: 'views/table-view.html' },
+                  { text: 'Grouped View', link: 'views/grouped-view.html' },
                   { text: 'Kanban View', link: 'views/kanban-view.html' },
                   { text: 'Gantt Chart', link: 'views/gantt-view.html' },
-                  { text: 'Calendar View', link: 'views/calendar-view.html' }
+                  { text: 'Calendar View', link: 'views/calendar-view.html' },
+                  { text: 'Gallery View', link: 'views/gallery-view.html' },
+                  { text: 'Form View', link: 'views/form-view.html' }
                 ]
               },
               { text: 'Field Types', link: 'field-types.html' },

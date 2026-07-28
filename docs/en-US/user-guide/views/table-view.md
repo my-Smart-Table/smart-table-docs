@@ -51,5 +51,9 @@ Grid view uses virtual scrolling to keep interactions smooth even with tens of t
 
 ## Next Steps
 
+- [Grouped View](/en-US/user-guide/views/grouped-view.html)
 - [Kanban View](/en-US/user-guide/views/kanban-view.html)
 - [Gantt Chart](/en-US/user-guide/views/gantt-view.html)
+- [Calendar View](/en-US/user-guide/views/calendar-view.html)
+- [Gallery View](/en-US/user-guide/views/gallery-view.html)
+- [Form View](/en-US/user-guide/views/form-view.html)

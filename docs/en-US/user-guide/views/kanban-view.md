@@ -38,3 +38,5 @@ Use a **Single Select** field for status so cards can be moved cleanly from one 
 
 - [Gantt Chart](/en-US/user-guide/views/gantt-view.html)
 - [Calendar View](/en-US/user-guide/views/calendar-view.html)
+- [Gallery View](/en-US/user-guide/views/gallery-view.html)
+- [Form View](/en-US/user-guide/views/form-view.html)

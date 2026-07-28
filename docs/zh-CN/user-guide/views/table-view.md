@@ -85,6 +85,9 @@
 
 ## 下一步
 
+- [分组视图](/zh-CN/user-guide/views/grouped-view.html)
 - [看板视图](/zh-CN/user-guide/views/kanban-view.html)
 - [甘特图](/zh-CN/user-guide/views/gantt-view.html)
 - [日历视图](/zh-CN/user-guide/views/calendar-view.html)
+- [画册视图](/zh-CN/user-guide/views/gallery-view.html)
+- [表单视图](/zh-CN/user-guide/views/form-view.html)
