@@ -5,6 +5,7 @@ export default defineConfig({
   title: 'SmartTable',
   description: '智能多维表格系统文档',
   lastUpdated: true,
+  ignoreDeadLinks: ['http://localhost:5173', /^http:\/\/localhost:5000/],
 
   // 默认语言为中文
   lang: 'zh-CN',

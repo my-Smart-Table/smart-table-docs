@@ -1,34 +1,40 @@
 # Kanban View
 
-Kanban view is an intuitive task management view, suitable for process management and task tracking.
+Kanban view turns your table into a card-based board. It is ideal for visualizing workflow stages, task ownership, and project progress.
 
-## Features
+## How Kanban Works
 
-### Kanban Columns
+Cards are grouped into columns based on a select field — usually a status such as **To Do**, **In Progress**, or **Done**. You can drag cards between columns to update their status instantly.
 
-- Automatically create columns based on select fields
-- Support custom column names
-- Drag to adjust column order
+## Kanban Features
 
-### Card Management
+| Feature | Description |
+|---------|-------------|
+| Column grouping | Columns are created from a Single Select field |
+| Drag sorting | Move cards within or between columns |
+| Quick edit | Edit key fields directly on the card |
+| Filtering | Filter cards by conditions without leaving the board |
+| Grouping | Add a second-level group for more organization |
 
-- Drag cards between columns
-- Cards display key fields
-- Support quick editing
+## Common Use Cases
 
-### Filter and Group
+- Project and task management
+- Sales pipeline tracking
+- Issue and bug triage
+- Content editorial calendars
 
-- Filter cards by conditions
-- Support grouped display
+## Configuring Kanban View
 
-## Use Cases
+1. Create a new view and choose **Kanban View**.
+2. Select the field that defines the columns (usually a status field).
+3. Arrange column order and choose which fields appear on each card.
+4. Apply filters or sorts as needed.
 
-- Project management
-- Task tracking
-- Sales process
-- Issue tracking
+::: tip Best Practice
+Use a **Single Select** field for status so cards can be moved cleanly from one column to another.
+:::
 
 ## Next Steps
 
-- [Gantt Chart](/en-US/user-guide/views/gantt-view)
-- [Calendar View](/en-US/user-guide/views/calendar-view)
+- [Gantt Chart](/en-US/user-guide/views/gantt-view.html)
+- [Calendar View](/en-US/user-guide/views/calendar-view.html)

@@ -1,73 +1,71 @@
 # Collaboration
 
-SmartTable provides complete collaboration features to support team members working together efficiently.
+SmartTable is designed for team work. Whether your team is in the same room or distributed, you can share data, manage permissions, and edit together in real time.
+
+## Sharing
+
+You can share SmartTable data at several levels:
+
+| Sharing Level | What It Does |
+|---------------|--------------|
+| Base Sharing | Share the whole base via a link with permission control |
+| Form Sharing | Share a form view publicly to collect submissions |
+| Dashboard Sharing | Share a dashboard publicly for real-time data display |
+
+## Member Management
+
+Each base has its own member list. You can invite users by email or username and assign one of the following roles:
+
+| Role | Permissions |
+|------|-------------|
+| Owner | Full control, including deletion |
+| Admin | Management permissions except deletion |
+| Editor | Can add, edit, and delete records |
+| Commenter | Can view and add comments |
+| Viewer | Read-only access |
 
 ## Real-time Collaborative Editing
 
-Multiple people can edit the same table at the same time:
+When real-time collaboration is enabled, multiple users can edit the same table at the same time:
 
-- View other members' cursor positions in real time
-- Instantly sync data changes
-- Automatically resolve simple editing conflicts
-- Support offline editing and sync
+- **Online Presence** — See who is currently viewing or editing.
+- **View Sync** — Follow collaborators' view switches and scroll positions.
+- **Cell Locking** — Cells being edited are locked to prevent conflicts.
+- **Conflict Detection** — Optimistic locking detects and reports collisions.
+- **Offline Queue** — Changes are cached locally and replayed after reconnection.
+- **Graceful Degradation** — Falls back to normal mode if WebSocket is unavailable.
+
+::: tip Enabling Real-time
+Real-time collaboration is optional and is enabled on the backend with `ENABLE_REALTIME=true` or `--enable-realtime`. See [Docker Deployment](/en-US/developer/deployment/docker.html) for configuration details.
+:::
 
 ## Comments and @Mentions
 
-Add comments to records:
+You can discuss records directly inside SmartTable:
 
-1. Click a record to open the detail panel
-2. Enter comment content in the comment area
-3. Use `@username` to mention team members
-4. Mentioned members will receive notifications
+1. Open a record's detail panel.
+2. Add a comment in the comments area.
+3. Type `@username` to mention a team member.
+4. Mentioned users receive a notification.
 
-## Permission Management
+## Notifications
 
-### Table Permissions
+Configure notifications to stay informed about:
 
-Set table access permissions:
+- Record modifications
+- @mentions
+- Approaching deadlines
+- Workflow execution results
 
-- **Owner**: Has all permissions and can delete the table
-- **Editor**: Can add, modify and delete records
-- **Viewer**: Can only view data, cannot edit
+## Request Tracking and Local Cache
 
-### Field Permissions
+SmartTable includes collaboration-supporting infrastructure:
 
-Control field access levels:
-
-- **Editable**: Collaborators can modify
-- **Read-only**: Collaborators can only view
-- **Hidden**: Hidden for specific collaborators
-
-## Sharing Tables
-
-### Invite Collaborators
-
-Invite team members to collaborate:
-
-1. Click the "Share" button in the upper right corner of the table
-2. Enter the collaborator's email or username
-3. Select permission level
-4. Click "Send invitation"
-
-### Create Public Link
-
-Share tables through public links:
-
-1. Click the "Share" button
-2. Enable "Public link"
-3. Set viewing permissions
-4. Copy the link to share with external users
-
-## Notification Settings
-
-Customize notification preferences:
-
-- Notify when records are modified
-- Notify when @mentioned
-- Notify when deadline is approaching
-- Notify workflow execution results
+- **Request Tracking System** — Request IDs trace requests end to end and standardize error handling.
+- **Local Cache System** — IndexedDB caches collaboration state, auth, and config, reducing config requests by 90%+.
 
 ## Related Links
 
-- [Table Operations](/en-US/user-guide/table-operations)
-- [Workflow Automation](/en-US/user-guide/workflow)
+- [Table Operations](/en-US/user-guide/table-operations.html)
+- [Workflow Automation](/en-US/user-guide/workflow.html)
+- [Docker Deployment](/en-US/developer/deployment/docker.html)

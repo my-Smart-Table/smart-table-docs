@@ -1,113 +1,79 @@
 # Workflow Automation
 
-SmartTable's workflow automation feature helps you automate repetitive business processes and improve work efficiency.
+SmartTable's workflow automation engine lets you build no-code automations that react to events in your data. Introduced in v1.6.0, it can save time on repetitive tasks and keep your team in sync.
 
-## Overview
+## How Workflows Work
 
-Workflows consist of triggers and actions:
+A workflow has two parts:
 
-- **Trigger**: Starts the workflow when a certain condition is met
-- **Action**: Operations performed after the trigger is activated
+- **Trigger** — The event that starts the workflow.
+- **Nodes** — The actions and decisions that run after the trigger.
 
-## Creating a New Workflow
+Workflows are bound to a base or a specific table. You can pause, resume, edit, and version them at any time.
 
-1. Click "Workflow" in the left menu
-2. Click the "New Workflow" button
-3. Select the associated table
-4. Enter the workflow name and description
-5. Click "Create"
+## Creating a Workflow
+
+1. Open **Workflow** from the left menu.
+2. Click **New Workflow**.
+3. Select the associated base or table.
+4. Enter a name and description.
+5. Click **Create** and start adding nodes.
 
 ## Trigger Types
 
-### Record Change Trigger
+| Trigger | When It Fires |
+|---------|---------------|
+| Scheduled Time | One-time or recurring (daily/weekly/monthly/yearly/custom); supports deadline configuration |
+| Record Created | When a new record is created; supports filter conditions |
+| Record Updated | When a record is modified; can listen to specific fields and apply filters |
 
-Triggered when records in a table change:
+## Node Types
 
-- **When record created**: Triggered when a new record is created
-- **When record updated**: Triggered when a record is modified
-- **When record deleted**: Triggered when a record is deleted
+| Node | What It Does |
+|------|--------------|
+| Create Record | Creates a record in a target table with static values or reference expressions |
+| Update Record | Updates fields on the source record with static values or expressions |
+| Webhook Node | Calls an external HTTP endpoint using an existing config or inline config |
+| Condition Node | Branches the workflow based on AND/OR condition combinations |
+| Node Sorting | Drag nodes to adjust execution order |
 
-### Time Trigger
+::: tip Reference Expressions
+Use reference expressions to pull values from the trigger record or related records. For example, map the trigger record's assignee into a newly created task.
+:::
 
-Triggered based on time conditions:
+## Version Management
 
-- **Specified time**: Triggered at a specific time point
-- **Record time reached**: Triggered when the date and time field in the record is reached
+Workflows support version snapshots:
 
-### Webhook Trigger
+- Save the current configuration as a version.
+- View version history and compare configurations.
+- Roll back to a previous version when needed.
 
-Triggered by external HTTP requests:
+## Webhook Delivery Management
 
-1. Create a webhook trigger node
-2. Get the webhook URL
-3. Configure the request in the external system
+Workflows can call external services via webhooks:
 
-## Action Types
-
-### Send Email
-
-Send emails to specified recipients:
-
-1. Add the "Send email" action
-2. Configure recipient, subject and body
-3. Support using variables to render email content
-
-### Create Record
-
-Create new records in the specified table:
-
-1. Select the target table
-2. Configure field values
-3. Support using context variables
-
-### Update Record
-
-Update records that meet conditions:
-
-1. Select the target table
-2. Set filter conditions
-3. Configure the fields to update
-
-### Call Webhook
-
-Send HTTP requests to external services:
-
-1. Configure the request URL
-2. Select the request method (GET, POST, PUT, DELETE)
-3. Configure request headers and body
-
-## Conditional Branches
-
-Execute different actions based on conditions:
-
-1. Add a "Conditional Branch" node
-2. Set judgment conditions
-3. Configure subsequent actions for each branch
+- Configure URL, HTTP method, headers, and request body template.
+- Set retry count and interval.
+- Test the webhook before going live.
+- View delivery records, request parameters, response status, and response body.
 
 ## Execution Logs
 
-View the execution history of workflows:
+Track every workflow run:
 
-- Execution time
-- Trigger record
-- Execution status of each node
-- Error information and retry options
+- Trigger time and trigger record
+- Status of each node
+- Error messages and retry options
 
 ## Best Practices
 
-### Workflow Design
-
-- Keep workflows simple and clear
-- Use meaningful node names
-- Add comments for complex logic
-
-### Error Handling
-
-- Add retry mechanism for webhook calls
-- Configure error notifications
-- Regularly check execution logs
+- Keep workflows focused and easy to understand.
+- Use meaningful node names and comments for complex logic.
+- Add error handling and retries for webhook calls.
+- Review execution logs regularly.
 
 ## Related Links
 
-- [Field Types](/en-US/user-guide/field-types)
-- [Collaboration](/en-US/user-guide/collaboration)
+- [Field Types](/en-US/user-guide/field-types.html)
+- [Collaboration](/en-US/user-guide/collaboration.html)

@@ -1,35 +1,41 @@
 # Gantt Chart
 
-Gantt chart is a commonly used view in project management for displaying project progress and timeline.
+The Gantt chart view displays tasks and milestones on a horizontal timeline. It is the standard view for project planning and progress tracking.
 
-## Features
+## Timeline Display
 
-### Timeline Display
+- The horizontal axis shows the project timeline.
+- The vertical axis lists tasks from your table.
+- Each task appears as a bar from its start date to its end date.
+- A vertical **today** line marks the current date.
 
-- Horizontal axis is the timeline
-- Vertical axis is the task list
-- Task bars display start and end times
+## Task Management
 
-### Task Management
+| Action | How To |
+|--------|--------|
+| Set dates | Use **Date** or **Date Time** fields for start and end times |
+| Add dependencies | Link tasks to show predecessor/successor relationships |
+| Adjust schedule | Drag the task bar or its edges to change dates |
+| Track progress | Link a **Progress** field to see completion on each bar |
 
-- Set start and end times
-- Set task dependencies
-- Drag to adjust task time
+## Progress Tracking
 
-### Progress Tracking
+- Overdue tasks are highlighted.
+- Completed or partially completed tasks show progress visually.
+- Zoom in and out to switch between day, week, and month scales.
 
-- Display task completion progress
-- Today line marks current date
-- Overdue tasks highlighted
+## Common Use Cases
 
-## Use Cases
+- Project planning and scheduling
+- Product roadmap visualization
+- Construction or event timelines
+- Resource allocation planning
 
-- Project planning
-- Progress tracking
-- Resource allocation
-- Time management
+::: tip Required Fields
+Gantt view needs at least a task name and a start/end date field. Adding a **Progress** field makes the chart more informative.
+:::
 
 ## Next Steps
 
-- [Calendar View](/en-US/user-guide/views/calendar-view)
-- [Collaboration](/en-US/user-guide/collaboration)
+- [Calendar View](/en-US/user-guide/views/calendar-view.html)
+- [Collaboration](/en-US/user-guide/collaboration.html)

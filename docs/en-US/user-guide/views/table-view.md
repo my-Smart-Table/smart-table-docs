@@ -1,67 +1,55 @@
 # Grid View
 
-Grid view is the most basic view type in SmartTable, providing a spreadsheet-like data display.
+Grid view is the default and most flexible way to work with SmartTable data. It displays records as rows and fields as columns, similar to a spreadsheet, while supporting high-performance virtual scrolling and advanced layout options.
 
-## Features
+## When to Use Grid View
 
-### Sorting
+Use grid view when you need to:
 
-- Click column header to sort
-- Support ascending/descending switching
-- Support multi-column sorting
+- Enter or edit many records at once.
+- See a large number of fields side by side.
+- Apply complex filters, sorts, and groupings.
+- Freeze important columns while scrolling.
 
-### Filtering
+## Sorting
 
-- Quick filter: Click the filter icon in the column header
-- Advanced filter: Set multiple filter conditions
-- Support condition combination (AND/OR)
+- Click a column header to sort ascending or descending.
+- Hold the sort indicator to add multi-column sorting.
+- Drag sort indicators to change priority.
 
-### Grouping
+## Filtering
 
-- Group display by field value
-- Support multi-level grouping
-- Group collapse/expand
+- Click the filter icon in a column header for a quick filter.
+- Open the view filter panel to add multiple conditions.
+- Combine conditions with **AND** or **OR** logic.
 
-### Freeze Columns
+## Grouping
 
-- Freeze left columns
-- Freeze right columns
-- Convenient for viewing large tables
+- Group records by one or more fields.
+- Expand or collapse groups.
+- Apply grouping up to 3 levels for nested summaries.
 
-## Row Operations
+## Freeze and Resize Columns
 
-### Add Row
+- Drag the column edge to adjust width; double-click to auto-fit.
+- Freeze columns to keep them visible while scrolling horizontally.
+- Show or hide fields per view without deleting them.
 
-- Click the "+" button at the bottom of the table
-- Use shortcut `Ctrl + N`
+## Row and Column Operations
 
-### Delete Row
+| Operation | How To |
+|-----------|--------|
+| Add row | Click the **+** at the bottom or press `Ctrl + N` / `Cmd + N` |
+| Delete row | Select the row and press `Delete`, or right-click and choose **Delete** |
+| Move row | Drag the row handle to a new position |
+| Move column | Drag the column header left or right |
+| Batch select | Hold `Shift` and click rows, or use checkboxes |
 
-- Select the row and right-click to choose "Delete"
-- Use shortcut `Delete`
-
-### Move Row
-
-- Drag the row to the target position
-- Support batch moving
-
-## Column Operations
-
-### Adjust Column Width
-
-- Drag the column edge to adjust width
-- Double-click to auto-fit column width
-
-### Hide/Show Columns
-
-- Right-click column header and select "Hide column"
-- Show again in view settings
-
-### Move Column
-
-- Drag the column header to the target position
+::: tip Performance
+Grid view uses virtual scrolling to keep interactions smooth even with tens of thousands of records.
+:::
 
 ## Next Steps
 
-- [Kanban View](/en-US/user-guide/views/kanban-view)
-- [Gantt Chart](/en-US/user-guide/views/gantt-view)
+- [Kanban View](/en-US/user-guide/views/kanban-view.html)
+- [Gantt Chart](/en-US/user-guide/views/gantt-view.html)

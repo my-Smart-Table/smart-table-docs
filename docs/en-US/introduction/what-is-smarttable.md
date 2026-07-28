@@ -1,47 +1,50 @@
 # What is SmartTable?
 
-SmartTable is an open-source smart multi-dimensional table system that provides powerful data management and collaboration features.
+SmartTable is an open-source, smart multi-dimensional table system built with Vue 3 and Flask. Inspired by products like Airtable and Lark Base, it combines the flexibility of a spreadsheet with the power of a database, making it easy for individuals and teams to organize, analyze, and collaborate on structured data.
 
-## Core Features
+At its heart, a SmartTable **Base** is a collection of interrelated **Tables**. Each table stores **Records** (rows), defined by rich **Fields** (columns), and can be viewed through multiple **Views** such as grid, kanban, Gantt, calendar, form, and gallery.
 
-### Multiple Views
+## What You Can Do
 
-- **Grid View**: Classic data display with sorting, filtering and grouping
-- **Kanban View**: Ideal for task management and workflow tracking
-- **Gantt Chart**: Visual project timeline management
-- **Calendar View**: Timeline data display
-- **Gallery View**: Image and file display
-- **Form View**: Data collection and sharing
+SmartTable covers the full data lifecycle:
 
-### Real-time Collaboration
+| Capability | Description |
+|------------|-------------|
+| Base Management | Create, edit, delete, and star bases; manage members and sharing settings. |
+| Table Management | Work with multiple tables per base; drag-sort, rename, duplicate, or delete tables. |
+| Field Management | Choose from 26 field types, configure options, set defaults, and control visibility. |
+| Record Management | Add, edit, delete, and batch-update records; open record details and track change history. |
+| View Management | Build 6+ view types, each with independent filters, sorts, groups, and frozen columns. |
+| Document Management | Write rich-text or Markdown documents, export to PDF, and keep version history. |
 
-- Multi-user real-time editing
-- Cursor position synchronization
-- Operation history tracking
-- Automatic conflict resolution
+## Supported Views
 
-### Rich Field Types
+SmartTable lets you look at the same data in different ways:
 
-Supports 20+ field types:
+| View | Best For |
+|------|----------|
+| Table View | Spreadsheet-style bulk editing and analysis |
+| Grouped View | Multi-level grouping and grouped statistics |
+| Kanban View | Task and workflow tracking |
+| Calendar View | Time-based event and deadline management |
+| Gantt View | Project timelines and task dependencies |
+| Form View | Public data collection and sharing |
+| Gallery View | Image and media content display |
 
-- Basic types: text, number, date, email, phone, URL
-- Advanced types: link, lookup, formula, rollup
-- Special types: attachment, member, rating, progress bar
+## Deployment Options
 
-### Workflow Automation
+SmartTable can run in several modes to match your environment:
 
-- Visual workflow designer
-- Multiple triggers (scheduled, record changed, webhook)
-- Rich action nodes (send email, update record, trigger webhook)
-- Conditional branches and loop processing
+| Mode | Stack | Use Case |
+|------|-------|----------|
+| Pure Frontend | Dexie (IndexedDB) | Personal or offline use; no server required |
+| Backend | SQLite + Flask | Lightweight self-hosted setup |
+| Production | PostgreSQL + Flask | Multi-user and high-availability deployments |
 
-## Technology Stack
-
-- **Frontend**: Vue 3 + TypeScript + Vite
-- **Backend**: Flask + SQLAlchemy
-- **Database**: SQLite / PostgreSQL
-- **Real-time Communication**: WebSocket
+::: tip Get Started
+To create your first base, see [Getting Started](/en-US/user-guide/getting-started.html). For a complete feature tour, read [Core Features](/en-US/introduction/core-features.html).
+:::
 
 ## Open Source License
 
-SmartTable is open-sourced under the [MIT License](https://opensource.org/licenses/MIT).
+SmartTable is released under the [MIT License](https://opensource.org/licenses/MIT).
