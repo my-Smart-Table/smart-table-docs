@@ -38,6 +38,8 @@ export default defineConfig({
                 ]
               },
               { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
+              { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
+              { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
               { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
               { text: '工作流自动化', link: '/zh-CN/user-guide/workflow.html' }
             ]
@@ -86,6 +88,8 @@ export default defineConfig({
                 ]
               },
               { text: '字段类型', link: 'field-types.html' },
+              { text: '文档管理', link: 'document-management.html' },
+              { text: '仪表盘管理', link: 'dashboard-management.html' },
               { text: '协作功能', link: 'collaboration.html' },
               { text: '工作流自动化', link: 'workflow.html' }
             ]
@@ -175,6 +179,8 @@ export default defineConfig({
                 ]
               },
               { text: 'Field Types', link: '/en-US/user-guide/field-types.html' },
+              { text: 'Document Management', link: '/en-US/user-guide/document-management.html' },
+              { text: 'Dashboard Management', link: '/en-US/user-guide/dashboard-management.html' },
               { text: 'Collaboration', link: '/en-US/user-guide/collaboration.html' },
               { text: 'Workflow Automation', link: '/en-US/user-guide/workflow.html' }
             ]
@@ -223,6 +229,8 @@ export default defineConfig({
                 ]
               },
               { text: 'Field Types', link: 'field-types.html' },
+              { text: 'Document Management', link: 'document-management.html' },
+              { text: 'Dashboard Management', link: 'dashboard-management.html' },
               { text: 'Collaboration', link: 'collaboration.html' },
               { text: 'Workflow Automation', link: 'workflow.html' }
             ]
@@ -296,6 +304,8 @@ export default defineConfig({
           { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
           { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
           { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
+          { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
+          { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
           { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
           { text: '工作流自动化', link: '/zh-CN/user-guide/workflow.html' }
         ]
