@@ -1,0 +1,19 @@
+/* 自定义样式 */
+:root {
+  --vp-c-brand-1: #3eaf7c;
+  --vp-c-brand-2: #42b883;
+  --vp-c-brand-3: #35495e;
+}
+
+/* 首页 Hero 区域样式 */
+.VPHero {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 自定义容器样式 */
+.custom-container {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-soft);
+}
