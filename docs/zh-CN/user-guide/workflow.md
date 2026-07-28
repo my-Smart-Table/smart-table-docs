@@ -90,6 +90,17 @@ SmartTable 为每个工作流保存版本快照：
 - 测试 Webhook 配置是否有效。
 - 查看每次投递的请求参数、响应状态码和响应体。
 
+## 节点详解
+
+- [触发器](/zh-CN/user-guide/workflow/trigger.html)
+- [创建记录节点](/zh-CN/user-guide/workflow/create-record.html)
+- [更新记录节点](/zh-CN/user-guide/workflow/update-record.html)
+- [查找记录节点](/zh-CN/user-guide/workflow/find-records.html)
+- [发送邮件节点](/zh-CN/user-guide/workflow/send-email.html)
+- [Webhook 节点](/zh-CN/user-guide/workflow/webhook.html)
+- [条件节点](/zh-CN/user-guide/workflow/condition.html)
+- [循环节点](/zh-CN/user-guide/workflow/loop.html)
+
 ## 相关链接
 
 - [字段类型](/zh-CN/user-guide/field-types.html)

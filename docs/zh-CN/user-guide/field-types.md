@@ -223,6 +223,8 @@ DATEDIF({开始日期}, {结束日期}, "D")
 
 ## 相关链接
 
+- [关联字段详解](/zh-CN/user-guide/field-types/link-field.html)
+- [查找字段详解](/zh-CN/user-guide/field-types/lookup-field.html)
+- [公式字段详解](/zh-CN/user-guide/field-types/formula-field.html)
 - [表格操作](/zh-CN/user-guide/table-operations.html)
 - [工作流自动化](/zh-CN/user-guide/workflow.html)
-- [公式引擎](/zh-CN/developer/api/overview.html)

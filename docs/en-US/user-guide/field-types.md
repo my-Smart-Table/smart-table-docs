@@ -112,5 +112,8 @@ System fields are managed automatically:
 
 ## Related Links
 
+- [Link Field](/en-US/user-guide/field-types/link-field.html)
+- [Lookup Field](/en-US/user-guide/field-types/lookup-field.html)
+- [Formula Field](/en-US/user-guide/field-types/formula-field.html)
 - [Table Operations](/en-US/user-guide/table-operations.html)
 - [Workflow Automation](/en-US/user-guide/workflow.html)

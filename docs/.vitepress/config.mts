@@ -10,6 +10,25 @@ export default defineConfig({
   // 默认语言为中文
   lang: 'zh-CN',
 
+  // 对包含 {{ }} 的 inline code 添加 v-pre，避免被 Vue 解析为插值
+  markdown: {
+    config: (md) => {
+      const defaultRender = md.renderer.rules.code_inline!
+      md.renderer.rules.code_inline = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        const content = token.content
+        if (content.includes('{{') || content.includes('}}')) {
+          const escaped = content
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+          return `<code v-pre>${escaped}</code>`
+        }
+        return defaultRender(tokens, idx, options, env, self)
+      }
+    }
+  },
+
   // 多语言配置
   locales: {
     'zh-CN': {
@@ -37,11 +56,33 @@ export default defineConfig({
                   { text: '表单视图', link: '/zh-CN/user-guide/views/form-view.html' }
                 ]
               },
-              { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
+              {
+                text: '字段类型',
+                items: [
+                  { text: '字段类型概览', link: '/zh-CN/user-guide/field-types.html' },
+                  { text: '关联字段', link: '/zh-CN/user-guide/field-types/link-field.html' },
+                  { text: '查找字段', link: '/zh-CN/user-guide/field-types/lookup-field.html' },
+                  { text: '公式字段', link: '/zh-CN/user-guide/field-types/formula-field.html' }
+                ]
+              },
               { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
               { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
               { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
-              { text: '工作流自动化', link: '/zh-CN/user-guide/workflow.html' }
+              {
+                text: '工作流自动化',
+                items: [
+                  { text: '工作流自动化概览', link: '/zh-CN/user-guide/workflow.html' },
+                  { text: '触发器', link: '/zh-CN/user-guide/workflow/trigger.html' },
+                  { text: '创建记录节点', link: '/zh-CN/user-guide/workflow/create-record.html' },
+                  { text: '更新记录节点', link: '/zh-CN/user-guide/workflow/update-record.html' },
+                  { text: '查找记录节点', link: '/zh-CN/user-guide/workflow/find-records.html' },
+                  { text: '发送邮件节点', link: '/zh-CN/user-guide/workflow/send-email.html' },
+                  { text: 'Webhook 节点', link: '/zh-CN/user-guide/workflow/webhook.html' },
+                  { text: '条件节点', link: '/zh-CN/user-guide/workflow/condition.html' },
+                  { text: '循环节点', link: '/zh-CN/user-guide/workflow/loop.html' }
+                ]
+              },
+              { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
             ]
           },
           {
@@ -87,11 +128,53 @@ export default defineConfig({
                   { text: '表单视图', link: 'views/form-view.html' }
                 ]
               },
-              { text: '字段类型', link: 'field-types.html' },
-              { text: '文档管理', link: 'document-management.html' },
-              { text: '仪表盘管理', link: 'dashboard-management.html' },
+              {
+                text: '字段类型',
+                collapsed: false,
+                items: [
+                  { text: '字段类型概览', link: 'field-types.html' },
+                  { text: '关联字段', link: 'field-types/link-field.html' },
+                  { text: '查找字段', link: 'field-types/lookup-field.html' },
+                  { text: '公式字段', link: 'field-types/formula-field.html' }
+                ]
+              },
+              {
+                text: '文档管理',
+                collapsed: false,
+                items: [
+                  { text: '文档管理', link: 'document-management.html' }
+                ]
+              },
+              {
+                text: '仪表盘管理',
+                collapsed: false,
+                items: [
+                  { text: '仪表盘管理', link: 'dashboard-management.html' }
+                ]
+              },
               { text: '协作功能', link: 'collaboration.html' },
-              { text: '工作流自动化', link: 'workflow.html' }
+              {
+                text: '工作流自动化',
+                collapsed: false,
+                items: [
+                  { text: '工作流自动化概览', link: 'workflow.html' },
+                  { text: '触发器', link: 'workflow/trigger.html' },
+                  { text: '创建记录节点', link: 'workflow/create-record.html' },
+                  { text: '更新记录节点', link: 'workflow/update-record.html' },
+                  { text: '查找记录节点', link: 'workflow/find-records.html' },
+                  { text: '发送邮件节点', link: 'workflow/send-email.html' },
+                  { text: 'Webhook 节点', link: 'workflow/webhook.html' },
+                  { text: '条件节点', link: 'workflow/condition.html' },
+                  { text: '循环节点', link: 'workflow/loop.html' }
+                ]
+              },
+              {
+                text: '系统管理',
+                collapsed: false,
+                items: [
+                  { text: '系统管理', link: 'system-management.html' }
+                ]
+              }
             ]
           },
           '/zh-CN/developer/': {
@@ -178,11 +261,33 @@ export default defineConfig({
                   { text: 'Form View', link: '/en-US/user-guide/views/form-view.html' }
                 ]
               },
-              { text: 'Field Types', link: '/en-US/user-guide/field-types.html' },
+              {
+                text: 'Field Types',
+                items: [
+                  { text: 'Field Types Overview', link: '/en-US/user-guide/field-types.html' },
+                  { text: 'Link Field', link: '/en-US/user-guide/field-types/link-field.html' },
+                  { text: 'Lookup Field', link: '/en-US/user-guide/field-types/lookup-field.html' },
+                  { text: 'Formula Field', link: '/en-US/user-guide/field-types/formula-field.html' }
+                ]
+              },
               { text: 'Document Management', link: '/en-US/user-guide/document-management.html' },
               { text: 'Dashboard Management', link: '/en-US/user-guide/dashboard-management.html' },
               { text: 'Collaboration', link: '/en-US/user-guide/collaboration.html' },
-              { text: 'Workflow Automation', link: '/en-US/user-guide/workflow.html' }
+              {
+                text: 'Workflow Automation',
+                items: [
+                  { text: 'Workflow Automation Overview', link: '/en-US/user-guide/workflow.html' },
+                  { text: 'Trigger', link: '/en-US/user-guide/workflow/trigger.html' },
+                  { text: 'Create Record Node', link: '/en-US/user-guide/workflow/create-record.html' },
+                  { text: 'Update Record Node', link: '/en-US/user-guide/workflow/update-record.html' },
+                  { text: 'Find Records Node', link: '/en-US/user-guide/workflow/find-records.html' },
+                  { text: 'Send Email Node', link: '/en-US/user-guide/workflow/send-email.html' },
+                  { text: 'Webhook Node', link: '/en-US/user-guide/workflow/webhook.html' },
+                  { text: 'Condition Node', link: '/en-US/user-guide/workflow/condition.html' },
+                  { text: 'Loop Node', link: '/en-US/user-guide/workflow/loop.html' }
+                ]
+              },
+              { text: 'System Management', link: '/en-US/user-guide/system-management.html' }
             ]
           },
           {
@@ -228,11 +333,53 @@ export default defineConfig({
                   { text: 'Form View', link: 'views/form-view.html' }
                 ]
               },
-              { text: 'Field Types', link: 'field-types.html' },
-              { text: 'Document Management', link: 'document-management.html' },
-              { text: 'Dashboard Management', link: 'dashboard-management.html' },
+              {
+                text: 'Field Types',
+                collapsed: false,
+                items: [
+                  { text: 'Field Types Overview', link: 'field-types.html' },
+                  { text: 'Link Field', link: 'field-types/link-field.html' },
+                  { text: 'Lookup Field', link: 'field-types/lookup-field.html' },
+                  { text: 'Formula Field', link: 'field-types/formula-field.html' }
+                ]
+              },
+              {
+                text: 'Document Management',
+                collapsed: false,
+                items: [
+                  { text: 'Document Management', link: 'document-management.html' }
+                ]
+              },
+              {
+                text: 'Dashboard Management',
+                collapsed: false,
+                items: [
+                  { text: 'Dashboard Management', link: 'dashboard-management.html' }
+                ]
+              },
               { text: 'Collaboration', link: 'collaboration.html' },
-              { text: 'Workflow Automation', link: 'workflow.html' }
+              {
+                text: 'Workflow Automation',
+                collapsed: false,
+                items: [
+                  { text: 'Workflow Automation Overview', link: 'workflow.html' },
+                  { text: 'Trigger', link: 'workflow/trigger.html' },
+                  { text: 'Create Record Node', link: 'workflow/create-record.html' },
+                  { text: 'Update Record Node', link: 'workflow/update-record.html' },
+                  { text: 'Find Records Node', link: 'workflow/find-records.html' },
+                  { text: 'Send Email Node', link: 'workflow/send-email.html' },
+                  { text: 'Webhook Node', link: 'workflow/webhook.html' },
+                  { text: 'Condition Node', link: 'workflow/condition.html' },
+                  { text: 'Loop Node', link: 'workflow/loop.html' }
+                ]
+              },
+              {
+                text: 'System Management',
+                collapsed: false,
+                items: [
+                  { text: 'System Management', link: 'system-management.html' }
+                ]
+              }
             ]
           },
           '/en-US/developer/': {
@@ -307,7 +454,21 @@ export default defineConfig({
           { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
           { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
           { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
-          { text: '工作流自动化', link: '/zh-CN/user-guide/workflow.html' }
+          {
+            text: '工作流自动化',
+            items: [
+              { text: '工作流自动化概览', link: '/zh-CN/user-guide/workflow.html' },
+              { text: '触发器', link: '/zh-CN/user-guide/workflow/trigger.html' },
+              { text: '创建记录节点', link: '/zh-CN/user-guide/workflow/create-record.html' },
+              { text: '更新记录节点', link: '/zh-CN/user-guide/workflow/update-record.html' },
+              { text: '查找记录节点', link: '/zh-CN/user-guide/workflow/find-records.html' },
+              { text: '发送邮件节点', link: '/zh-CN/user-guide/workflow/send-email.html' },
+              { text: 'Webhook 节点', link: '/zh-CN/user-guide/workflow/webhook.html' },
+              { text: '条件节点', link: '/zh-CN/user-guide/workflow/condition.html' },
+              { text: '循环节点', link: '/zh-CN/user-guide/workflow/loop.html' }
+            ]
+          },
+          { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
         ]
       },
       {
