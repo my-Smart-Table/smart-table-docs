@@ -89,13 +89,41 @@ export default defineConfig({
             text: '开发者文档',
             activeMatch: '/zh-CN/developer/',
             items: [
-              { text: '架构设计', link: '/zh-CN/developer/architecture.html' },
-              { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
-              { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
-              { text: '手动部署', link: '/zh-CN/developer/deployment/manual.html' },
-              { text: '配置说明', link: '/zh-CN/developer/deployment/configuration.html' },
-              { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' },
-              { text: '认证', link: '/zh-CN/developer/api/authentication.html' }
+              {
+                text: '架构',
+                items: [
+                  { text: '架构设计', link: '/zh-CN/developer/architecture.html' }
+                ]
+              },
+              {
+                text: '部署',
+                items: [
+                  { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
+                  { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
+                  { text: '手动部署', link: '/zh-CN/developer/deployment/manual.html' },
+                  { text: '配置说明', link: '/zh-CN/developer/deployment/configuration.html' }
+                ]
+              },
+              {
+                text: '开发',
+                items: [
+                  { text: '开发环境', link: '/zh-CN/developer/development/environment.html' }
+                ]
+              },
+              {
+                text: 'API',
+                items: [
+                  { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' },
+                  { text: '认证', link: '/zh-CN/developer/api/authentication.html' },
+                  { text: '数据表 API', link: '/zh-CN/developer/api/table.html' },
+                  { text: '记录 API', link: '/zh-CN/developer/api/record.html' },
+                  { text: '工作流 API', link: '/zh-CN/developer/api/workflow.html' }
+                ]
+              },
+              {
+                text: '其他',
+                items: []
+              }
             ]
           },
           { text: '更新日志', link: '/zh-CN/changelog.html' }
@@ -180,9 +208,15 @@ export default defineConfig({
           '/zh-CN/developer/': {
             base: '/zh-CN/developer/',
             items: [
-              { text: '架构设计', link: 'architecture.html' },
               {
-                text: '部署指南',
+                text: '架构',
+                collapsed: false,
+                items: [
+                  { text: '架构设计', link: 'architecture.html' }
+                ]
+              },
+              {
+                text: '部署',
                 collapsed: false,
                 items: [
                   { text: '一键部署', link: 'deployment/one-click.html' },
@@ -192,7 +226,14 @@ export default defineConfig({
                 ]
               },
               {
-                text: 'API 文档',
+                text: '开发',
+                collapsed: false,
+                items: [
+                  { text: '开发环境', link: 'development/environment.html' }
+                ]
+              },
+              {
+                text: 'API',
                 collapsed: false,
                 items: [
                   { text: 'API 概览', link: 'api/overview.html' },
@@ -201,6 +242,11 @@ export default defineConfig({
                   { text: '记录 API', link: 'api/record.html' },
                   { text: '工作流 API', link: 'api/workflow.html' }
                 ]
+              },
+              {
+                text: '其他',
+                collapsed: false,
+                items: []
               }
             ]
           }
@@ -294,13 +340,41 @@ export default defineConfig({
             text: 'Developer',
             activeMatch: '/en-US/developer/',
             items: [
-              { text: 'Architecture', link: '/en-US/developer/architecture.html' },
-              { text: 'One-click Deployment', link: '/en-US/developer/deployment/one-click.html' },
-              { text: 'Docker Deployment', link: '/en-US/developer/deployment/docker.html' },
-              { text: 'Manual Deployment', link: '/en-US/developer/deployment/manual.html' },
-              { text: 'Configuration', link: '/en-US/developer/deployment/configuration.html' },
-              { text: 'API Overview', link: '/en-US/developer/api/overview.html' },
-              { text: 'Authentication', link: '/en-US/developer/api/authentication.html' }
+              {
+                text: 'Architecture',
+                items: [
+                  { text: 'Architecture', link: '/en-US/developer/architecture.html' }
+                ]
+              },
+              {
+                text: 'Deployment',
+                items: [
+                  { text: 'One-click Deployment', link: '/en-US/developer/deployment/one-click.html' },
+                  { text: 'Docker Deployment', link: '/en-US/developer/deployment/docker.html' },
+                  { text: 'Manual Deployment', link: '/en-US/developer/deployment/manual.html' },
+                  { text: 'Configuration', link: '/en-US/developer/deployment/configuration.html' }
+                ]
+              },
+              {
+                text: 'Development',
+                items: [
+                  { text: 'Development Environment', link: '/en-US/developer/development/environment.html' }
+                ]
+              },
+              {
+                text: 'API',
+                items: [
+                  { text: 'API Overview', link: '/en-US/developer/api/overview.html' },
+                  { text: 'Authentication', link: '/en-US/developer/api/authentication.html' },
+                  { text: 'Table API', link: '/en-US/developer/api/table.html' },
+                  { text: 'Record API', link: '/en-US/developer/api/record.html' },
+                  { text: 'Workflow API', link: '/en-US/developer/api/workflow.html' }
+                ]
+              },
+              {
+                text: 'Others',
+                items: []
+              }
             ]
           },
           { text: 'Changelog', link: '/en-US/changelog.html' }
@@ -385,7 +459,13 @@ export default defineConfig({
           '/en-US/developer/': {
             base: '/en-US/developer/',
             items: [
-              { text: 'Architecture', link: 'architecture.html' },
+              {
+                text: 'Architecture',
+                collapsed: false,
+                items: [
+                  { text: 'Architecture', link: 'architecture.html' }
+                ]
+              },
               {
                 text: 'Deployment',
                 collapsed: false,
@@ -397,7 +477,14 @@ export default defineConfig({
                 ]
               },
               {
-                text: 'API Docs',
+                text: 'Development',
+                collapsed: false,
+                items: [
+                  { text: 'Development Environment', link: 'development/environment.html' }
+                ]
+              },
+              {
+                text: 'API',
                 collapsed: false,
                 items: [
                   { text: 'API Overview', link: 'api/overview.html' },
@@ -406,6 +493,11 @@ export default defineConfig({
                   { text: 'Record API', link: 'api/record.html' },
                   { text: 'Workflow API', link: 'api/workflow.html' }
                 ]
+              },
+              {
+                text: 'Others',
+                collapsed: false,
+                items: []
               }
             ]
           }
@@ -474,10 +566,41 @@ export default defineConfig({
       {
         text: '开发者文档',
         items: [
-          { text: '架构设计', link: '/zh-CN/developer/architecture.html' },
-          { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
-          { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
-          { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' }
+          {
+            text: '架构',
+            items: [
+              { text: '架构设计', link: '/zh-CN/developer/architecture.html' }
+            ]
+          },
+          {
+            text: '部署',
+            items: [
+              { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
+              { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
+              { text: '手动部署', link: '/zh-CN/developer/deployment/manual.html' },
+              { text: '配置说明', link: '/zh-CN/developer/deployment/configuration.html' }
+            ]
+          },
+          {
+            text: '开发',
+            items: [
+              { text: '开发环境', link: '/zh-CN/developer/development/environment.html' }
+            ]
+          },
+          {
+            text: 'API',
+            items: [
+              { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' },
+              { text: '认证', link: '/zh-CN/developer/api/authentication.html' },
+              { text: '数据表 API', link: '/zh-CN/developer/api/table.html' },
+              { text: '记录 API', link: '/zh-CN/developer/api/record.html' },
+              { text: '工作流 API', link: '/zh-CN/developer/api/workflow.html' }
+            ]
+          },
+          {
+            text: '其他',
+            items: []
+          }
         ]
       },
       { text: 'English', link: '/en-US/' }
