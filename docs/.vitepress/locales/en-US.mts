@@ -1,6 +1,4 @@
-import { defineLocaleConfig } from 'vitepress'
-
-export default defineLocaleConfig({
+export default {
   label: 'English',
   lang: 'en-US',
 
@@ -142,4 +140,4 @@ export default defineLocaleConfig({
     lightModeSwitchTitle: 'Switch to light theme',
     darkModeSwitchTitle: 'Switch to dark theme'
   }
-})
+}

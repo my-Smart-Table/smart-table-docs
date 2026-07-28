@@ -1,6 +1,4 @@
-import { defineLocaleConfig } from 'vitepress'
-
-export default defineLocaleConfig({
+export default {
   label: '简体中文',
   lang: 'zh-CN',
 
@@ -142,4 +140,4 @@ export default defineLocaleConfig({
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式'
   }
-})
+}
