@@ -43,12 +43,13 @@ export default defineConfig({
             text: '开发者文档',
             activeMatch: '/zh-CN/developer/',
             items: [
+              { text: '架构设计', link: '/zh-CN/developer/architecture.html' },
+              { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
               { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
               { text: '手动部署', link: '/zh-CN/developer/deployment/manual.html' },
               { text: '配置说明', link: '/zh-CN/developer/deployment/configuration.html' },
               { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' },
-              { text: '认证', link: '/zh-CN/developer/api/authentication.html' },
-              { text: '架构设计', link: '/zh-CN/developer/architecture.html' }
+              { text: '认证', link: '/zh-CN/developer/api/authentication.html' }
             ]
           },
           { text: '更新日志', link: '/zh-CN/changelog.html' }
@@ -86,10 +87,12 @@ export default defineConfig({
           '/zh-CN/developer/': {
             base: '/zh-CN/developer/',
             items: [
+              { text: '架构设计', link: 'architecture.html' },
               {
                 text: '部署指南',
                 collapsed: false,
                 items: [
+                  { text: '一键部署', link: 'deployment/one-click.html' },
                   { text: 'Docker 部署', link: 'deployment/docker.html' },
                   { text: '手动部署', link: 'deployment/manual.html' },
                   { text: '配置说明', link: 'deployment/configuration.html' }
@@ -105,8 +108,7 @@ export default defineConfig({
                   { text: '记录 API', link: 'api/record.html' },
                   { text: '工作流 API', link: 'api/workflow.html' }
                 ]
-              },
-              { text: '架构设计', link: 'architecture.html' }
+              }
             ]
           }
         },
@@ -172,12 +174,13 @@ export default defineConfig({
             text: 'Developer',
             activeMatch: '/en-US/developer/',
             items: [
+              { text: 'Architecture', link: '/en-US/developer/architecture.html' },
+              { text: 'One-click Deployment', link: '/en-US/developer/deployment/one-click.html' },
               { text: 'Docker Deployment', link: '/en-US/developer/deployment/docker.html' },
               { text: 'Manual Deployment', link: '/en-US/developer/deployment/manual.html' },
               { text: 'Configuration', link: '/en-US/developer/deployment/configuration.html' },
               { text: 'API Overview', link: '/en-US/developer/api/overview.html' },
-              { text: 'Authentication', link: '/en-US/developer/api/authentication.html' },
-              { text: 'Architecture', link: '/en-US/developer/architecture.html' }
+              { text: 'Authentication', link: '/en-US/developer/api/authentication.html' }
             ]
           },
           { text: 'Changelog', link: '/en-US/changelog.html' }
@@ -215,10 +218,12 @@ export default defineConfig({
           '/en-US/developer/': {
             base: '/en-US/developer/',
             items: [
+              { text: 'Architecture', link: 'architecture.html' },
               {
                 text: 'Deployment',
                 collapsed: false,
                 items: [
+                  { text: 'One-click Deployment', link: 'deployment/one-click.html' },
                   { text: 'Docker Deployment', link: 'deployment/docker.html' },
                   { text: 'Manual Deployment', link: 'deployment/manual.html' },
                   { text: 'Configuration', link: 'deployment/configuration.html' }
@@ -234,8 +239,7 @@ export default defineConfig({
                   { text: 'Record API', link: 'api/record.html' },
                   { text: 'Workflow API', link: 'api/workflow.html' }
                 ]
-              },
-              { text: 'Architecture', link: 'architecture.html' }
+              }
             ]
           }
         },
@@ -287,9 +291,10 @@ export default defineConfig({
       {
         text: '开发者文档',
         items: [
+          { text: '架构设计', link: '/zh-CN/developer/architecture.html' },
+          { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
           { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
-          { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' },
-          { text: '架构设计', link: '/zh-CN/developer/architecture.html' }
+          { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' }
         ]
       },
       { text: 'English', link: '/en-US/' }
@@ -300,7 +305,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/my-Smart-Table/smart-table-spec' }
+      { icon: 'github', link: 'https://github.com/ldbinac/smart_table' }
     ],
 
     footer: {

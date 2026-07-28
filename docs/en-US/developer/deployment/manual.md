@@ -14,8 +14,8 @@ If you want more flexible control over the deployment environment, you can choos
 ### 1. Clone the Code
 
 ```bash
-git clone https://github.com/my-Smart-Table/smart-table-spec.git
-cd smart-table-spec
+git clone https://github.com/ldbinac/smart_table.git
+cd smart_table
 ```
 
 ### 2. Install Dependencies

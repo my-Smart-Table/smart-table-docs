@@ -17,15 +17,15 @@ const isEnglish = computed(() => site.value.lang === 'en-US')
 const actions = computed<Action[]>(() => {
   if (isEnglish.value) {
     return [
-      { theme: 'brand', text: 'Get Started', link: '/en-US/user-guide/getting-started.html' },
-      { theme: 'alt', text: 'Deployment', link: '/en-US/developer/deployment/docker.html' },
-      { theme: 'alt', text: 'GitHub', link: 'https://github.com/my-Smart-Table/smart-table-spec', external: true }
+      { theme: 'alt', text: 'Product Introduction', link: '/en-US/introduction/what-is-smarttable.html' },
+      { theme: 'brand', text: 'Getting Started', link: '/en-US/user-guide/getting-started.html' },
+      { theme: 'alt', text: 'Developer Docs', link: '/en-US/developer/architecture.html' }
     ]
   }
   return [
+    { theme: 'alt', text: '产品介绍', link: '/zh-CN/introduction/what-is-smarttable.html' },
     { theme: 'brand', text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
-    { theme: 'alt', text: '部署指南', link: '/zh-CN/developer/deployment/docker.html' },
-    { theme: 'alt', text: 'GitHub', link: 'https://github.com/my-Smart-Table/smart-table-spec', external: true }
+    { theme: 'alt', text: '开发者文档', link: '/zh-CN/developer/architecture.html' }
   ]
 })
 </script>

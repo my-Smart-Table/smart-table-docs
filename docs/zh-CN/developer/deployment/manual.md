@@ -14,8 +14,8 @@
 ### 1. 克隆代码
 
 ```bash
-git clone https://github.com/my-Smart-Table/smart-table-spec.git
-cd smart-table-spec
+git clone https://github.com/ldbinac/smart_table.git
+cd smart_table
 ```
 
 ### 2. 安装依赖
