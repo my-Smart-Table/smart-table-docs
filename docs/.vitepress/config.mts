@@ -3,6 +3,7 @@ import zhCN from './locales/zh-CN.mts'
 import enUS from './locales/en-US.mts'
 
 export default defineConfig({
+  base: '/smart-table-docs/',
   title: 'SmartTable',
   description: '智能多维表格系统文档',
 
