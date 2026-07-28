@@ -1,132 +1,74 @@
 # 配置说明
 
-本文档详细介绍 SmartTable 的配置选项。
+SmartTable 支持通过环境变量和配置文件进行灵活配置。
 
-## 环境变量配置
+## 基础配置
 
-### 基础配置
+### 应用配置
 
-```bash
-# 服务端口
-PORT=3000
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `APP_ENV` | 运行环境 | `development` |
+| `APP_PORT` | 服务端口 | `3000` |
+| `APP_HOST` | 服务主机 | `0.0.0.0` |
+| `APP_SECRET_KEY` | 应用密钥 | 必填 |
 
-# 数据库配置
-DATABASE_URL=sqlite:///data/smarttable.db
-# 或使用 PostgreSQL
-# DATABASE_URL=postgresql://user:password@localhost:5432/smarttable
+### 数据库配置
 
-# 密钥配置（用于加密）
-SECRET_KEY=your-secret-key-change-in-production
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `DATABASE_URL` | 数据库连接字符串 | 必填 |
+| `DATABASE_POOL_SIZE` | 连接池大小 | `20` |
+
+示例：
+```env
+DATABASE_URL=postgresql://user:password@localhost:5432/smarttable
 ```
 
-### 认证配置
+### 缓存配置
 
-```bash
-# JWT 配置
-JWT_SECRET=your-jwt-secret
-JWT_EXPIRES_IN=7d
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `REDIS_URL` | Redis 连接地址 | 可选 |
+| `CACHE_TTL` | 缓存过期时间（秒） | `3600` |
 
-# 是否启用注册功能
-ENABLE_REGISTRATION=true
-```
+## 安全配置
 
-### 文件存储配置
+### JWT 配置
 
-```bash
-# 本地存储
-STORAGE_TYPE=local
-UPLOAD_DIR=./uploads
-
-# 或使用云存储
-# STORAGE_TYPE=s3
-# S3_ENDPOINT=https://s3.amazonaws.com
-# S3_BUCKET=smarttable
-# S3_ACCESS_KEY=your-access-key
-# S3_SECRET_KEY=your-secret-key
-```
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `JWT_ACCESS_TOKEN_EXPIRE_MINUTES` | 访问令牌过期时间 | `30` |
+| `JWT_REFRESH_TOKEN_EXPIRE_DAYS` | 刷新令牌过期时间 | `7` |
 
 ### 邮件配置
 
-```bash
-# SMTP 配置
-SMTP_HOST=smtp.example.com
-SMTP_PORT=587
-SMTP_USER=your-email@example.com
-SMTP_PASSWORD=your-password
-SMTP_FROM=noreply@example.com
-```
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `SMTP_HOST` | SMTP 服务器地址 | 可选 |
+| `SMTP_PORT` | SMTP 端口 | `587` |
+| `SMTP_USER` | SMTP 用户名 | 可选 |
+| `SMTP_PASSWORD` | SMTP 密码 | 可选 |
 
-## Docker 配置
+## 高级配置
 
-### docker-compose.yml
+### 文件存储
 
-```yaml
-version: '3.8'
-services:
-  smarttable:
-    image: smarttable:latest
-    ports:
-      - "3000:3000"
-    environment:
-      - DATABASE_URL=postgresql://postgres:password@db:5432/smarttable
-      - SECRET_KEY=${SECRET_KEY}
-    volumes:
-      - ./uploads:/app/uploads
-      - ./data:/app/data
-    depends_on:
-      - db
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `STORAGE_TYPE` | 存储类型（local/s3） | `local` |
+| `STORAGE_LOCAL_PATH` | 本地存储路径 | `./uploads` |
+| `S3_BUCKET` | S3 存储桶名称 | 可选 |
+| `S3_REGION` | S3 区域 | 可选 |
 
-  db:
-    image: postgres:14
-    environment:
-      - POSTGRES_DB=smarttable
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
+### Webhook 配置
 
-volumes:
-  postgres-data:
-```
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `WEBHOOK_TIMEOUT` | Webhook 超时时间（秒） | `30` |
+| `WEBHOOK_RETRY_COUNT` | Webhook 重试次数 | `3` |
 
-## 性能优化
+## 相关链接
 
-### 数据库优化
-
-- 使用 PostgreSQL 替代 SQLite（推荐用于生产环境）
-- 配置数据库连接池
-- 定期备份数据库
-
-### 应用优化
-
-- 启用 Gzip 压缩
-- 配置 CDN 加速
-- 使用 Redis 缓存（可选）
-
-## 安全建议
-
-1. **修改默认密钥**：生产环境必须修改 `SECRET_KEY` 和 `JWT_SECRET`
-2. **启用 HTTPS**：建议使用反向代理（如 Nginx）配置 SSL
-3. **限制文件上传大小**：防止恶意上传
-4. **定期备份**：确保数据安全
-
-## 故障排查
-
-### 常见问题
-
-**数据库连接失败**
-
-检查数据库配置和网络连接。
-
-**文件上传失败**
-
-检查上传目录权限和磁盘空间。
-
-**邮件发送失败**
-
-验证 SMTP 配置和邮件服务器状态。
-
-## 下一步
-
-- [API 概览](/zh-CN/developer/api/overview)
-- [架构设计](/zh-CN/developer/architecture)
+- [Docker 部署](/zh-CN/developer/deployment/docker)
+- [手动部署](/zh-CN/developer/deployment/manual)
