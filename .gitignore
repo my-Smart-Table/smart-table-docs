@@ -1,0 +1,17 @@
+# VitePress
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# Dependencies
+node_modules
+.pnpm-debug.log
+
+# Editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
