@@ -12,11 +12,13 @@ Follow our official WeChat public account and send a direct message with "SmartT
 
 If this project helps you, consider buying us a coffee ☕
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px;">
-  <div style="padding: 24px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); text-align: center; color: var(--vp-c-text-2);">
-    WeChat Pay QR Code (to be added)
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 16px;">
+  <div style="text-align: center;">
+    <img src="/images/wechat_pay.png" alt="WeChat Pay QR Code" style="max-width: 200px; border-radius: 12px; border: 1px solid var(--vp-c-divider);" />
+    <p style="margin-top: 12px; color: var(--vp-c-text-2); font-size: 14px;">WeChat Pay</p>
   </div>
-  <div style="padding: 24px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); text-align: center; color: var(--vp-c-text-2);">
-    Alipay QR Code (to be added)
+  <div style="text-align: center;">
+    <img src="/images/alipay_pay.png" alt="Alipay QR Code" style="max-width: 200px; border-radius: 12px; border: 1px solid var(--vp-c-divider);" />
+    <p style="margin-top: 12px; color: var(--vp-c-text-2); font-size: 14px;">Alipay</p>
   </div>
 </div>

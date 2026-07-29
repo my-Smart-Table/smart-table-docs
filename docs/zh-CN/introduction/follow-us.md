@@ -12,11 +12,13 @@
 
 如果这个项目对你有帮助，欢迎请我喝一杯咖啡 ☕
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px;">
-  <div style="padding: 24px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); text-align: center; color: var(--vp-c-text-2);">
-    微信收款码（待补充）
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 16px;">
+  <div style="text-align: center;">
+    <img src="/images/wechat_pay.png" alt="微信收款码" style="max-width: 200px; border-radius: 12px; border: 1px solid var(--vp-c-divider);" />
+    <p style="margin-top: 12px; color: var(--vp-c-text-2); font-size: 14px;">微信收款码</p>
   </div>
-  <div style="padding: 24px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); text-align: center; color: var(--vp-c-text-2);">
-    支付宝收款码（待补充）
+  <div style="text-align: center;">
+    <img src="/images/alipay_pay.png" alt="支付宝收款码" style="max-width: 200px; border-radius: 12px; border: 1px solid var(--vp-c-divider);" />
+    <p style="margin-top: 12px; color: var(--vp-c-text-2); font-size: 14px;">支付宝收款码</p>
   </div>
 </div>
