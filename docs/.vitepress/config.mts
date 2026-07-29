@@ -37,7 +37,16 @@ export default defineConfig({
       link: '/zh-CN/',
       themeConfig: {
         nav: [
-          { text: '产品介绍', link: '/zh-CN/introduction/what-is-smarttable.html' },
+          {
+            text: '产品介绍',
+            activeMatch: '/zh-CN/introduction/',
+            items: [
+              { text: 'SmartTable 是什么？', link: '/zh-CN/introduction/what-is-smarttable.html' },
+              { text: '核心功能', link: '/zh-CN/introduction/core-features.html' },
+              { text: '使用场景', link: '/zh-CN/introduction/use-cases.html' },
+              { text: '客户案例', link: '/zh-CN/introduction/customer-cases.html' }
+            ]
+          },
           {
             text: '用户指南',
             activeMatch: '/zh-CN/user-guide/',
@@ -46,6 +55,7 @@ export default defineConfig({
               {
                 text: '基础功能',
                 items: [
+                  { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
                   { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
                   { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
                   { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
@@ -54,7 +64,6 @@ export default defineConfig({
                   { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
                 ]
               },
-              { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
               {
                 text: '字段类型',
                 items: [
@@ -87,18 +96,18 @@ export default defineConfig({
                 ]
               },
               {
+                text: '开发',
+                items: [
+                  { text: '开发环境', link: '/zh-CN/developer/development/environment.html' }
+                ]
+              },
+              {
                 text: '部署',
                 items: [
                   { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
                   { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
                   { text: '手动部署', link: '/zh-CN/developer/deployment/manual.html' },
                   { text: '配置说明', link: '/zh-CN/developer/deployment/configuration.html' }
-                ]
-              },
-              {
-                text: '开发',
-                items: [
-                  { text: '开发环境', link: '/zh-CN/developer/development/environment.html' }
                 ]
               },
               {
@@ -126,7 +135,8 @@ export default defineConfig({
             items: [
               { text: 'SmartTable 是什么？', link: 'what-is-smarttable.html' },
               { text: '核心功能', link: 'core-features.html' },
-              { text: '使用场景', link: 'use-cases.html' }
+              { text: '使用场景', link: 'use-cases.html' },
+              { text: '客户案例', link: 'customer-cases.html' }
             ]
           },
           '/zh-CN/user-guide/': {
@@ -137,6 +147,7 @@ export default defineConfig({
                 text: '基础功能',
                 collapsed: false,
                 items: [
+                  { text: '表格操作', link: 'table-operations.html' },
                   {
                     text: '视图管理',
                     collapsed: false,
@@ -195,7 +206,6 @@ export default defineConfig({
                   }
                 ]
               },
-              { text: '表格操作', link: 'table-operations.html' },
               {
                 text: '字段类型',
                 collapsed: false,
@@ -230,6 +240,13 @@ export default defineConfig({
                 ]
               },
               {
+                text: '开发',
+                collapsed: false,
+                items: [
+                  { text: '开发环境', link: 'development/environment.html' }
+                ]
+              },
+              {
                 text: '部署',
                 collapsed: false,
                 items: [
@@ -237,13 +254,6 @@ export default defineConfig({
                   { text: 'Docker 部署', link: 'deployment/docker.html' },
                   { text: '手动部署', link: 'deployment/manual.html' },
                   { text: '配置说明', link: 'deployment/configuration.html' }
-                ]
-              },
-              {
-                text: '开发',
-                collapsed: false,
-                items: [
-                  { text: '开发环境', link: 'development/environment.html' }
                 ]
               },
               {
@@ -302,7 +312,16 @@ export default defineConfig({
       link: '/en-US/',
       themeConfig: {
         nav: [
-          { text: 'Introduction', link: '/en-US/introduction/what-is-smarttable.html' },
+          {
+            text: 'Introduction',
+            activeMatch: '/en-US/introduction/',
+            items: [
+              { text: 'What is SmartTable?', link: '/en-US/introduction/what-is-smarttable.html' },
+              { text: 'Core Features', link: '/en-US/introduction/core-features.html' },
+              { text: 'Use Cases', link: '/en-US/introduction/use-cases.html' },
+              { text: 'Customer Cases', link: '/en-US/introduction/customer-cases.html' }
+            ]
+          },
           {
             text: 'User Guide',
             activeMatch: '/en-US/user-guide/',
@@ -311,6 +330,7 @@ export default defineConfig({
               {
                 text: 'Basic Features',
                 items: [
+                  { text: 'Table Operations', link: '/en-US/user-guide/table-operations.html' },
                   { text: 'Views', link: '/en-US/user-guide/views/table-view.html' },
                   { text: 'Document Management', link: '/en-US/user-guide/document-management.html' },
                   { text: 'Dashboard Management', link: '/en-US/user-guide/dashboard-management.html' },
@@ -319,7 +339,6 @@ export default defineConfig({
                   { text: 'System Management', link: '/en-US/user-guide/system-management.html' }
                 ]
               },
-              { text: 'Table Operations', link: '/en-US/user-guide/table-operations.html' },
               {
                 text: 'Field Types',
                 items: [
@@ -352,18 +371,18 @@ export default defineConfig({
                 ]
               },
               {
+                text: 'Development',
+                items: [
+                  { text: 'Development Environment', link: '/en-US/developer/development/environment.html' }
+                ]
+              },
+              {
                 text: 'Deployment',
                 items: [
                   { text: 'One-click Deployment', link: '/en-US/developer/deployment/one-click.html' },
                   { text: 'Docker Deployment', link: '/en-US/developer/deployment/docker.html' },
                   { text: 'Manual Deployment', link: '/en-US/developer/deployment/manual.html' },
                   { text: 'Configuration', link: '/en-US/developer/deployment/configuration.html' }
-                ]
-              },
-              {
-                text: 'Development',
-                items: [
-                  { text: 'Development Environment', link: '/en-US/developer/development/environment.html' }
                 ]
               },
               {
@@ -391,7 +410,8 @@ export default defineConfig({
             items: [
               { text: 'What is SmartTable?', link: 'what-is-smarttable.html' },
               { text: 'Core Features', link: 'core-features.html' },
-              { text: 'Use Cases', link: 'use-cases.html' }
+              { text: 'Use Cases', link: 'use-cases.html' },
+              { text: 'Customer Cases', link: 'customer-cases.html' }
             ]
           },
           '/en-US/user-guide/': {
@@ -402,6 +422,7 @@ export default defineConfig({
                 text: 'Basic Features',
                 collapsed: false,
                 items: [
+                  { text: 'Table Operations', link: 'table-operations.html' },
                   {
                     text: 'Views',
                     collapsed: false,
@@ -460,7 +481,6 @@ export default defineConfig({
                   }
                 ]
               },
-              { text: 'Table Operations', link: 'table-operations.html' },
               {
                 text: 'Field Types',
                 collapsed: false,
@@ -495,6 +515,13 @@ export default defineConfig({
                 ]
               },
               {
+                text: 'Development',
+                collapsed: false,
+                items: [
+                  { text: 'Development Environment', link: 'development/environment.html' }
+                ]
+              },
+              {
                 text: 'Deployment',
                 collapsed: false,
                 items: [
@@ -502,13 +529,6 @@ export default defineConfig({
                   { text: 'Docker Deployment', link: 'deployment/docker.html' },
                   { text: 'Manual Deployment', link: 'deployment/manual.html' },
                   { text: 'Configuration', link: 'deployment/configuration.html' }
-                ]
-              },
-              {
-                text: 'Development',
-                collapsed: false,
-                items: [
-                  { text: 'Development Environment', link: 'development/environment.html' }
                 ]
               },
               {
@@ -563,7 +583,16 @@ export default defineConfig({
 
     // 顶层导航用于非 locale 页面（如首页）
     nav: [
-      { text: '产品介绍', link: '/zh-CN/introduction/what-is-smarttable.html' },
+      {
+        text: '产品介绍',
+        activeMatch: '/zh-CN/introduction/',
+        items: [
+          { text: 'SmartTable 是什么？', link: '/zh-CN/introduction/what-is-smarttable.html' },
+          { text: '核心功能', link: '/zh-CN/introduction/core-features.html' },
+          { text: '使用场景', link: '/zh-CN/introduction/use-cases.html' },
+          { text: '客户案例', link: '/zh-CN/introduction/customer-cases.html' }
+        ]
+      },
       {
         text: '用户指南',
         items: [
@@ -571,6 +600,7 @@ export default defineConfig({
           {
             text: '基础功能',
             items: [
+              { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
               { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
               { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
               { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
@@ -579,7 +609,6 @@ export default defineConfig({
               { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
             ]
           },
-          { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
           {
             text: '字段类型',
             items: [
@@ -611,18 +640,18 @@ export default defineConfig({
             ]
           },
           {
+            text: '开发',
+            items: [
+              { text: '开发环境', link: '/zh-CN/developer/development/environment.html' }
+            ]
+          },
+          {
             text: '部署',
             items: [
               { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
               { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
               { text: '手动部署', link: '/zh-CN/developer/deployment/manual.html' },
               { text: '配置说明', link: '/zh-CN/developer/deployment/configuration.html' }
-            ]
-          },
-          {
-            text: '开发',
-            items: [
-              { text: '开发环境', link: '/zh-CN/developer/development/environment.html' }
             ]
           },
           {
