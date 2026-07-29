@@ -44,7 +44,8 @@ export default defineConfig({
               { text: 'SmartTable 是什么？', link: '/zh-CN/introduction/what-is-smarttable.html' },
               { text: '核心功能', link: '/zh-CN/introduction/core-features.html' },
               { text: '使用场景', link: '/zh-CN/introduction/use-cases.html' },
-              { text: '客户案例', link: '/zh-CN/introduction/customer-cases.html' }
+              { text: '客户案例', link: '/zh-CN/introduction/customer-cases.html' },
+              { text: '关注我们', link: '/zh-CN/introduction/follow-us.html' }
             ]
           },
           {
@@ -136,7 +137,8 @@ export default defineConfig({
               { text: 'SmartTable 是什么？', link: 'what-is-smarttable.html' },
               { text: '核心功能', link: 'core-features.html' },
               { text: '使用场景', link: 'use-cases.html' },
-              { text: '客户案例', link: 'customer-cases.html' }
+              { text: '客户案例', link: 'customer-cases.html' },
+              { text: '关注我们', link: 'follow-us.html' }
             ]
           },
           '/zh-CN/user-guide/': {
@@ -319,7 +321,8 @@ export default defineConfig({
               { text: 'What is SmartTable?', link: '/en-US/introduction/what-is-smarttable.html' },
               { text: 'Core Features', link: '/en-US/introduction/core-features.html' },
               { text: 'Use Cases', link: '/en-US/introduction/use-cases.html' },
-              { text: 'Customer Cases', link: '/en-US/introduction/customer-cases.html' }
+              { text: 'Customer Cases', link: '/en-US/introduction/customer-cases.html' },
+              { text: 'Follow Us', link: '/en-US/introduction/follow-us.html' }
             ]
           },
           {
@@ -411,7 +414,8 @@ export default defineConfig({
               { text: 'What is SmartTable?', link: 'what-is-smarttable.html' },
               { text: 'Core Features', link: 'core-features.html' },
               { text: 'Use Cases', link: 'use-cases.html' },
-              { text: 'Customer Cases', link: 'customer-cases.html' }
+              { text: 'Customer Cases', link: 'customer-cases.html' },
+              { text: 'Follow Us', link: 'follow-us.html' }
             ]
           },
           '/en-US/user-guide/': {
@@ -590,7 +594,8 @@ export default defineConfig({
           { text: 'SmartTable 是什么？', link: '/zh-CN/introduction/what-is-smarttable.html' },
           { text: '核心功能', link: '/zh-CN/introduction/core-features.html' },
           { text: '使用场景', link: '/zh-CN/introduction/use-cases.html' },
-          { text: '客户案例', link: '/zh-CN/introduction/customer-cases.html' }
+          { text: '客户案例', link: '/zh-CN/introduction/customer-cases.html' },
+          { text: '关注我们', link: '/zh-CN/introduction/follow-us.html' }
         ]
       },
       {
