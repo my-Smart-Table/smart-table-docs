@@ -11,6 +11,8 @@
 
 ## 配置项
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="条件节点" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 分支
 
 每个条件节点包含一个或多个分支：

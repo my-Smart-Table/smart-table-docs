@@ -11,6 +11,8 @@ Gallery view displays records as cards, with each card showing a cover image and
 
 ## Creating a Gallery View
 
+<img src="/images/user-guide/basic-features/views/views-gallery-view.png" alt="Gallery view" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 1. Click **+ New View** in the view switcher.
 2. Select the **Gallery** view type.
 3. Enter a view name and create it.

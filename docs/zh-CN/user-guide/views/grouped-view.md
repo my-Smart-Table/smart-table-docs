@@ -11,6 +11,8 @@
 
 ## 创建分组
 
+<img src="/images/user-guide/basic-features/views/views-grouped-view.png" alt="分组视图展示" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 1. 在表格视图下，点击工具栏中的「分组」按钮，打开分组配置面板。
 2. 选择用于分组的字段，支持文本、单选、成员、日期等多种字段类型。
 3. 支持添加最多 **3 级分组**，实现多级嵌套展示。

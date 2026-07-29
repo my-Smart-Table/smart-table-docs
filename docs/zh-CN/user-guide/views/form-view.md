@@ -17,6 +17,8 @@
 
 ## 配置表单
 
+<img src="/images/user-guide/basic-features/views/views-form-view.png" alt="表单视图配置" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 点击表单视图右上角的「配置」按钮，打开表单配置面板：
 
 | 配置项 | 说明 |
@@ -42,6 +44,8 @@
 - 单选、多选字段会显示配置好的选项。
 
 ## 表单分享
+
+<img src="/images/user-guide/basic-features/views/views-form-sharing.png" alt="表单分享设置" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 表单视图支持生成公开分享链接，方便外部用户访问和提交。
 

@@ -18,6 +18,8 @@ SmartTable 的工作流自动化引擎（v1.6.0 新增）可以帮助您将重�
 4. 输入工作流名称和描述。
 5. 点击「创建」。
 
+<img src="/images/user-guide/basic-features/workflow/workflow-overview.png" alt="工作流概览" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## 触发器类型
 
 | 触发器类型 | 说明 |
@@ -62,6 +64,8 @@ SmartTable 为每个工作流保存版本快照：
 - 回溯到任意历史版本。
 
 ## 管理功能
+
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="工作流实例" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 在工作流列表中，您可以：
 

@@ -30,6 +30,12 @@ SmartTable 内置了多种常用模板（如项目管理、客户关系、任务
 3. 预览字段映射，确认导入设置。
 4. 点击「开始导入」，系统会自动创建新表并写入数据。
 
+<img src="/images/user-guide/basic-features/table-operations/table-operations-excel-import.png" alt="Excel 导入创建表" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
+导入过程中，系统会展示字段映射预览界面，方便你确认数据是否正确解析：
+
+<img src="/images/user-guide/basic-features/table-operations/table-operations-data-import-preview.png" alt="数据导入预览" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## 数据表基本操作
 
 创建数据表后，您可以对其进行以下管理：
@@ -51,6 +57,8 @@ SmartTable 内置了多种常用模板（如项目管理、客户关系、任务
 - **调整顺序**：拖拽字段表头调整列顺序。
 - **显示/隐藏**：在视图设置中控制字段的显示与隐藏。
 - **字段配置**：不同字段类型拥有专属配置项，例如单选字段可定义选项和颜色，数字字段可设置小数位数和格式。
+
+<img src="/images/user-guide/basic-features/table-operations/table-operations-field-config.png" alt="字段配置面板" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 SmartTable 支持 [26 种字段类型](/zh-CN/user-guide/field-types.html)，覆盖文本、数值、日期、选择、关联、公式、附件等场景。
 
@@ -96,9 +104,13 @@ SmartTable 会自动保存单元格修改，所有变更都会记录到历史记
 
 点击记录行可打开记录详情抽屉，查看和编辑完整字段内容，并查看该记录的变更历史。
 
+<img src="/images/user-guide/basic-features/table-operations/table-operations-record-detail.png" alt="记录详情抽屉" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## 视图管理
 
 视图决定了数据表的呈现方式。每个数据表可以创建多个视图，不同视图拥有独立的筛选、排序、分组和字段显示配置。
+
+<img src="/images/user-guide/basic-features/table-operations/table-operations-table-view.png" alt="表格视图主界面" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 ### 创建视图
 

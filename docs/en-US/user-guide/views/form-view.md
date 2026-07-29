@@ -17,6 +17,8 @@ Form view turns a table into a data collection form, making it easy to gather in
 
 ## Configuring the Form
 
+<img src="/images/user-guide/basic-features/views/views-form-view.png" alt="Form view configuration" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 Click the **Configure** button in the upper right corner of the form view to open the configuration panel:
 
 | Configuration | Description |
@@ -42,6 +44,8 @@ Click the **Configure** button in the upper right corner of the form view to ope
 - Single select and multi-select fields show configured options.
 
 ## Sharing the Form
+
+<img src="/images/user-guide/basic-features/views/views-form-sharing.png" alt="Form sharing settings" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 Form view supports generating public share links so external users can access and submit data.
 

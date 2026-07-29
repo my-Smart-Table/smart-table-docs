@@ -15,6 +15,8 @@ SmartTable 为每个 Base 提供了独立的文档管理功能，支持创建、
 2. 在左侧侧边栏切换到「文档」标签页。
 3. 点击文档名称即可打开编辑器；点击「+ 新建文档」创建新文档。
 
+<img src="/images/user-guide/basic-features/document-management/document-management-list.png" alt="文档列表" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## 文档操作
 
 ### 新建文档
@@ -38,6 +40,8 @@ SmartTable 为每个 Base 提供了独立的文档管理功能，支持创建、
 - 删除后文档不可恢复，请提前导出或备份重要内容。
 
 ## 富文本编辑器
+
+<img src="/images/user-guide/basic-features/document-management/document-management-editor.png" alt="文档编辑器" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 SmartTable 文档编辑器基于 FluentEditor（兼容 Quill 生态），提供接近专业编辑器的排版能力。
 
@@ -95,6 +99,8 @@ SmartTable 文档编辑器基于 FluentEditor（兼容 Quill 生态），提供�
 
 ## 版本历史
 
+<img src="/images/user-guide/basic-features/document-management/document-management-version-history.png" alt="文档版本历史" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 SmartTable 会自动为文档内容变更创建版本快照，方便回溯和恢复。
 
 ### 查看版本历史
@@ -120,6 +126,8 @@ SmartTable 会自动为文档内容变更创建版本快照，方便回溯和恢
 - 元数据变更（如重命名、排序、置顶）不会触发版本创建。
 
 ## PDF 导出
+
+<img src="/images/user-guide/basic-features/document-management/document-management-pdf-export.png" alt="文档 PDF 导出" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 文档支持一键导出为 PDF，便于离线分享或归档。
 

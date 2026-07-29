@@ -11,6 +11,8 @@
 
 ## 配置项
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="循环节点" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 数据源类型
 
 循环节点支持以下几种数据源：

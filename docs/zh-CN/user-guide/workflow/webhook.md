@@ -24,6 +24,8 @@ Webhook 节点支持两种配置方式：
 
 ## 配置项
 
+<img src="/images/user-guide/basic-features/workflow/workflow-webhook.png" alt="Webhook 节点" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 基础信息
 
 - **名称**：Webhook 名称，便于识别。

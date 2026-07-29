@@ -15,6 +15,8 @@ SmartTable provides independent document management for each Base, supporting th
 2. Switch to the **Documents** tab in the left sidebar.
 3. Click a document name to open the editor, or click **+ New Document** to create one.
 
+<img src="/images/user-guide/basic-features/document-management/document-management-list.png" alt="Document list" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## Document Operations
 
 ### Creating a Document
@@ -38,6 +40,8 @@ SmartTable provides independent document management for each Base, supporting th
 - Deleted documents cannot be recovered; please export or back up important content in advance.
 
 ## Rich Text Editor
+
+<img src="/images/user-guide/basic-features/document-management/document-management-editor.png" alt="Document editor" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 The SmartTable document editor is based on FluentEditor (compatible with the Quill ecosystem), providing professional-grade formatting capabilities.
 
@@ -95,6 +99,8 @@ Click the **Fullscreen** button in the header to enter fullscreen mode, hiding t
 
 ## Version History
 
+<img src="/images/user-guide/basic-features/document-management/document-management-version-history.png" alt="Document version history" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 SmartTable automatically creates version snapshots when document content changes significantly, making it easy to review and restore previous versions.
 
 ### Viewing Version History
@@ -120,6 +126,8 @@ SmartTable automatically creates version snapshots when document content changes
 - Metadata changes (such as renaming, sorting, or pinning) do not trigger version creation.
 
 ## PDF Export
+
+<img src="/images/user-guide/basic-features/document-management/document-management-pdf-export.png" alt="Document PDF export" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 Documents can be exported to PDF with one click for offline sharing or archiving.
 

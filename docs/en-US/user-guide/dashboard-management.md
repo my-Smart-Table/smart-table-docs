@@ -15,6 +15,8 @@ SmartTable Dashboard is a visual data presentation tool that supports combining 
 2. Switch to the **Dashboards** tab in the left sidebar.
 3. Click a dashboard name to enter view or edit mode.
 
+<img src="/images/user-guide/basic-features/dashboard-management/dashboard-management-overview.png" alt="Dashboard overview" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## Dashboard Operations
 
 ### Creating a Dashboard
@@ -142,7 +144,13 @@ Chart widgets additionally support:
 | Refresh Interval | Data auto-refresh frequency, from 1 second to 5 minutes |
 | Enable Interaction | Whether click, hover, and other interactions are supported |
 
+After configuration, you can preview the dashboard in design or view mode:
+
+<img src="/images/user-guide/basic-features/dashboard-management/dashboard-management-preview.png" alt="Dashboard preview" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## Template Management
+
+<img src="/images/user-guide/basic-features/dashboard-management/dashboard-management-templates.png" alt="Dashboard templates" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 Dashboards support saving the current configuration as a template for quick reuse.
 

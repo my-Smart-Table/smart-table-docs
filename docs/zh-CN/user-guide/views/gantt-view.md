@@ -25,6 +25,8 @@
 
 ## 配置甘特图视图
 
+<img src="/images/user-guide/basic-features/views/views-gantt-view.png" alt="甘特图视图" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 1. 创建或切换到甘特图视图。
 2. 选择作为「任务名称」的字段。
 3. 选择「开始日期」和「结束日期」字段。

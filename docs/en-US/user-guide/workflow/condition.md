@@ -11,6 +11,8 @@ The Condition node is used in workflows to route to different branches based on 
 
 ## Configuration
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="Condition node" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### Branches
 
 Each condition node contains one or more branches:

@@ -18,6 +18,8 @@
 
 ## 配置日历视图
 
+<img src="/images/user-guide/basic-features/views/views-calendar-view.png" alt="日历视图界面" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 1. 创建或切换到日历视图。
 2. 选择作为日期依据的字段（日期或日期时间字段）。
 3. 配置卡片上显示的字段（如标题、状态、负责人等）。

@@ -20,6 +20,8 @@
 
 ## 配置项
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="发送邮件节点" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 收件人
 
 支持两种收件人来源：

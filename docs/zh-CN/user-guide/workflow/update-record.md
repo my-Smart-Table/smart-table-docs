@@ -11,6 +11,8 @@
 
 ## 配置项
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="更新记录节点" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 更新对象
 
 更新记录节点默认更新触发记录，也可以通过表达式指定其他记录 ID。

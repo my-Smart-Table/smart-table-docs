@@ -4,6 +4,8 @@ Grid view is the default and most flexible way to work with SmartTable data. It 
 
 ## When to Use Grid View
 
+<img src="/images/user-guide/basic-features/views/views-table-view.png" alt="Grid view interface" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 Use grid view when you need to:
 
 - Enter or edit many records at once.

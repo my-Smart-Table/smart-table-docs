@@ -56,6 +56,8 @@
 
 ## 系统配置
 
+<img src="/images/user-guide/basic-features/system-management/system-management-config.png" alt="系统配置" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 系统配置模块用于设置平台全局参数，分为基础配置、安全配置、邮件配置和其他配置。
 
 ### 基础配置

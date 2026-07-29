@@ -15,6 +15,8 @@ SmartTable 仪表盘是一个可视化数据展示工具，支持通过拖拽方
 2. 在左侧侧边栏切换到「仪表盘」标签页。
 3. 点击仪表盘名称进入设计或查看模式。
 
+<img src="/images/user-guide/basic-features/dashboard-management/dashboard-management-overview.png" alt="仪表盘概览" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## 仪表盘操作
 
 ### 新建仪表盘
@@ -142,7 +144,13 @@ SmartTable 仪表盘是一个可视化数据展示工具，支持通过拖拽方
 | 刷新间隔 | 数据自动刷新频率，支持 1 秒 ~ 5 分钟 |
 | 启用交互 | 是否支持点击、悬停等交互 |
 
+配置完成后，可在设计或查看模式预览仪表盘效果：
+
+<img src="/images/user-guide/basic-features/dashboard-management/dashboard-management-preview.png" alt="仪表盘预览" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## 模板管理
+
+<img src="/images/user-guide/basic-features/dashboard-management/dashboard-management-templates.png" alt="仪表盘模板" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 仪表盘支持将当前配置保存为模板，方便快速复用。
 

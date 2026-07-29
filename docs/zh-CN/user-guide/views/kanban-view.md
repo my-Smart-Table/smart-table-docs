@@ -24,6 +24,8 @@
 
 ## 配置看板视图
 
+<img src="/images/user-guide/basic-features/views/views-kanban-view.png" alt="看板视图界面" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 1. 创建或切换到看板视图。
 2. 选择用于分组的字段（通常为状态、阶段等单选字段）。
 3. 配置卡片上需要显示的字段。

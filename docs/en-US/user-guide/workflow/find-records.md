@@ -11,6 +11,8 @@ The Find Records node is used to query records in a target table during workflow
 
 ## Configuration
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="Find Records node" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### Target Table
 
 Select the table to query.

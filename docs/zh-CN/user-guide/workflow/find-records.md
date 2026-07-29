@@ -11,6 +11,8 @@
 
 ## 配置项
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="查找记录节点" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 目标表
 
 选择要查询的数据表。

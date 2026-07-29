@@ -19,6 +19,8 @@ Workflows are bound to a base or a specific table. You can pause, resume, edit, 
 4. Enter a name and description.
 5. Click **Create** and start adding nodes.
 
+<img src="/images/user-guide/basic-features/workflow/workflow-overview.png" alt="Workflow overview" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## Trigger Types
 
 | Trigger | When It Fires |
@@ -59,6 +61,8 @@ Workflows can call external services via webhooks:
 - View delivery records, request parameters, response status, and response body.
 
 ## Execution Logs
+
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="Workflow instance" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 Track every workflow run:
 

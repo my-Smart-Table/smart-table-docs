@@ -4,6 +4,8 @@ SmartTable is designed for team work. Whether your team is in the same room or d
 
 ## Sharing
 
+<img src="/images/user-guide/basic-features/collaboration/collaboration-sharing.png" alt="Base sharing" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 You can share SmartTable data at several levels:
 
 | Sharing Level | What It Does |
@@ -11,6 +13,8 @@ You can share SmartTable data at several levels:
 | Base Sharing | Share the whole base via a link with permission control |
 | Form Sharing | Share a form view publicly to collect submissions |
 | Dashboard Sharing | Share a dashboard publicly for real-time data display |
+
+<img src="/images/user-guide/basic-features/collaboration/collaboration-form-sharing.png" alt="Form sharing" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 ## Member Management
 

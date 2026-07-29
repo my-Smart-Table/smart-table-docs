@@ -56,6 +56,8 @@ Administrators can manually create new users:
 
 ## System Configuration
 
+<img src="/images/user-guide/basic-features/system-management/system-management-config.png" alt="System configuration" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 The System Configuration module is used to set platform-wide parameters, divided into Basic, Security, Email, and Other configurations.
 
 ### Basic Configuration

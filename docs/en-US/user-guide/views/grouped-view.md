@@ -11,6 +11,8 @@ Grouped view is a display mode of the table view. It organizes records into grou
 
 ## Creating Groups
 
+<img src="/images/user-guide/basic-features/views/views-grouped-view.png" alt="Grouped view" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 1. In table view, click the **Group** button in the toolbar to open the grouping configuration panel.
 2. Select the field to group by. Text, single select, member, date, and other field types are supported.
 3. Up to **3 grouping levels** are supported for nested display.

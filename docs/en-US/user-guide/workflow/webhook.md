@@ -24,6 +24,8 @@ Inline Webhook configurations are only used in the current workflow and are not 
 
 ## Configuration
 
+<img src="/images/user-guide/basic-features/workflow/workflow-webhook.png" alt="Webhook node" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### Basic Information
 
 - **Name**: Webhook name for easy identification.

@@ -4,6 +4,8 @@
 
 ## 功能特性
 
+<img src="/images/user-guide/basic-features/views/views-table-view.png" alt="表格视图界面" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 排序
 
 - 点击列头即可按该字段升序或降序排列。

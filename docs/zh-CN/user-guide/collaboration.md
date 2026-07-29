@@ -42,6 +42,8 @@ Base 所有者或管理员可以：
 
 ## 分享功能
 
+<img src="/images/user-guide/basic-features/collaboration/collaboration-sharing.png" alt="Base 分享" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### Base 分享
 
 通过链接将 Base 分享给团队成员或外部用户：
@@ -52,6 +54,8 @@ Base 所有者或管理员可以：
 4. 复制链接分享给他人。
 
 ### 表单分享
+
+<img src="/images/user-guide/basic-features/collaboration/collaboration-form-sharing.png" alt="表单分享" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 表单视图可生成公开链接，用于数据收集：
 

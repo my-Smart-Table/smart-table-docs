@@ -4,6 +4,8 @@ Calendar view displays time-based records on a familiar calendar layout. It is p
 
 ## Calendar Display
 
+<img src="/images/user-guide/basic-features/views/views-calendar-view.png" alt="Calendar view interface" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 - Switch between month, week, and day views.
 - Records appear on the date defined by a selected date field.
 - Drag a record to a different date to reschedule it.

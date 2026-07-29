@@ -11,6 +11,8 @@ The Loop node is used to iterate over a set of data, suitable for batch processi
 
 ## Configuration
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="Loop node" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### Data Source Types
 
 The Loop node supports the following data sources:

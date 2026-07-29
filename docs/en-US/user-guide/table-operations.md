@@ -30,7 +30,15 @@ Each base can contain multiple tables.
 You can create a new table by importing an Excel, CSV, or JSON file. Multi-sheet Excel files are supported.
 :::
 
+<img src="/images/user-guide/basic-features/table-operations/table-operations-excel-import.png" alt="Excel import creating a table" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
+During import, the system displays a field mapping preview so you can confirm the data is parsed correctly:
+
+<img src="/images/user-guide/basic-features/table-operations/table-operations-data-import-preview.png" alt="Data import preview" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## Field Management
+
+<img src="/images/user-guide/basic-features/table-operations/table-operations-field-config.png" alt="Field configuration panel" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 Fields define the structure of each table. SmartTable supports 26 field types.
 
@@ -45,6 +53,8 @@ Fields define the structure of each table. SmartTable supports 26 field types.
 See [Field Types](/en-US/user-guide/field-types.html) for a complete reference.
 
 ## Record Management
+
+<img src="/images/user-guide/basic-features/table-operations/table-operations-record-detail.png" alt="Record detail drawer" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 Records are the rows of your table.
 
@@ -62,6 +72,8 @@ SmartTable tracks every record change. Open a record's detail panel to see who c
 :::
 
 ## View Management
+
+<img src="/images/user-guide/basic-features/table-operations/table-operations-table-view.png" alt="Table view main interface" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 Views let the same table appear in different ways without changing the underlying data.
 

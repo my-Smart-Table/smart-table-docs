@@ -10,6 +10,8 @@
 
 ## 配置项
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="创建记录节点" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 目标表
 
 选择要在其中创建记录的数据表。可以选择当前 Base 下的任意数据表。

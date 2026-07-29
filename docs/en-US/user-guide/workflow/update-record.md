@@ -11,6 +11,8 @@ The Update Record node is used to automatically modify field values of existing 
 
 ## Configuration
 
+<img src="/images/user-guide/basic-features/workflow/workflow-instance.png" alt="Update Record node" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### Update Target
 
 By default, the Update Record node updates the trigger record. You can also specify another record ID through an expression.

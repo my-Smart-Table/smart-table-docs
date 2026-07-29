@@ -11,6 +11,8 @@
 
 ## 创建画册视图
 
+<img src="/images/user-guide/basic-features/views/views-gallery-view.png" alt="画册视图示意" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 1. 在视图切换器中点击「+ 新建视图」。
 2. 选择「画册」视图类型。
 3. 输入视图名称，点击创建。
