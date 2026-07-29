@@ -43,19 +43,18 @@ export default defineConfig({
             activeMatch: '/zh-CN/user-guide/',
             items: [
               { text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
-              { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
               {
-                text: '视图管理',
+                text: '基础功能',
                 items: [
-                  { text: '表格视图', link: '/zh-CN/user-guide/views/table-view.html' },
-                  { text: '分组视图', link: '/zh-CN/user-guide/views/grouped-view.html' },
-                  { text: '看板视图', link: '/zh-CN/user-guide/views/kanban-view.html' },
-                  { text: '甘特图', link: '/zh-CN/user-guide/views/gantt-view.html' },
-                  { text: '日历视图', link: '/zh-CN/user-guide/views/calendar-view.html' },
-                  { text: '画册视图', link: '/zh-CN/user-guide/views/gallery-view.html' },
-                  { text: '表单视图', link: '/zh-CN/user-guide/views/form-view.html' }
+                  { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
+                  { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
+                  { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
+                  { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
+                  { text: '工作流自动化', link: '/zh-CN/user-guide/workflow.html' },
+                  { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
                 ]
               },
+              { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
               {
                 text: '字段类型',
                 items: [
@@ -65,24 +64,16 @@ export default defineConfig({
                   { text: '公式字段', link: '/zh-CN/user-guide/field-types/formula-field.html' }
                 ]
               },
-              { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
-              { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
-              { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
               {
-                text: '工作流自动化',
+                text: '场景实践',
                 items: [
-                  { text: '工作流自动化概览', link: '/zh-CN/user-guide/workflow.html' },
-                  { text: '触发器', link: '/zh-CN/user-guide/workflow/trigger.html' },
-                  { text: '创建记录节点', link: '/zh-CN/user-guide/workflow/create-record.html' },
-                  { text: '更新记录节点', link: '/zh-CN/user-guide/workflow/update-record.html' },
-                  { text: '查找记录节点', link: '/zh-CN/user-guide/workflow/find-records.html' },
-                  { text: '发送邮件节点', link: '/zh-CN/user-guide/workflow/send-email.html' },
-                  { text: 'Webhook 节点', link: '/zh-CN/user-guide/workflow/webhook.html' },
-                  { text: '条件节点', link: '/zh-CN/user-guide/workflow/condition.html' },
-                  { text: '循环节点', link: '/zh-CN/user-guide/workflow/loop.html' }
+                  { text: '项目管理', link: '/zh-CN/user-guide/scenarios/project-management.html' },
+                  { text: '研发缺陷管理', link: '/zh-CN/user-guide/scenarios/rd-defect-management.html' },
+                  { text: '客户关系管理', link: '/zh-CN/user-guide/scenarios/crm-customer-management.html' },
+                  { text: '人事招聘管理', link: '/zh-CN/user-guide/scenarios/hr-recruitment.html' },
+                  { text: '内容日历管理', link: '/zh-CN/user-guide/scenarios/content-calendar.html' }
                 ]
-              },
-              { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
+              }
             ]
           },
           {
@@ -142,20 +133,69 @@ export default defineConfig({
             base: '/zh-CN/user-guide/',
             items: [
               { text: '快速开始', link: 'getting-started.html' },
-              { text: '表格操作', link: 'table-operations.html' },
               {
-                text: '视图管理',
+                text: '基础功能',
                 collapsed: false,
                 items: [
-                  { text: '表格视图', link: 'views/table-view.html' },
-                  { text: '分组视图', link: 'views/grouped-view.html' },
-                  { text: '看板视图', link: 'views/kanban-view.html' },
-                  { text: '甘特图', link: 'views/gantt-view.html' },
-                  { text: '日历视图', link: 'views/calendar-view.html' },
-                  { text: '画册视图', link: 'views/gallery-view.html' },
-                  { text: '表单视图', link: 'views/form-view.html' }
+                  {
+                    text: '视图管理',
+                    collapsed: false,
+                    items: [
+                      { text: '表格视图', link: 'views/table-view.html' },
+                      { text: '分组视图', link: 'views/grouped-view.html' },
+                      { text: '看板视图', link: 'views/kanban-view.html' },
+                      { text: '甘特图', link: 'views/gantt-view.html' },
+                      { text: '日历视图', link: 'views/calendar-view.html' },
+                      { text: '画册视图', link: 'views/gallery-view.html' },
+                      { text: '表单视图', link: 'views/form-view.html' }
+                    ]
+                  },
+                  {
+                    text: '文档管理',
+                    collapsed: false,
+                    items: [
+                      { text: '文档管理', link: 'document-management.html' }
+                    ]
+                  },
+                  {
+                    text: '仪表盘管理',
+                    collapsed: false,
+                    items: [
+                      { text: '仪表盘管理', link: 'dashboard-management.html' }
+                    ]
+                  },
+                  {
+                    text: '协作功能',
+                    collapsed: false,
+                    items: [
+                      { text: '协作功能', link: 'collaboration.html' }
+                    ]
+                  },
+                  {
+                    text: '工作流自动化',
+                    collapsed: false,
+                    items: [
+                      { text: '工作流自动化概览', link: 'workflow.html' },
+                      { text: '触发器', link: 'workflow/trigger.html' },
+                      { text: '创建记录节点', link: 'workflow/create-record.html' },
+                      { text: '更新记录节点', link: 'workflow/update-record.html' },
+                      { text: '查找记录节点', link: 'workflow/find-records.html' },
+                      { text: '发送邮件节点', link: 'workflow/send-email.html' },
+                      { text: 'Webhook 节点', link: 'workflow/webhook.html' },
+                      { text: '条件节点', link: 'workflow/condition.html' },
+                      { text: '循环节点', link: 'workflow/loop.html' }
+                    ]
+                  },
+                  {
+                    text: '系统管理',
+                    collapsed: false,
+                    items: [
+                      { text: '系统管理', link: 'system-management.html' }
+                    ]
+                  }
                 ]
               },
+              { text: '表格操作', link: 'table-operations.html' },
               {
                 text: '字段类型',
                 collapsed: false,
@@ -167,40 +207,14 @@ export default defineConfig({
                 ]
               },
               {
-                text: '文档管理',
+                text: '场景实践',
                 collapsed: false,
                 items: [
-                  { text: '文档管理', link: 'document-management.html' }
-                ]
-              },
-              {
-                text: '仪表盘管理',
-                collapsed: false,
-                items: [
-                  { text: '仪表盘管理', link: 'dashboard-management.html' }
-                ]
-              },
-              { text: '协作功能', link: 'collaboration.html' },
-              {
-                text: '工作流自动化',
-                collapsed: false,
-                items: [
-                  { text: '工作流自动化概览', link: 'workflow.html' },
-                  { text: '触发器', link: 'workflow/trigger.html' },
-                  { text: '创建记录节点', link: 'workflow/create-record.html' },
-                  { text: '更新记录节点', link: 'workflow/update-record.html' },
-                  { text: '查找记录节点', link: 'workflow/find-records.html' },
-                  { text: '发送邮件节点', link: 'workflow/send-email.html' },
-                  { text: 'Webhook 节点', link: 'workflow/webhook.html' },
-                  { text: '条件节点', link: 'workflow/condition.html' },
-                  { text: '循环节点', link: 'workflow/loop.html' }
-                ]
-              },
-              {
-                text: '系统管理',
-                collapsed: false,
-                items: [
-                  { text: '系统管理', link: 'system-management.html' }
+                  { text: '项目管理', link: 'scenarios/project-management.html' },
+                  { text: '研发缺陷管理', link: 'scenarios/rd-defect-management.html' },
+                  { text: '客户关系管理', link: 'scenarios/crm-customer-management.html' },
+                  { text: '人事招聘管理', link: 'scenarios/hr-recruitment.html' },
+                  { text: '内容日历管理', link: 'scenarios/content-calendar.html' }
                 ]
               }
             ]
@@ -294,19 +308,18 @@ export default defineConfig({
             activeMatch: '/en-US/user-guide/',
             items: [
               { text: 'Getting Started', link: '/en-US/user-guide/getting-started.html' },
-              { text: 'Table Operations', link: '/en-US/user-guide/table-operations.html' },
               {
-                text: 'Views',
+                text: 'Basic Features',
                 items: [
-                  { text: 'Grid View', link: '/en-US/user-guide/views/table-view.html' },
-                  { text: 'Grouped View', link: '/en-US/user-guide/views/grouped-view.html' },
-                  { text: 'Kanban View', link: '/en-US/user-guide/views/kanban-view.html' },
-                  { text: 'Gantt Chart', link: '/en-US/user-guide/views/gantt-view.html' },
-                  { text: 'Calendar View', link: '/en-US/user-guide/views/calendar-view.html' },
-                  { text: 'Gallery View', link: '/en-US/user-guide/views/gallery-view.html' },
-                  { text: 'Form View', link: '/en-US/user-guide/views/form-view.html' }
+                  { text: 'Views', link: '/en-US/user-guide/views/table-view.html' },
+                  { text: 'Document Management', link: '/en-US/user-guide/document-management.html' },
+                  { text: 'Dashboard Management', link: '/en-US/user-guide/dashboard-management.html' },
+                  { text: 'Collaboration', link: '/en-US/user-guide/collaboration.html' },
+                  { text: 'Workflow Automation', link: '/en-US/user-guide/workflow.html' },
+                  { text: 'System Management', link: '/en-US/user-guide/system-management.html' }
                 ]
               },
+              { text: 'Table Operations', link: '/en-US/user-guide/table-operations.html' },
               {
                 text: 'Field Types',
                 items: [
@@ -316,24 +329,16 @@ export default defineConfig({
                   { text: 'Formula Field', link: '/en-US/user-guide/field-types/formula-field.html' }
                 ]
               },
-              { text: 'Document Management', link: '/en-US/user-guide/document-management.html' },
-              { text: 'Dashboard Management', link: '/en-US/user-guide/dashboard-management.html' },
-              { text: 'Collaboration', link: '/en-US/user-guide/collaboration.html' },
               {
-                text: 'Workflow Automation',
+                text: 'Scenario Practice',
                 items: [
-                  { text: 'Workflow Automation Overview', link: '/en-US/user-guide/workflow.html' },
-                  { text: 'Trigger', link: '/en-US/user-guide/workflow/trigger.html' },
-                  { text: 'Create Record Node', link: '/en-US/user-guide/workflow/create-record.html' },
-                  { text: 'Update Record Node', link: '/en-US/user-guide/workflow/update-record.html' },
-                  { text: 'Find Records Node', link: '/en-US/user-guide/workflow/find-records.html' },
-                  { text: 'Send Email Node', link: '/en-US/user-guide/workflow/send-email.html' },
-                  { text: 'Webhook Node', link: '/en-US/user-guide/workflow/webhook.html' },
-                  { text: 'Condition Node', link: '/en-US/user-guide/workflow/condition.html' },
-                  { text: 'Loop Node', link: '/en-US/user-guide/workflow/loop.html' }
+                  { text: 'Project Management', link: '/en-US/user-guide/scenarios/project-management.html' },
+                  { text: 'R&D Defect Management', link: '/en-US/user-guide/scenarios/rd-defect-management.html' },
+                  { text: 'CRM', link: '/en-US/user-guide/scenarios/crm-customer-management.html' },
+                  { text: 'HR Recruitment', link: '/en-US/user-guide/scenarios/hr-recruitment.html' },
+                  { text: 'Content Calendar', link: '/en-US/user-guide/scenarios/content-calendar.html' }
                 ]
-              },
-              { text: 'System Management', link: '/en-US/user-guide/system-management.html' }
+              }
             ]
           },
           {
@@ -393,20 +398,69 @@ export default defineConfig({
             base: '/en-US/user-guide/',
             items: [
               { text: 'Getting Started', link: 'getting-started.html' },
-              { text: 'Table Operations', link: 'table-operations.html' },
               {
-                text: 'Views',
+                text: 'Basic Features',
                 collapsed: false,
                 items: [
-                  { text: 'Grid View', link: 'views/table-view.html' },
-                  { text: 'Grouped View', link: 'views/grouped-view.html' },
-                  { text: 'Kanban View', link: 'views/kanban-view.html' },
-                  { text: 'Gantt Chart', link: 'views/gantt-view.html' },
-                  { text: 'Calendar View', link: 'views/calendar-view.html' },
-                  { text: 'Gallery View', link: 'views/gallery-view.html' },
-                  { text: 'Form View', link: 'views/form-view.html' }
+                  {
+                    text: 'Views',
+                    collapsed: false,
+                    items: [
+                      { text: 'Grid View', link: 'views/table-view.html' },
+                      { text: 'Grouped View', link: 'views/grouped-view.html' },
+                      { text: 'Kanban View', link: 'views/kanban-view.html' },
+                      { text: 'Gantt Chart', link: 'views/gantt-view.html' },
+                      { text: 'Calendar View', link: 'views/calendar-view.html' },
+                      { text: 'Gallery View', link: 'views/gallery-view.html' },
+                      { text: 'Form View', link: 'views/form-view.html' }
+                    ]
+                  },
+                  {
+                    text: 'Document Management',
+                    collapsed: false,
+                    items: [
+                      { text: 'Document Management', link: 'document-management.html' }
+                    ]
+                  },
+                  {
+                    text: 'Dashboard Management',
+                    collapsed: false,
+                    items: [
+                      { text: 'Dashboard Management', link: 'dashboard-management.html' }
+                    ]
+                  },
+                  {
+                    text: 'Collaboration',
+                    collapsed: false,
+                    items: [
+                      { text: 'Collaboration', link: 'collaboration.html' }
+                    ]
+                  },
+                  {
+                    text: 'Workflow Automation',
+                    collapsed: false,
+                    items: [
+                      { text: 'Workflow Automation Overview', link: 'workflow.html' },
+                      { text: 'Trigger', link: 'workflow/trigger.html' },
+                      { text: 'Create Record Node', link: 'workflow/create-record.html' },
+                      { text: 'Update Record Node', link: 'workflow/update-record.html' },
+                      { text: 'Find Records Node', link: 'workflow/find-records.html' },
+                      { text: 'Send Email Node', link: 'workflow/send-email.html' },
+                      { text: 'Webhook Node', link: 'workflow/webhook.html' },
+                      { text: 'Condition Node', link: 'workflow/condition.html' },
+                      { text: 'Loop Node', link: 'workflow/loop.html' }
+                    ]
+                  },
+                  {
+                    text: 'System Management',
+                    collapsed: false,
+                    items: [
+                      { text: 'System Management', link: 'system-management.html' }
+                    ]
+                  }
                 ]
               },
+              { text: 'Table Operations', link: 'table-operations.html' },
               {
                 text: 'Field Types',
                 collapsed: false,
@@ -418,40 +472,14 @@ export default defineConfig({
                 ]
               },
               {
-                text: 'Document Management',
+                text: 'Scenario Practice',
                 collapsed: false,
                 items: [
-                  { text: 'Document Management', link: 'document-management.html' }
-                ]
-              },
-              {
-                text: 'Dashboard Management',
-                collapsed: false,
-                items: [
-                  { text: 'Dashboard Management', link: 'dashboard-management.html' }
-                ]
-              },
-              { text: 'Collaboration', link: 'collaboration.html' },
-              {
-                text: 'Workflow Automation',
-                collapsed: false,
-                items: [
-                  { text: 'Workflow Automation Overview', link: 'workflow.html' },
-                  { text: 'Trigger', link: 'workflow/trigger.html' },
-                  { text: 'Create Record Node', link: 'workflow/create-record.html' },
-                  { text: 'Update Record Node', link: 'workflow/update-record.html' },
-                  { text: 'Find Records Node', link: 'workflow/find-records.html' },
-                  { text: 'Send Email Node', link: 'workflow/send-email.html' },
-                  { text: 'Webhook Node', link: 'workflow/webhook.html' },
-                  { text: 'Condition Node', link: 'workflow/condition.html' },
-                  { text: 'Loop Node', link: 'workflow/loop.html' }
-                ]
-              },
-              {
-                text: 'System Management',
-                collapsed: false,
-                items: [
-                  { text: 'System Management', link: 'system-management.html' }
+                  { text: 'Project Management', link: 'scenarios/project-management.html' },
+                  { text: 'R&D Defect Management', link: 'scenarios/rd-defect-management.html' },
+                  { text: 'CRM', link: 'scenarios/crm-customer-management.html' },
+                  { text: 'HR Recruitment', link: 'scenarios/hr-recruitment.html' },
+                  { text: 'Content Calendar', link: 'scenarios/content-calendar.html' }
                 ]
               }
             ]
@@ -540,27 +568,37 @@ export default defineConfig({
         text: '用户指南',
         items: [
           { text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
-          { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
-          { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
-          { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
-          { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
-          { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
-          { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
           {
-            text: '工作流自动化',
+            text: '基础功能',
             items: [
-              { text: '工作流自动化概览', link: '/zh-CN/user-guide/workflow.html' },
-              { text: '触发器', link: '/zh-CN/user-guide/workflow/trigger.html' },
-              { text: '创建记录节点', link: '/zh-CN/user-guide/workflow/create-record.html' },
-              { text: '更新记录节点', link: '/zh-CN/user-guide/workflow/update-record.html' },
-              { text: '查找记录节点', link: '/zh-CN/user-guide/workflow/find-records.html' },
-              { text: '发送邮件节点', link: '/zh-CN/user-guide/workflow/send-email.html' },
-              { text: 'Webhook 节点', link: '/zh-CN/user-guide/workflow/webhook.html' },
-              { text: '条件节点', link: '/zh-CN/user-guide/workflow/condition.html' },
-              { text: '循环节点', link: '/zh-CN/user-guide/workflow/loop.html' }
+              { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
+              { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
+              { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
+              { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
+              { text: '工作流自动化', link: '/zh-CN/user-guide/workflow.html' },
+              { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
             ]
           },
-          { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
+          { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
+          {
+            text: '字段类型',
+            items: [
+              { text: '字段类型概览', link: '/zh-CN/user-guide/field-types.html' },
+              { text: '关联字段', link: '/zh-CN/user-guide/field-types/link-field.html' },
+              { text: '查找字段', link: '/zh-CN/user-guide/field-types/lookup-field.html' },
+              { text: '公式字段', link: '/zh-CN/user-guide/field-types/formula-field.html' }
+            ]
+          },
+          {
+            text: '场景实践',
+            items: [
+              { text: '项目管理', link: '/zh-CN/user-guide/scenarios/project-management.html' },
+              { text: '研发缺陷管理', link: '/zh-CN/user-guide/scenarios/rd-defect-management.html' },
+              { text: '客户关系管理', link: '/zh-CN/user-guide/scenarios/crm-customer-management.html' },
+              { text: '人事招聘管理', link: '/zh-CN/user-guide/scenarios/hr-recruitment.html' },
+              { text: '内容日历管理', link: '/zh-CN/user-guide/scenarios/content-calendar.html' }
+            ]
+          }
         ]
       },
       {
