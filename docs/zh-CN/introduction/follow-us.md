@@ -8,6 +8,17 @@
 
 ![微信公众号二维码](/images/wechat_official_account.png)
 
+如果 SmartTable 对你有帮助，欢迎关注作者，第一时间获取更新动态和技术干货：
+
+| 平台             | 账号 / 链接                                                                   |
+| -------------- | ------------------------------------------------------------------------- |
+| 🌐 **GitHub**  | [github.com/ldbinac/smart_table](https://github.com/ldbinac/smart_table) |
+| 🇨🇳 **Gitee** | [gitee.com/binac/smart_table](https://gitee.com/binac/smart_table)       |
+| 💬 **微信公众号**   | 程序员吕洞宾                                                                    |
+| 📝 **CSDN**    | 程序员吕洞宾                                                                    |
+| 📘 **稀土掘金**    | 程序员吕洞宾                                                                    |
+| 🧠 **知乎**      | 程序员吕洞宾                                                                    |
+
 ## 支持我们
 
 如果这个项目对你有帮助，欢迎请我喝一杯咖啡 ☕

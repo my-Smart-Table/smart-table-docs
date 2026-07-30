@@ -53,10 +53,10 @@ export default defineConfig({
             activeMatch: '/zh-CN/user-guide/',
             items: [
               { text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
+              { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
               {
                 text: '基础功能',
                 items: [
-                  { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
                   { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
                   { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
                   { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
@@ -145,11 +145,11 @@ export default defineConfig({
             base: '/zh-CN/user-guide/',
             items: [
               { text: '快速开始', link: 'getting-started.html' },
+              { text: '表格操作', link: 'table-operations.html' },
               {
                 text: '基础功能',
                 collapsed: false,
                 items: [
-                  { text: '表格操作', link: 'table-operations.html' },
                   {
                     text: '视图管理',
                     collapsed: false,
@@ -330,10 +330,10 @@ export default defineConfig({
             activeMatch: '/en-US/user-guide/',
             items: [
               { text: 'Getting Started', link: '/en-US/user-guide/getting-started.html' },
+              { text: 'Table Operations', link: '/en-US/user-guide/table-operations.html' },
               {
                 text: 'Basic Features',
                 items: [
-                  { text: 'Table Operations', link: '/en-US/user-guide/table-operations.html' },
                   { text: 'Views', link: '/en-US/user-guide/views/table-view.html' },
                   { text: 'Document Management', link: '/en-US/user-guide/document-management.html' },
                   { text: 'Dashboard Management', link: '/en-US/user-guide/dashboard-management.html' },
@@ -422,11 +422,11 @@ export default defineConfig({
             base: '/en-US/user-guide/',
             items: [
               { text: 'Getting Started', link: 'getting-started.html' },
+              { text: 'Table Operations', link: 'table-operations.html' },
               {
                 text: 'Basic Features',
                 collapsed: false,
                 items: [
-                  { text: 'Table Operations', link: 'table-operations.html' },
                   {
                     text: 'Views',
                     collapsed: false,
@@ -602,10 +602,10 @@ export default defineConfig({
         text: '用户指南',
         items: [
           { text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
+          { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
           {
             text: '基础功能',
             items: [
-              { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
               { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
               { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
               { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },

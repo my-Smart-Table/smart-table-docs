@@ -17,13 +17,13 @@ const features = computed(() => isEnglish.value
       { icon: '📚', title: 'Document Knowledge Base', details: 'Rich-text editor (Markdown supported) for building internal documentation and knowledge base.' }
     ]
   : [
-      { icon: '📊', title: '多视图支持', details: '表格、看板、甘特图、日历等多种视图，满足不同场景需求' },
-      { icon: '🔄', title: '实时协作', details: '支持多人实时协作编辑，数据同步无延迟' },
+      { icon: '🔒', title: '数据私有化', details: '我的数据我做主，不受限于特定平台的服务，高安全需求内网也可部署使用' },
       { icon: '⚙️', title: '工作流自动化', details: '可视化工作流设计，自动化处理业务流程' },
       { icon: '🔗', title: '丰富的字段类型', details: '支持文本、数字、日期、关联、公式等 20+ 字段类型' },
-      { icon: '🔒', title: '数据私有化', details: '我的数据我做主，不受限于特定平台的服务，高安全需求内网也可部署使用' },
+      { icon: '📊', title: '多视图支持', details: '表格、看板、甘特图、日历等多种视图，满足不同场景需求' },
       { icon: '📈', title: '可视化仪表盘', details: '优秀的自定义可视化仪表盘，数据可视化展示（支持大屏模式）' },
-      { icon: '📚', title: '文档知识库', details: '支持富文本模式编写（Markdown 格式也支持），构建内部文档知识库' }
+      { icon: '📚', title: '文档知识库', details: '支持富文本模式编写（Markdown 格式也支持），构建内部文档知识库' },
+      { icon: '🔄', title: '实时协作', details: '支持多人实时协作编辑，数据同步无延迟' }
     ])
 
 const docLinks = computed(() => isEnglish.value
