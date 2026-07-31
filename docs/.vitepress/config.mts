@@ -61,77 +61,19 @@ export default defineConfig({
             items: [
               { text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
               { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
-              {
-                text: '基础功能',
-                items: [
-                  { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
-                  { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
-                  { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
-                  { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
-                  { text: '工作流自动化', link: '/zh-CN/user-guide/workflow.html' },
-                  { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
-                ]
-              },
-              {
-                text: '字段类型',
-                items: [
-                  { text: '字段类型概览', link: '/zh-CN/user-guide/field-types.html' },
-                  { text: '关联字段', link: '/zh-CN/user-guide/field-types/link-field.html' },
-                  { text: '查找字段', link: '/zh-CN/user-guide/field-types/lookup-field.html' },
-                  { text: '公式字段', link: '/zh-CN/user-guide/field-types/formula-field.html' }
-                ]
-              },
-              {
-                text: '场景实践',
-                items: [
-                  { text: '项目管理', link: '/zh-CN/user-guide/scenarios/project-management.html' },
-                  { text: '研发缺陷管理', link: '/zh-CN/user-guide/scenarios/rd-defect-management.html' },
-                  { text: '客户关系管理', link: '/zh-CN/user-guide/scenarios/crm-customer-management.html' },
-                  { text: '人事招聘管理', link: '/zh-CN/user-guide/scenarios/hr-recruitment.html' },
-                  { text: '内容日历管理', link: '/zh-CN/user-guide/scenarios/content-calendar.html' }
-                ]
-              }
+              { text: '基础功能', link: '/zh-CN/user-guide/views/table-view.html' },
+              { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
+              { text: '场景实践', link: '/zh-CN/user-guide/scenarios/project-management.html' }
             ]
           },
           {
             text: '开发者文档',
             activeMatch: '/zh-CN/developer/',
             items: [
-              {
-                text: '架构',
-                items: [
-                  { text: '架构设计', link: '/zh-CN/developer/architecture.html' }
-                ]
-              },
-              {
-                text: '开发',
-                items: [
-                  { text: '开发环境', link: '/zh-CN/developer/development/environment.html' }
-                ]
-              },
-              {
-                text: '部署',
-                items: [
-                  { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
-                  { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
-                  { text: '手动部署', link: '/zh-CN/developer/deployment/manual.html' },
-                  { text: '配置说明', link: '/zh-CN/developer/deployment/configuration.html' }
-                ]
-              },
-              {
-                text: 'API',
-                items: [
-                  { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' },
-                  { text: '认证', link: '/zh-CN/developer/api/authentication.html' },
-                  { text: '数据表 API', link: '/zh-CN/developer/api/table.html' },
-                  { text: '记录 API', link: '/zh-CN/developer/api/record.html' },
-                  { text: '工作流 API', link: '/zh-CN/developer/api/workflow.html' }
-                ]
-              },
-              {
-                text: '其他',
-                items: []
-              }
+              { text: '架构', link: '/zh-CN/developer/architecture.html' },
+              { text: '开发', link: '/zh-CN/developer/development/environment.html' },
+              { text: '部署', link: '/zh-CN/developer/deployment/one-click.html' },
+              { text: 'API', link: '/zh-CN/developer/api/overview.html' }
             ]
           },
           { text: '更新日志', link: '/zh-CN/changelog.html' }
@@ -338,77 +280,19 @@ export default defineConfig({
             items: [
               { text: 'Getting Started', link: '/en-US/user-guide/getting-started.html' },
               { text: 'Table Operations', link: '/en-US/user-guide/table-operations.html' },
-              {
-                text: 'Basic Features',
-                items: [
-                  { text: 'Views', link: '/en-US/user-guide/views/table-view.html' },
-                  { text: 'Document Management', link: '/en-US/user-guide/document-management.html' },
-                  { text: 'Dashboard Management', link: '/en-US/user-guide/dashboard-management.html' },
-                  { text: 'Collaboration', link: '/en-US/user-guide/collaboration.html' },
-                  { text: 'Workflow Automation', link: '/en-US/user-guide/workflow.html' },
-                  { text: 'System Management', link: '/en-US/user-guide/system-management.html' }
-                ]
-              },
-              {
-                text: 'Field Types',
-                items: [
-                  { text: 'Field Types Overview', link: '/en-US/user-guide/field-types.html' },
-                  { text: 'Link Field', link: '/en-US/user-guide/field-types/link-field.html' },
-                  { text: 'Lookup Field', link: '/en-US/user-guide/field-types/lookup-field.html' },
-                  { text: 'Formula Field', link: '/en-US/user-guide/field-types/formula-field.html' }
-                ]
-              },
-              {
-                text: 'Scenario Practice',
-                items: [
-                  { text: 'Project Management', link: '/en-US/user-guide/scenarios/project-management.html' },
-                  { text: 'R&D Defect Management', link: '/en-US/user-guide/scenarios/rd-defect-management.html' },
-                  { text: 'CRM', link: '/en-US/user-guide/scenarios/crm-customer-management.html' },
-                  { text: 'HR Recruitment', link: '/en-US/user-guide/scenarios/hr-recruitment.html' },
-                  { text: 'Content Calendar', link: '/en-US/user-guide/scenarios/content-calendar.html' }
-                ]
-              }
+              { text: 'Basic Features', link: '/en-US/user-guide/views/table-view.html' },
+              { text: 'Field Types', link: '/en-US/user-guide/field-types.html' },
+              { text: 'Scenario Practice', link: '/en-US/user-guide/scenarios/project-management.html' }
             ]
           },
           {
             text: 'Developer',
             activeMatch: '/en-US/developer/',
             items: [
-              {
-                text: 'Architecture',
-                items: [
-                  { text: 'Architecture', link: '/en-US/developer/architecture.html' }
-                ]
-              },
-              {
-                text: 'Development',
-                items: [
-                  { text: 'Development Environment', link: '/en-US/developer/development/environment.html' }
-                ]
-              },
-              {
-                text: 'Deployment',
-                items: [
-                  { text: 'One-click Deployment', link: '/en-US/developer/deployment/one-click.html' },
-                  { text: 'Docker Deployment', link: '/en-US/developer/deployment/docker.html' },
-                  { text: 'Manual Deployment', link: '/en-US/developer/deployment/manual.html' },
-                  { text: 'Configuration', link: '/en-US/developer/deployment/configuration.html' }
-                ]
-              },
-              {
-                text: 'API',
-                items: [
-                  { text: 'API Overview', link: '/en-US/developer/api/overview.html' },
-                  { text: 'Authentication', link: '/en-US/developer/api/authentication.html' },
-                  { text: 'Table API', link: '/en-US/developer/api/table.html' },
-                  { text: 'Record API', link: '/en-US/developer/api/record.html' },
-                  { text: 'Workflow API', link: '/en-US/developer/api/workflow.html' }
-                ]
-              },
-              {
-                text: 'Others',
-                items: []
-              }
+              { text: 'Architecture', link: '/en-US/developer/architecture.html' },
+              { text: 'Development', link: '/en-US/developer/development/environment.html' },
+              { text: 'Deployment', link: '/en-US/developer/deployment/one-click.html' },
+              { text: 'API', link: '/en-US/developer/api/overview.html' }
             ]
           },
           { text: 'Changelog', link: '/en-US/changelog.html' }
@@ -610,76 +494,18 @@ export default defineConfig({
         items: [
           { text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
           { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
-          {
-            text: '基础功能',
-            items: [
-              { text: '视图管理', link: '/zh-CN/user-guide/views/table-view.html' },
-              { text: '文档管理', link: '/zh-CN/user-guide/document-management.html' },
-              { text: '仪表盘管理', link: '/zh-CN/user-guide/dashboard-management.html' },
-              { text: '协作功能', link: '/zh-CN/user-guide/collaboration.html' },
-              { text: '工作流自动化', link: '/zh-CN/user-guide/workflow.html' },
-              { text: '系统管理', link: '/zh-CN/user-guide/system-management.html' }
-            ]
-          },
-          {
-            text: '字段类型',
-            items: [
-              { text: '字段类型概览', link: '/zh-CN/user-guide/field-types.html' },
-              { text: '关联字段', link: '/zh-CN/user-guide/field-types/link-field.html' },
-              { text: '查找字段', link: '/zh-CN/user-guide/field-types/lookup-field.html' },
-              { text: '公式字段', link: '/zh-CN/user-guide/field-types/formula-field.html' }
-            ]
-          },
-          {
-            text: '场景实践',
-            items: [
-              { text: '项目管理', link: '/zh-CN/user-guide/scenarios/project-management.html' },
-              { text: '研发缺陷管理', link: '/zh-CN/user-guide/scenarios/rd-defect-management.html' },
-              { text: '客户关系管理', link: '/zh-CN/user-guide/scenarios/crm-customer-management.html' },
-              { text: '人事招聘管理', link: '/zh-CN/user-guide/scenarios/hr-recruitment.html' },
-              { text: '内容日历管理', link: '/zh-CN/user-guide/scenarios/content-calendar.html' }
-            ]
-          }
+          { text: '基础功能', link: '/zh-CN/user-guide/views/table-view.html' },
+          { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
+          { text: '场景实践', link: '/zh-CN/user-guide/scenarios/project-management.html' }
         ]
       },
       {
         text: '开发者文档',
         items: [
-          {
-            text: '架构',
-            items: [
-              { text: '架构设计', link: '/zh-CN/developer/architecture.html' }
-            ]
-          },
-          {
-            text: '开发',
-            items: [
-              { text: '开发环境', link: '/zh-CN/developer/development/environment.html' }
-            ]
-          },
-          {
-            text: '部署',
-            items: [
-              { text: '一键部署', link: '/zh-CN/developer/deployment/one-click.html' },
-              { text: 'Docker 部署', link: '/zh-CN/developer/deployment/docker.html' },
-              { text: '手动部署', link: '/zh-CN/developer/deployment/manual.html' },
-              { text: '配置说明', link: '/zh-CN/developer/deployment/configuration.html' }
-            ]
-          },
-          {
-            text: 'API',
-            items: [
-              { text: 'API 概览', link: '/zh-CN/developer/api/overview.html' },
-              { text: '认证', link: '/zh-CN/developer/api/authentication.html' },
-              { text: '数据表 API', link: '/zh-CN/developer/api/table.html' },
-              { text: '记录 API', link: '/zh-CN/developer/api/record.html' },
-              { text: '工作流 API', link: '/zh-CN/developer/api/workflow.html' }
-            ]
-          },
-          {
-            text: '其他',
-            items: []
-          }
+          { text: '架构', link: '/zh-CN/developer/architecture.html' },
+          { text: '开发', link: '/zh-CN/developer/development/environment.html' },
+          { text: '部署', link: '/zh-CN/developer/deployment/one-click.html' },
+          { text: 'API', link: '/zh-CN/developer/api/overview.html' }
         ]
       },
       { text: 'English', link: '/en-US/' }
