@@ -60,7 +60,6 @@ export default defineConfig({
             activeMatch: '/zh-CN/user-guide/',
             items: [
               { text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
-              { text: '表格操作', link: '/zh-CN/user-guide/table-operations.html' },
               { text: '基础功能', link: '/zh-CN/user-guide/views/table-view.html' },
               { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
               { text: '场景实践', link: '/zh-CN/user-guide/scenarios/project-management.html' }
@@ -93,15 +92,21 @@ export default defineConfig({
           '/zh-CN/user-guide/': {
             base: '/zh-CN/user-guide/',
             items: [
-              { text: '快速开始', link: 'getting-started.html' },
-              { text: '表格操作', link: 'table-operations.html' },
+              {
+                text: '快速开始',
+                collapsed: true,
+                items: [
+                  { text: '快速开始', link: 'getting-started.html' },
+                  { text: '表格操作', link: 'table-operations.html' },
+                ]
+              },
               {
                 text: '基础功能',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   {
                     text: '视图管理',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: '表格视图', link: 'views/table-view.html' },
                       { text: '分组视图', link: 'views/grouped-view.html' },
@@ -114,28 +119,28 @@ export default defineConfig({
                   },
                   {
                     text: '文档管理',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: '文档管理', link: 'document-management.html' }
                     ]
                   },
                   {
                     text: '仪表盘管理',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: '仪表盘管理', link: 'dashboard-management.html' }
                     ]
                   },
                   {
                     text: '协作功能',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: '协作功能', link: 'collaboration.html' }
                     ]
                   },
                   {
                     text: '工作流自动化',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: '工作流自动化概览', link: 'workflow.html' },
                       { text: '触发器', link: 'workflow/trigger.html' },
@@ -150,7 +155,7 @@ export default defineConfig({
                   },
                   {
                     text: '系统管理',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: '系统管理', link: 'system-management.html' }
                     ]
@@ -159,7 +164,7 @@ export default defineConfig({
               },
               {
                 text: '字段类型',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: '字段类型概览', link: 'field-types.html' },
                   { text: '关联字段', link: 'field-types/link-field.html' },
@@ -169,7 +174,7 @@ export default defineConfig({
               },
               {
                 text: '场景实践',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: '项目管理', link: 'scenarios/project-management.html' },
                   { text: '研发缺陷管理', link: 'scenarios/rd-defect-management.html' },
@@ -185,21 +190,21 @@ export default defineConfig({
             items: [
               {
                 text: '架构',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: '架构设计', link: 'architecture.html' }
                 ]
               },
               {
                 text: '开发',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: '开发环境', link: 'development/environment.html' }
                 ]
               },
               {
                 text: '部署',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: '一键部署', link: 'deployment/one-click.html' },
                   { text: 'Docker 部署', link: 'deployment/docker.html' },
@@ -209,7 +214,7 @@ export default defineConfig({
               },
               {
                 text: 'API',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: 'API 概览', link: 'api/overview.html' },
                   { text: '认证', link: 'api/authentication.html' },
@@ -220,7 +225,7 @@ export default defineConfig({
               },
               {
                 text: '其他',
-                collapsed: false,
+                collapsed: true,
                 items: []
               }
             ]
@@ -279,7 +284,6 @@ export default defineConfig({
             activeMatch: '/en-US/user-guide/',
             items: [
               { text: 'Getting Started', link: '/en-US/user-guide/getting-started.html' },
-              { text: 'Table Operations', link: '/en-US/user-guide/table-operations.html' },
               { text: 'Basic Features', link: '/en-US/user-guide/views/table-view.html' },
               { text: 'Field Types', link: '/en-US/user-guide/field-types.html' },
               { text: 'Scenario Practice', link: '/en-US/user-guide/scenarios/project-management.html' }
@@ -312,15 +316,21 @@ export default defineConfig({
           '/en-US/user-guide/': {
             base: '/en-US/user-guide/',
             items: [
-              { text: 'Getting Started', link: 'getting-started.html' },
-              { text: 'Table Operations', link: 'table-operations.html' },
+              {
+                text: 'Getting Started',
+                collapsed: true,
+                items: [
+                  { text: 'Getting Started', link: 'getting-started.html' },
+                  { text: 'Table Operations', link: 'table-operations.html' },
+                ]
+              },
               {
                 text: 'Basic Features',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   {
                     text: 'Views',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: 'Grid View', link: 'views/table-view.html' },
                       { text: 'Grouped View', link: 'views/grouped-view.html' },
@@ -333,28 +343,28 @@ export default defineConfig({
                   },
                   {
                     text: 'Document Management',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: 'Document Management', link: 'document-management.html' }
                     ]
                   },
                   {
                     text: 'Dashboard Management',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: 'Dashboard Management', link: 'dashboard-management.html' }
                     ]
                   },
                   {
                     text: 'Collaboration',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: 'Collaboration', link: 'collaboration.html' }
                     ]
                   },
                   {
                     text: 'Workflow Automation',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: 'Workflow Automation Overview', link: 'workflow.html' },
                       { text: 'Trigger', link: 'workflow/trigger.html' },
@@ -369,7 +379,7 @@ export default defineConfig({
                   },
                   {
                     text: 'System Management',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                       { text: 'System Management', link: 'system-management.html' }
                     ]
@@ -378,7 +388,7 @@ export default defineConfig({
               },
               {
                 text: 'Field Types',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: 'Field Types Overview', link: 'field-types.html' },
                   { text: 'Link Field', link: 'field-types/link-field.html' },
@@ -388,7 +398,7 @@ export default defineConfig({
               },
               {
                 text: 'Scenario Practice',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: 'Project Management', link: 'scenarios/project-management.html' },
                   { text: 'R&D Defect Management', link: 'scenarios/rd-defect-management.html' },
@@ -404,21 +414,21 @@ export default defineConfig({
             items: [
               {
                 text: 'Architecture',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: 'Architecture', link: 'architecture.html' }
                 ]
               },
               {
                 text: 'Development',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: 'Development Environment', link: 'development/environment.html' }
                 ]
               },
               {
                 text: 'Deployment',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: 'One-click Deployment', link: 'deployment/one-click.html' },
                   { text: 'Docker Deployment', link: 'deployment/docker.html' },
@@ -428,7 +438,7 @@ export default defineConfig({
               },
               {
                 text: 'API',
-                collapsed: false,
+                collapsed: true,
                 items: [
                   { text: 'API Overview', link: 'api/overview.html' },
                   { text: 'Authentication', link: 'api/authentication.html' },
@@ -439,7 +449,7 @@ export default defineConfig({
               },
               {
                 text: 'Others',
-                collapsed: false,
+                collapsed: true,
                 items: []
               }
             ]
