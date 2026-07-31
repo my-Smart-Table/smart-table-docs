@@ -75,7 +75,8 @@ export default defineConfig({
               { text: 'API', link: '/zh-CN/developer/api/overview.html' }
             ]
           },
-          { text: '更新日志', link: '/zh-CN/changelog.html' }
+          { text: '更新日志', link: '/zh-CN/changelog.html' },
+          { text: '常见问题', link: '/zh-CN/faq/' }
         ],
 
         sidebar: {
@@ -229,6 +230,12 @@ export default defineConfig({
                 items: []
               }
             ]
+          },
+          '/zh-CN/faq/': {
+            base: '/zh-CN/faq/',
+            items: [
+              { text: '常见问题', link: 'index.html' }
+            ]
           }
         },
 
@@ -299,7 +306,8 @@ export default defineConfig({
               { text: 'API', link: '/en-US/developer/api/overview.html' }
             ]
           },
-          { text: 'Changelog', link: '/en-US/changelog.html' }
+          { text: 'Changelog', link: '/en-US/changelog.html' },
+          { text: 'FAQ', link: '/en-US/faq/' }
         ],
 
         sidebar: {
@@ -453,6 +461,12 @@ export default defineConfig({
                 items: []
               }
             ]
+          },
+          '/en-US/faq/': {
+            base: '/en-US/faq/',
+            items: [
+              { text: 'FAQ', link: 'index.html' }
+            ]
           }
         },
 
@@ -518,6 +532,8 @@ export default defineConfig({
           { text: 'API', link: '/zh-CN/developer/api/overview.html' }
         ]
       },
+      { text: '更新日志', link: '/zh-CN/changelog.html' },
+      { text: '常见问题', link: '/zh-CN/faq/' },
       { text: 'English', link: '/en-US/' }
     ],
 

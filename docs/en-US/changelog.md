@@ -2,6 +2,56 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.3 (2026-07-30)
+
+### New Features & Improvements
+
+#### 🔄 Workflow Engine Enhancements
+
+- **Loop Node**: New loop node type with full process support, iterate collections inside workflow
+- **Loop Webhook**: Added loop node Webhook support and fixed loop data source
+- **Webhook Delivery Logs**: New workflow instance Webhook delivery log viewer
+- **Webhook Variable Hints**: Refactored variable hint system with detailed hover tooltips
+- **Inline Webhook Interception**: Support inline Webhook delivery and re-delivery interception
+- **Canvas Edges**: Optimized canvas edges with directional arrows
+- **Node Type Refactor**: Refactored workflow node types with fine-grained enums, backward-compatible with legacy data
+- **Execution Log Enhancements**: Execution log node ID changed to string type, added node name field
+
+#### 🧮 Formula & Fields
+
+- **Unified Formula Registration**: Unified frontend and backend formula function registration, added missing functions
+- **Lookup Field Optimization**: Optimized lookup field functionality, fixed cache and display issues
+- **Number Formatting**: Added formatting rendering for number type fields
+
+#### 🛠️ Platform Capabilities
+
+- **Token Auto-Refresh**: Implemented complete Token auto-refresh system
+- **Issue Feedback**: New issue feedback related functionality
+- **Document Experience**: Optimized document version control and editing experience
+- **Attachment Preview**: Attachment image thumbnails support single-click to preview full image
+- **Session Timeout Upper Limit**: Adjusted session timeout upper limit to 10080 minutes (7 days) — not recommended to raise too high due to security concerns
+
+#### 📦 Engineering & Build
+
+- **pnpm Migration**: Full migration of frontend build system to pnpm (Docker, packaging scripts, docs sync)
+- **Database Migration**: Refactored database initialization flow, switched to Alembic migrations, supports automatic version upgrade
+- **Feedback Email**: Updated feedback email address
+
+### Bug Fixes
+
+| Issue | Fix |
+| --- | --- |
+| Kanban drag | Fixed kanban drag not using target group ID |
+| Kanban sync | Fixed kanban view drag not synchronizing group field updates |
+| Duplicate new rows | Fixed editor callback anomaly causing 2 rows to be added per single add operation |
+| Table interaction | Fixed table view interaction issues and field type conversion/defaults |
+| Field editor | Fixed field management panel anomalies after confirming field editor |
+| Attachment delete | Fixed attachment field delete dialog occlusion and deletion failure |
+| Attachment preview | Fixed clicking attachment thumbnail triggering cell selection |
+| Workflow validation | Fixed workflow node empty result handling and empty node validation logic |
+| Timezone acquisition | Fixed timezone acquisition logic, support reading browser local timezone |
+| Webhook interception | Fixed inline Webhook delivery and re-delivery interception |
+
 ## v1.6.2 (2026-07-19)
 
 ### New Features & Improvements
