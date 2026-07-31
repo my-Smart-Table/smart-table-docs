@@ -1,7 +1,9 @@
 import { defineConfig } from 'vitepress'
 
+const base = '/smart-table-docs/'
+
 export default defineConfig({
-  base: '/smart-table-docs/',
+  base,
   title: 'SmartTable',
   description: '智能多维表格系统文档',
   lastUpdated: true,
@@ -9,6 +11,11 @@ export default defineConfig({
 
   // 默认语言为中文
   lang: 'zh-CN',
+
+  // 站点 favicon，用于浏览器标签页图标
+  head: [
+    ['link', { rel: 'icon', href: `${base}images/favicon.ico`, type: 'image/x-icon' }]
+  ],
 
   // 对包含 {{ }} 的 inline code 添加 v-pre，避免被 Vue 解析为插值
   markdown: {
