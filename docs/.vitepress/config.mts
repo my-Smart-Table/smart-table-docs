@@ -151,7 +151,8 @@ export default defineConfig({
                       { text: '发送邮件节点', link: 'workflow/send-email.html' },
                       { text: 'Webhook 节点', link: 'workflow/webhook.html' },
                       { text: '条件节点', link: 'workflow/condition.html' },
-                      { text: '循环节点', link: 'workflow/loop.html' }
+                      { text: '循环节点', link: 'workflow/loop.html' },
+                      { text: '自定义脚本节点', link: 'workflow/script.html' }
                     ]
                   },
                   {
@@ -382,7 +383,8 @@ export default defineConfig({
                       { text: 'Send Email Node', link: 'workflow/send-email.html' },
                       { text: 'Webhook Node', link: 'workflow/webhook.html' },
                       { text: 'Condition Node', link: 'workflow/condition.html' },
-                      { text: 'Loop Node', link: 'workflow/loop.html' }
+                      { text: 'Loop Node', link: 'workflow/loop.html' },
+                      { text: 'Script Node', link: 'workflow/script.html' }
                     ]
                   },
                   {
