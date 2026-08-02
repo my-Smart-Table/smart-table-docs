@@ -140,6 +140,19 @@ export default defineConfig({
                     ]
                   },
                   {
+                    text: '系统管理',
+                    collapsed: true,
+                    items: [
+                      { text: '系统管理', link: 'system-management.html' }
+                    ]
+                  }
+                ]
+              },
+              {
+                text: '高级功能',
+                collapsed: true,
+                items: [
+                  {
                     text: '工作流自动化',
                     collapsed: true,
                     items: [
@@ -153,13 +166,6 @@ export default defineConfig({
                       { text: '条件节点', link: 'workflow/condition.html' },
                       { text: '循环节点', link: 'workflow/loop.html' },
                       { text: '自定义脚本节点', link: 'workflow/script.html' }
-                    ]
-                  },
-                  {
-                    text: '系统管理',
-                    collapsed: true,
-                    items: [
-                      { text: '系统管理', link: 'system-management.html' }
                     ]
                   }
                 ]
@@ -372,6 +378,19 @@ export default defineConfig({
                     ]
                   },
                   {
+                    text: 'System Management',
+                    collapsed: true,
+                    items: [
+                      { text: 'System Management', link: 'system-management.html' }
+                    ]
+                  }
+                ]
+              },
+              {
+                text: 'Advanced Features',
+                collapsed: true,
+                items: [
+                  {
                     text: 'Workflow Automation',
                     collapsed: true,
                     items: [
@@ -385,13 +404,6 @@ export default defineConfig({
                       { text: 'Condition Node', link: 'workflow/condition.html' },
                       { text: 'Loop Node', link: 'workflow/loop.html' },
                       { text: 'Script Node', link: 'workflow/script.html' }
-                    ]
-                  },
-                  {
-                    text: 'System Management',
-                    collapsed: true,
-                    items: [
-                      { text: 'System Management', link: 'system-management.html' }
                     ]
                   }
                 ]
