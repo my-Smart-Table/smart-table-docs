@@ -61,6 +61,7 @@ export default defineConfig({
             items: [
               { text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
               { text: '基础功能', link: '/zh-CN/user-guide/views/table-view.html' },
+              { text: '高级功能', link: '/zh-CN/user-guide/workflow.html' },
               { text: '字段类型', link: '/zh-CN/user-guide/field-types.html' },
               { text: '场景实践', link: '/zh-CN/user-guide/scenarios/project-management.html' }
             ]
@@ -299,6 +300,7 @@ export default defineConfig({
             items: [
               { text: 'Getting Started', link: '/en-US/user-guide/getting-started.html' },
               { text: 'Basic Features', link: '/en-US/user-guide/views/table-view.html' },
+              { text: 'Advanced Features', link: '/en-US/user-guide/workflow.html' },
               { text: 'Field Types', link: '/en-US/user-guide/field-types.html' },
               { text: 'Scenario Practice', link: '/en-US/user-guide/scenarios/project-management.html' }
             ]
