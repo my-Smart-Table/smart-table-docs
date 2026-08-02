@@ -120,6 +120,13 @@ export default defineConfig({
                     ]
                   },
                   {
+                    text: '主从表',
+                    collapsed: true,
+                    items: [
+                      { text: '主从表功能', link: 'master-detail.html' }
+                    ]
+                  },
+                  {
                     text: '文档管理',
                     collapsed: true,
                     items: [
