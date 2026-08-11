@@ -127,6 +127,20 @@ export default defineConfig({
                     ]
                   },
                   {
+                    text: '树表格',
+                    collapsed: true,
+                    items: [
+                      { text: '树形表格（层级表）', link: 'tree-table.html' }
+                    ]
+                  },
+                  {
+                    text: '站内信',
+                    collapsed: true,
+                    items: [
+                      { text: '站内信通知', link: 'notification.html' }
+                    ]
+                  },
+                  {
                     text: '文档管理',
                     collapsed: true,
                     items: [
@@ -363,6 +377,27 @@ export default defineConfig({
                       { text: 'Calendar View', link: 'views/calendar-view.html' },
                       { text: 'Gallery View', link: 'views/gallery-view.html' },
                       { text: 'Form View', link: 'views/form-view.html' }
+                    ]
+                  },
+                  {
+                    text: 'Master-Detail',
+                    collapsed: true,
+                    items: [
+                      { text: 'Master-Detail Tables', link: 'master-detail.html' }
+                    ]
+                  },
+                  {
+                    text: 'Tree Table',
+                    collapsed: true,
+                    items: [
+                      { text: 'Tree Table (Hierarchical Table)', link: 'tree-table.html' }
+                    ]
+                  },
+                  {
+                    text: 'In-App Notifications',
+                    collapsed: true,
+                    items: [
+                      { text: 'In-App Notifications', link: 'notification.html' }
                     ]
                   },
                   {

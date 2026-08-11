@@ -1,6 +1,11 @@
 # VitePress
 docs/.vitepress/dist
 docs/.vitepress/cache
+docs/.vitepress/.temp
+/.vitepress/
+
+# Build logs
+build-verify.log
 
 # Dependencies
 node_modules
