@@ -1,3 +1,5 @@
+> API的接入功能待实现
+
 # API 概览
 
 SmartTable 提供完整的 RESTful API，方便与其他系统集成。
