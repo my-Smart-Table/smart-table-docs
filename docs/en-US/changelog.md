@@ -2,6 +2,84 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.4 (2026-08-12)
+
+This release focuses on **master-detail tables & tree hierarchy**, **in-app notification system**, **workflow custom script nodes**, **collaborative editing & concurrency control**, and **permission model tightening**.
+
+### New Features & Improvements
+
+#### 🔗 Master-Detail & Tree Hierarchy ⭐
+
+- ⭐ **Master-Detail Tables**: Full master-detail (sub-table) support with sub-table toolbar, multi-link-field switching, add-link and refresh capabilities
+- **Master-Detail Data Service**: New `masterDetailService` and `useMasterDetail` composable encapsulating data fetching, column building, caching and lazy loading
+- **Sub-Table in Drawer**: New `SubTableInDrawer` component renders linked sub-tables inside the detail drawer, with a second-level sub-record detail dialog
+- **Drawer Width Optimization**: Improved drawer width calculation with a minimum-width fallback
+- ⭐ **Tree Hierarchy Records**: New view parent-field configuration, build record tree hierarchy via self-referencing link fields
+- **Tree Record APIs**: New create-child-record API and tree record data query API
+- **Self-Link Optimization**: Link field component now excludes the current record in self-referencing scenarios
+
+#### 📬 In-App Notification System ⭐
+
+- ⭐ **In-App Notifications**: Complete in-app notification system with notification service, models, API routes and admin interfaces
+- **Frontend Notification Center**: New notification components, state management and notification page
+- **Notification-First Strategy**: Replaced legacy email notification logic — sends in-app messages first while remaining compatible with email delivery
+- **Multi-Scenario Coverage**: Covers registration, password change, share collaboration, approval and other notification scenarios
+- **Database Upgrade**: Added notification tables and migration scripts; Dexie frontend database upgraded to version 10
+
+#### 🔄 Workflow Engine Enhancements
+
+- ⭐ **Custom Script Node**: New workflow custom script node supporting custom scripts written in Python
+- **Script Execution Sandbox**: New backend script execution sandbox isolating execution via subprocess for safety
+- **Script Config Panel**: New frontend script node config panel integrating a code editor with test-run capability
+- **Engine Scheduling**: Improved workflow execution engine scheduling and context handling for script nodes
+
+#### 🤝 Collaborative Editing & Concurrency Control
+
+- ⭐ **Cell Collaboration Lock**: Complete cell collaboration lock with conflict detection, supporting lock timeout, reconnect retry and state management
+- **Optimistic Conflict Detection**: Local pending changes support optimistic conflict detection with a conflict dialog and user resolution logic
+- **Lock Resource Release**: Automatically release all held locks on component unmount to avoid lock leakage
+- **Document Optimistic Lock**: Document updates now carry `expected_updated_at` optimistic lock validation; rename and save conflicts return 409
+
+#### 🧮 Formula & Fields
+
+- **Date Functions**: Refactored backend date parsing, added support for YYYYMMDD format, millisecond timestamp strings and common date formats
+- **Nested Functions**: Unified date parsing entry, improved multi-level nested function scenarios (e.g., extracting dates from ID numbers)
+- **Formula Error Hints**: Added detailed formula engine error hints including function name, arguments and error message
+- **Regex Validation Field**: Added regex validation config for single-line text fields with custom rules and validation hints
+- **Regex Presets**: Built-in presets for domestic phone, postal code, ID number, IPv4 and more, with quick-fill support
+- **Real-time Validation**: Forms and detail dialogs support on-blur real-time validation with error styling
+
+#### 🎨 Interaction & Experience
+
+- **Context Menu Enhancement**: Added hint tooltips to menu items; added promote/demote/add-child tree operation icons and optimized layout
+- **Table Position Retention**: Auto-scroll to the most recently updated record row after data updates, keeping operation context continuous
+- **Incremental Update Optimization**: Prefer incremental updates when row count is unchanged during real-time updates to reduce full rebuilds
+- **Clipboard Compatibility**: New `copyToClipboard` utility prioritizing Clipboard API with automatic fallback and full URL display
+
+#### 🔐 Permissions & Security
+
+- **Permission Tightening**: Field and management operations raised from EDITOR-and-above to ADMIN-and-above to prevent accidental edits by regular users
+- **Scope Coverage**: Workflows, data tables, documents, dashboards and other management functions are admin-only
+- **Share Rate Limiting**: Form share rate limit changed from client IP dimension to share-token dimension to avoid falsely limiting multiple LAN users; threshold adjusted to 100 requests / 15 minutes
+
+### Bug Fixes
+
+| Issue | Fix |
+| --- | --- |
+| Select editor | Fixed selected value matching anomaly; single/multi-select now match by id while remaining compatible with legacy name matching |
+| Select option display | Fixed incorrect display text; now uses the actual name for display |
+| View route validation | Fixed table_id type mismatch causing validation failure; form view can now be set as default view |
+| Hierarchical table expand | Fixed expand button not showing (empty records initialized in CachedDataSource mode) |
+| Table scroll position | Fixed table jumping back to first row after data updates |
+| Share API route | Unified frontend/backend share API route paths; merged update and delete APIs with improved error hints |
+| Share API compatibility | Fixed using `filter_by` instead of `query.get` to be compatible with CompatUUID type |
+| Timestamp adaptation | Fixed frontend adaptation for backend returning second-level timestamps |
+| Form error hint | Fixed form submit error hint value order, prioritizing the error field to match backend error format |
+| Debug reload | Fixed Flask debug reload opening the browser repeatedly in packaged mode |
+| Formula date comparison | Fixed type inconsistency when comparing date/time field values in formulas |
+| Cell option storage | Fixed cell single/multi-select values stored differently from those shown in the dialog |
+| Form share copy | Fixed form share link not copyable in some scenarios |
+
 ## v1.6.3 (2026-07-30)
 
 ### New Features & Improvements

@@ -60,7 +60,9 @@ SmartTable 内置了多种常用模板（如项目管理、客户关系、任务
 
 <img src="/images/user-guide/basic-features/table-operations/table-operations-field-config.png" alt="字段配置面板" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
-SmartTable 支持 [26 种字段类型](/zh-CN/user-guide/field-types.html)，覆盖文本、数值、日期、选择、关联、公式、附件等场景。
+SmartTable 支持 [26 种字段类型](/zh-CN/user-guide/field-types.html)，覆盖文本、数值、日期、选择、关联、公式、附件等场景。单行文本字段还支持**正则表达式校验**，可自定义规则与校验提示，并内置国内电话、邮编、身份证、IPv4 等常用预设。
+
+<img src="/images/user-guide/basic-features/txt_regx.jpeg" alt="字段正则校验配置" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 ## 记录管理
 

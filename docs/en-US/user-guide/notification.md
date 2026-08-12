@@ -49,9 +49,13 @@ Clicking the bell opens the notification panel, which has three parts:
 
 When there are no notifications, the panel shows "No notifications".
 
+<img src="/images/user-guide/basic-features/notifiations.jpeg" alt="Notification bell and panel" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 2.2 Notification List Page
 
 Click "View All Notifications" at the bottom of the panel, or navigate directly to the `/notifications` route, to open the full notification list page. This page supports paginated browsing of all historical notifications and allows filtering by read status, source, and other conditions.
+
+<img src="/images/user-guide/basic-features/noties.jpeg" alt="Notification list page" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 ## 3. Managing Notifications
 

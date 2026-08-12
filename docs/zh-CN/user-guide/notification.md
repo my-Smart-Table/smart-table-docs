@@ -49,9 +49,13 @@
 
 无通知时面板显示「暂无通知」。
 
+<img src="/images/user-guide/basic-features/notifiations.jpeg" alt="站内信铃铛与通知面板" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 2.2 通知列表页
 
 点击面板底部的「查看全部通知」，或直接访问 `/notifications` 路径，可进入完整的通知列表页。列表页支持分页浏览全部历史通知，并可按已读状态、来源等条件筛选查找。
+
+<img src="/images/user-guide/basic-features/noties.jpeg" alt="站内信列表页" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 ## 3. 通知管理
 

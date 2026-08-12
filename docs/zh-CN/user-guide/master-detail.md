@@ -10,6 +10,8 @@
 - **多关联字段切换**：当表中有多个关联字段时，可在子表中切换查看不同关联字段的数据。
 - **数据联动**：子表操作后自动同步更新主表的关联字段显示。
 
+<img src="/images/user-guide/basic-features/master-detail.jpeg" alt="主从表效果" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## 使用前提
 
 1. 当前表格中至少包含一个**关联字段**（LINK 类型字段）。
@@ -57,6 +59,8 @@
 ### 6. 刷新子表
 
 点击子表工具栏的「刷新」按钮，可重新加载当前关联字段的子表数据。
+
+<img src="/images/user-guide/basic-features/master-detail-2.jpeg" alt="主从表工具栏与子表" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 ## 交互说明
 

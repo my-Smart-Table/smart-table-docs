@@ -64,6 +64,8 @@
 
 配置结果保存在视图上（字段 `parent_field_id`），因此**同一张表的不同视图可以各自决定是否开启树形展示**，互不影响。
 
+<img src="/images/user-guide/basic-features/tree-table.jpeg" alt="树形表格配置与效果" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 2.3 关闭树形展示
 
 在「树形」面板中清空「父记录字段」下拉框的选项即可恢复为普通平铺列表。此操作只改变展示形态，**不会删除任何记录数据或字段值**。

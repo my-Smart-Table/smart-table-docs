@@ -10,6 +10,8 @@ The master-detail feature lets you expand any row in a master table to view and 
 - **Multiple link field switching**: When a table has several link fields, you can switch between them in the sub-table to view different linked data.
 - **Data synchronization**: Operations in the sub-table automatically update the link field display in the master table.
 
+<img src="/images/user-guide/basic-features/master-detail.jpeg" alt="Master-detail preview" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ## Prerequisites
 
 1. The current table contains at least one **link field** (a LINK type field).
@@ -57,6 +59,8 @@ Removing a link only breaks the relationship between records; it does not delete
 ### 6. Refresh the Sub-Table
 
 Click the "Refresh" button in the sub-table toolbar to reload the sub-table data for the current link field.
+
+<img src="/images/user-guide/basic-features/master-detail-2.jpeg" alt="Master-detail toolbar and sub-table" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 ## Interaction Details
 

@@ -61,6 +61,8 @@ Compared with fixed-function nodes (such as Find Records, Send Email, and Update
 2. Select "Custom Script" from the node type list.
 3. The node will appear on the canvas with a `Cpu` icon and the default name "Custom Script".
 
+<img src="/images/user-guide/basic-features/self-sript.jpeg" alt="Custom script node configuration panel" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 #### 2.1.2 Script Storage Location
 
 The script source code is not stored as a separate file. Instead, it is saved directly in the `config` JSON field of the `workflow_nodes` table, persisted together with other node configurations. The storage structure is as follows:
@@ -1075,4 +1077,5 @@ The database migration involved in adding the `'script'` node type:
 
 | Version | Date | Change Description |
 |---------|------|--------------------|
+| 1.1 | 2026-08-12 | Synced the complete Script node documentation: added configuration panel details (4.2), error handling and retry strategy (4.4), in-loop-body case (5.3), and appendix API/error codes/toolchain/migration/test suite (Chapter 7); added a configuration panel screenshot after "Adding a Script Node" |
 | 1.0 | 2026-08-01 | Initial version covering the complete functionality of the Script node |

@@ -64,6 +64,8 @@ Tree hierarchy relies on a link field that points to its own table. Steps:
 
 The configuration is stored on the view (the `parent_field_id` attribute). Therefore, **different views of the same table can independently decide whether to enable tree display** without affecting each other.
 
+<img src="/images/user-guide/basic-features/tree-table.jpeg" alt="Tree table configuration and preview" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
 ### 2.3 Disabling Tree Display
 
 Clear the "Parent Record Field" dropdown in the "Tree" panel to return to a normal flat list. This only changes the display mode and **does not delete any record data or field values**.
