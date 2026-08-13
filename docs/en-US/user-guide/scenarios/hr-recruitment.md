@@ -18,31 +18,31 @@ Create two core tables: "Job Management" and "Candidate Management".
 
 | Field Name | Field Type | Description |
 | --- | --- | --- |
-| Job Title | Single-line text | The name of the recruitment position. |
-| Department | Single select | Such as Engineering, Product, Marketing, etc. |
+| Job Title | Single Line Text | The name of the recruitment position. |
+| Department | Single Select | Such as Engineering, Product, Marketing, etc. |
 | Recruiter | Member | The HR responsible for this position. |
 | Headcount | Number | Planned number of hires. |
-| Job Status | Single select | Options: Open, Paused, Closed. |
-| Priority | Single select | Options: Urgent, High, Medium, Low. |
+| Job Status | Single Select | Options: Open, Paused, Closed. |
+| Priority | Single Select | Options: Urgent, High, Medium, Low. |
 | Expected Onboard Date | Date | Planned onboarding date. |
-| Job Description | Multi-line text | Job responsibilities and requirements. |
+| Job Description | Long Text | Job responsibilities and requirements. |
 
 ### Candidate Management Table
 
 | Field Name | Field Type | Description |
 | --- | --- | --- |
-| Name | Single-line text | Candidate name. |
-| Phone | Single-line text | Candidate phone number. |
+| Name | Single Line Text | Candidate name. |
+| Phone | Single Line Text | Candidate phone number. |
 | Email | Email | Candidate email address. |
 | Applied Position | Link | Links to the "Job Management" table. |
-| Source Channel | Single select | Options: Headhunter, Referral, Job Board, Website, Social Media, Other. |
-| Current Status | Single select | Options: Resume Screening, To Be Interviewed, Interviewing, Pending Feedback, Offer Sent, Hired, Rejected. |
+| Source Channel | Single Select | Options: Headhunter, Referral, Job Board, Website, Social Media, Other. |
+| Current Status | Single Select | Options: Resume Screening, To Be Interviewed, Interviewing, Pending Feedback, Offer Sent, Hired, Rejected. |
 | Interviewer | Member | The hiring manager arranged for the interview. |
-| Interview Time | Date time | Scheduled interview time. |
-| Interview Feedback | Multi-line text | Evaluations and suggestions filled in by the interviewer. |
-| Expected Salary | Single-line text | Candidate's expected salary range. |
+| Interview Time | Date Time | Scheduled interview time. |
+| Interview Feedback | Long Text | Evaluations and suggestions filled in by the interviewer. |
+| Expected Salary | Single Line Text | Candidate's expected salary range. |
 | Resume | Attachment | Upload candidate resume. |
-| Notes | Multi-line text | Other supplementary information. |
+| Notes | Long Text | Other supplementary information. |
 
 ## Recommended View Configuration
 

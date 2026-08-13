@@ -25,7 +25,7 @@ Workflows are bound to a base or a specific table. You can pause, resume, edit, 
 
 | Trigger | When It Fires |
 |---------|---------------|
-| Scheduled Time | One-time or recurring (daily/weekly/monthly/yearly/custom); supports deadline configuration |
+| Specified Time | One-time or recurring (daily/weekly/monthly/yearly/custom); supports deadline configuration |
 | Record Created | When a new record is created; supports filter conditions |
 | Record Updated | When a record is modified; can listen to specific fields and apply filters |
 

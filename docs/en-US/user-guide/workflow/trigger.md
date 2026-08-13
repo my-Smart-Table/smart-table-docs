@@ -13,7 +13,7 @@ SmartTable supports the following trigger types:
 | Record Created | Triggered when a new record is created |
 | Record Updated | Triggered when a record is updated; can listen to specified fields |
 | Specified Time | Triggered according to a set schedule; supports repetition |
-| Record Time Reached | Triggered when a date/datetime field value in a record is reached |
+| Record Time Reached | Triggered when a date/date time field value in a record is reached |
 
 ## Record Created Trigger
 
@@ -73,11 +73,11 @@ Triggers the workflow according to a scheduled time plan, independent of record 
 
 ## Record Time Reached
 
-Triggered when the value of a date/datetime field in a record is reached.
+Triggered when the value of a date/date time field in a record is reached.
 
 ### Configuration
 
-- **Time Field**: Select a date or datetime field in the record.
+- **Time Field**: Select a date or date time field in the record.
 - **Filter Conditions**: Only trigger when conditions are met.
 
 ### Use Cases
@@ -95,7 +95,7 @@ Except for the Specified Time trigger, all other triggers support filter conditi
 - Support AND / OR logic.
 
 ::: tip Performance Suggestion
-Try to use indexed fields (such as primary keys, single select, dates) as filter conditions, and avoid using full-text matching fields on large tables.
+Try to use indexed fields (such as primary keys, Single Select, dates) as filter conditions, and avoid using full-text matching fields on large tables.
 :::
 
 ## Trigger Record Variables

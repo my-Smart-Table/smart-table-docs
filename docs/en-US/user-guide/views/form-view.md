@@ -33,7 +33,7 @@ Click the **Configure** button in the upper right corner of the form view to ope
 ### Field Display Rules
 
 - All non-system fields are displayed by default.
-- System fields (created by, created time, updated by, updated time, auto number) are not shown in the form.
+- System fields (Created By, Created Time, Updated By, Updated Time, Auto Number) are not shown in the form.
 - Fields can be manually checked or unchecked.
 - At least one field must be selected to save the configuration.
 
@@ -41,7 +41,7 @@ Click the **Configure** button in the upper right corner of the form view to ope
 
 - Required fields automatically show required indicators.
 - Email, phone, URL, and other fields are validated by type.
-- Single select and multi-select fields show configured options.
+- Single Select and Multi Select fields show configured options.
 
 ## Sharing the Form
 
@@ -83,5 +83,5 @@ For sensitive data collection, it is recommended to enable CAPTCHA and set a sub
 
 ## Next Steps
 
-- [Grid View](/en-US/user-guide/views/table-view.html)
+- [Table View](/en-US/user-guide/views/table-view.html)
 - [Kanban View](/en-US/user-guide/views/kanban-view.html)

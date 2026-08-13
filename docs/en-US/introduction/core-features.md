@@ -24,7 +24,7 @@ SmartTable offers 26 field types across 9 categories. See [Field Types](/en-US/u
 |----------|----------|
 | Text | Single Line Text, Long Text, Rich Text |
 | Numeric | Number (integer/decimal/currency/percent) |
-| Date | Date, DateTime |
+| Date | Date, Date Time |
 | Selection | Single Select, Multi Select, Checkbox |
 | People & Contact | Member, Phone, Email, URL |
 | Media | Attachment (images, files, thumbnails) |
@@ -48,7 +48,7 @@ Work with large datasets using advanced data tools:
 
 The visual workflow engine (new in v1.6.0) helps you automate repetitive tasks:
 
-- **Triggers** — Scheduled time, record creation, or record update.
+- **Triggers** — Specified time, record creation, or record update.
 - **Action Nodes** — Create record, update record, call webhook, or branch on conditions.
 - **Versioning** — Save snapshots, view history, and roll back changes.
 - **Management** — Pause, resume, edit, and bind workflows to tables.

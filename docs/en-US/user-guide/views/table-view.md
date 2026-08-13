@@ -1,12 +1,12 @@
-# Grid View
+# Table View
 
-Grid view is the default and most flexible way to work with SmartTable data. It displays records as rows and fields as columns, similar to a spreadsheet, while supporting high-performance virtual scrolling and advanced layout options.
+Table view is the default and most flexible way to work with SmartTable data. It displays records as rows and fields as columns, similar to a spreadsheet, while supporting high-performance virtual scrolling and advanced layout options.
 
-## When to Use Grid View
+## When to Use Table View
 
-<img src="/images/user-guide/basic-features/views/views-table-view.png" alt="Grid view interface" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+<img src="/images/user-guide/basic-features/views/views-table-view.png" alt="Table view interface" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
-Use grid view when you need to:
+Use table view when you need to:
 
 - Enter or edit many records at once.
 - See a large number of fields side by side.
@@ -48,14 +48,14 @@ Use grid view when you need to:
 | Batch select | Hold `Shift` and click rows, or use checkboxes |
 
 ::: tip Performance
-Grid view uses virtual scrolling to keep interactions smooth even with tens of thousands of records.
+Table view uses virtual scrolling to keep interactions smooth even with tens of thousands of records.
 :::
 
 ## Next Steps
 
 - [Grouped View](/en-US/user-guide/views/grouped-view.html)
 - [Kanban View](/en-US/user-guide/views/kanban-view.html)
-- [Gantt Chart](/en-US/user-guide/views/gantt-view.html)
+- [Gantt View](/en-US/user-guide/views/gantt-view.html)
 - [Calendar View](/en-US/user-guide/views/calendar-view.html)
 - [Gallery View](/en-US/user-guide/views/gallery-view.html)
 - [Form View](/en-US/user-guide/views/form-view.html)

@@ -4,7 +4,7 @@
 
 ### 1.1 What Is a Tree Table
 
-A tree table (hierarchical table) is a display mode of the grid view. By designating a **self-referencing link field** as the "parent record field" on a view, SmartTable renders the otherwise flat record list as an expandable, collapsible tree structure based on the parent-child references between records.
+A tree table (hierarchical table) is a display mode of the table view. By designating a **self-referencing link field** as the "parent record field" on a view, SmartTable renders the otherwise flat record list as an expandable, collapsible tree structure based on the parent-child references between records.
 
 The difference from master-detail lies in the scope of the relationship:
 
@@ -12,7 +12,7 @@ The difference from master-detail lies in the scope of the relationship:
 |------------|-----------|---------------|
 | Relationship scope | Between records within the same table | Between two different tables |
 | Required field | A link field pointing to the current table | A link field pointing to another table |
-| Display location | Indented directly in the grid view | Sub-table area inside the detail drawer |
+| Display location | Indented directly in the table view | Sub-table area inside the detail drawer |
 | Typical semantics | Hierarchy, ownership, decomposition | Master record and detail lines |
 
 ### 1.2 Application Scenarios
@@ -33,7 +33,7 @@ The difference from master-detail lies in the scope of the relationship:
 | Data table | Target table created with some records |
 | Self-referencing field | The table contains a link field pointing to **itself** |
 | Link type | The link type of that field must be **one-to-many** |
-| View type | The current view is a grid view |
+| View type | The current view is a table view |
 | Permission | Configuring the parent record field requires the Editor role or above |
 
 ## 2. Configuring the Parent Record Field
@@ -46,7 +46,7 @@ Tree hierarchy relies on a link field that points to its own table. Steps:
 2. Select "Link to Record" as the field type.
 3. In the "Linked Table" dropdown, select the current table, which is marked with a `(Current Table)` suffix.
 
-   > After selecting the current table, a blue hint appears: linking to the current table can be used to set record hierarchy in the grid view.
+   > After selecting the current table, a blue hint appears: linking to the current table can be used to set record hierarchy in the table view.
 
 4. The "Link Type" is then automatically locked to **one-to-many** and cannot be changed. This constraint is required for hierarchy structures.
 5. Give the field a meaningful name, such as "Parent Task", "Parent Department", or "Parent Category".
@@ -54,7 +54,7 @@ Tree hierarchy relies on a link field that points to its own table. Steps:
 
 ### 2.2 Enabling Tree Display
 
-1. Open the target grid view.
+1. Open the target table view.
 2. Find and click the "Tree" button (gear icon) on the toolbar.
 
    > This button appears only when the table contains a self-referencing link field. If you do not see it, create the field first as described in section 2.1.
@@ -146,6 +146,6 @@ No. Child records are retained; they simply lose the parent reference and return
 
 ## 6. Related Documents
 
-- [Grid View](views/table-view.md)
+- [Table View](views/table-view.md)
 - [Master-Detail Tables](master-detail.md)
 - [Link Field](field-types/link-field.md)

@@ -16,20 +16,20 @@ Create a table named "Defect Management" with the following core fields:
 
 | Field Name | Field Type | Description |
 | --- | --- | --- |
-| Defect Title | Single-line text | A short description of the defect, used as the record title. |
-| Defect ID | Auto number | Automatically generates a unique ID for tracking and referencing. |
-| Project | Single select | The project or product module where the defect was found. |
-| Affected Version | Single-line text | The version number where the defect was found, e.g., "v1.5.2". |
-| Severity | Single select | Options: Critical, Major, Minor, Trivial, Suggestion. |
-| Priority | Single select | Options: Urgent, High, Medium, Low. |
-| Defect Status | Single select | Options: New, Confirmed, In Progress, Pending Verification, Closed, Rejected. |
+| Defect Title | Single Line Text | A short description of the defect, used as the record title. |
+| Defect ID | Auto Number | Automatically generates a unique ID for tracking and referencing. |
+| Project | Single Select | The project or product module where the defect was found. |
+| Affected Version | Single Line Text | The version number where the defect was found, e.g., "v1.5.2". |
+| Severity | Single Select | Options: Critical, Major, Minor, Trivial, Suggestion. |
+| Priority | Single Select | Options: Urgent, High, Medium, Low. |
+| Defect Status | Single Select | Options: New, Confirmed, In Progress, Pending Verification, Closed, Rejected. |
 | Submitter | Member | The tester who submitted the defect. |
 | Assignee | Member | The developer responsible for fixing the defect. |
 | Verifier | Member | The tester responsible for verifying the fix. |
-| Submit Time | Date time | The time the defect was submitted. |
+| Submit Time | Date Time | The time the defect was submitted. |
 | Expected Fix Date | Date | The planned date for completing the fix. |
 | Actual Fix Date | Date | The actual date when the fix was completed. |
-| Reproduction Steps | Multi-line text | Detailed steps to reproduce the defect. |
+| Reproduction Steps | Long Text | Detailed steps to reproduce the defect. |
 | Screenshots/Logs | Attachment | Upload defect screenshots, log files, or screen recordings. |
 | Related Requirement | Link | Links to the "Requirement Management" table to associate defects with requirements. |
 
@@ -67,7 +67,7 @@ Create a table named "Defect Management" with the following core fields:
 
 ## Brief Operation Steps
 
-1. Create a "Defect Management" table and add the fields listed above with single-select options configured.
+1. Create a "Defect Management" table and add the fields listed above with Single Select options configured.
 2. Set the "Defect ID" field to auto-number to maintain continuity.
 3. Create Kanban, Grouped, and assignee-filtered Table views.
 4. When submitting a defect, testers fill in reproduction steps and upload screenshots or logs.

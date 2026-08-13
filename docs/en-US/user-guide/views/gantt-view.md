@@ -1,10 +1,10 @@
-# Gantt Chart
+# Gantt View
 
-The Gantt chart view displays tasks and milestones on a horizontal timeline. It is the standard view for project planning and progress tracking.
+The Gantt view displays tasks and milestones on a horizontal timeline. It is the standard view for project planning and progress tracking.
 
 ## Timeline Display
 
-<img src="/images/user-guide/basic-features/views/views-gantt-view.png" alt="Gantt chart view" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+<img src="/images/user-guide/basic-features/views/views-gantt-view.png" alt="Gantt view" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
 - The horizontal axis shows the project timeline.
 - The vertical axis lists tasks from your table.

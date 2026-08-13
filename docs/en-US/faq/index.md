@@ -229,7 +229,7 @@ This section collects common issues and solutions you may encounter when deployi
 
 ### Timezone display is incorrect
 
-**Symptom**: DateTime fields show times inconsistent with expectations.
+**Symptom**: Date Time fields show times inconsistent with expectations.
 
 **Solution**:
 

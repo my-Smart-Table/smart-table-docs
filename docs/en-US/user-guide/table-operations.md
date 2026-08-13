@@ -40,7 +40,7 @@ During import, the system displays a field mapping preview so you can confirm th
 
 <img src="/images/user-guide/basic-features/table-operations/table-operations-field-config.png" alt="Field configuration panel" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
-Fields define the structure of each table. SmartTable supports 26 field types. Single-line text fields additionally support **regular expression validation**, with custom rules and validation hints, and built-in presets for domestic phone, postal code, ID number, IPv4, and more.
+Fields define the structure of each table. SmartTable supports 26 field types. Single Line Text fields additionally support **regular expression validation**, with custom rules and validation hints, and built-in presets for domestic phone, postal code, ID number, IPv4, and more.
 
 <img src="/images/user-guide/basic-features/txt_regx.jpeg" alt="Field regex validation configuration" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 

@@ -16,18 +16,18 @@ Create a table named "Content Calendar" with the following core fields:
 
 | Field Name | Field Type | Description |
 | --- | --- | --- |
-| Content Title | Single-line text | The title or theme of the content. |
-| Content Type | Single select | Options: Article, Short Video, Image & Text, Live, Poster, Whitepaper, Other. |
-| Column | Single select | Such as Product Updates, Industry Insights, User Cases, Event Promotion. |
-| Topic Status | Single select | Options: Ideation, Creating, Reviewing, Pending Publish, Published, Offline. |
+| Content Title | Single Line Text | The title or theme of the content. |
+| Content Type | Single Select | Options: Article, Short Video, Image & Text, Live, Poster, Whitepaper, Other. |
+| Column | Single Select | Such as Product Updates, Industry Insights, User Cases, Event Promotion. |
+| Topic Status | Single Select | Options: Ideation, Creating, Reviewing, Pending Publish, Published, Offline. |
 | Owner | Member | The content creator or operator. |
 | Reviewer | Member | The editor or supervisor responsible for content review. |
 | Target Publish Date | Date | The planned publishing date. |
 | Actual Publish Date | Date | The actual publishing date. |
-| Publish Channels | Multi select | Options: WeChat Official Account, Website, Zhihu, Weibo, TikTok, Bilibili, Email, Other. |
-| Target Audience | Single select | Options: New Users, Existing Customers, Developers, Partners. |
-| Keywords | Multi select | Keywords used for SEO or content classification. |
-| Content Summary | Multi-line text | Core points or introduction of the content. |
+| Publish Channels | Multi Select | Options: WeChat Official Account, Website, Zhihu, Weibo, TikTok, Bilibili, Email, Other. |
+| Target Audience | Single Select | Options: New Users, Existing Customers, Developers, Partners. |
+| Keywords | Multi Select | Keywords used for SEO or content classification. |
+| Content Summary | Long Text | Core points or introduction of the content. |
 | Content Link | URL | The online link of published content. |
 | Material Attachments | Attachment | Upload copy, images, videos, and other materials. |
 
@@ -57,14 +57,14 @@ Create a table named "Content Calendar" with the following core fields:
 
 | Automation Scenario | Trigger | Node Configuration |
 | --- | --- | --- |
-| Pre-publish Reminder | Scheduled trigger (daily) | Find content where "Target Publish Date is tomorrow and status is Pending Publish", reminding the owner to perform final checks. |
+| Pre-publish Reminder | Specified Time trigger (daily) | Find content where "Target Publish Date is tomorrow and status is Pending Publish", reminding the owner to perform final checks. |
 | Review Notification | Record update trigger (status changed to Reviewing) | Call a Webhook node to notify the reviewer to process pending content. |
 | Publish Archiving | Record update trigger (status changed to Published) | Update the actual publish date and notify the operations team to synchronize promotion. |
-| Topic Overdue Warning | Scheduled trigger (weekly) | Condition node checks if "Target Publish Date has passed and status is not Published", then increase priority and notify the content editor. |
+| Topic Overdue Warning | Specified Time trigger (weekly) | Condition node checks if "Target Publish Date has passed and status is not Published", then increase priority and notify the content editor. |
 
 ## Brief Operation Steps
 
-1. Create a "Content Calendar" table and add the fields listed above with single/multi-select options configured.
+1. Create a "Content Calendar" table and add the fields listed above with Single/Multi Select options configured.
 2. Create a Calendar view as the default view and display the content plan by target publish date.
 3. Create Kanban and Grouped views for tracking creation progress and column distribution.
 4. After team brainstorming, enter topics with target publish date, owner, and publish channel.

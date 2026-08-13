@@ -53,7 +53,7 @@ For non-original/distinct modes, lookup fields support custom result formatting:
 | Percentage | Display as percentage |
 | Date | For max/min date values; date format configurable |
 
-In original and distinct modes, lookup results follow the source field's original type rendering (such as thumbnails for attachments, avatars for members, colored tags for single/multi-select, etc.).
+In original and distinct modes, lookup results follow the source field's original type rendering (such as thumbnails for attachments, avatars for members, colored tags for Single/Multi Select, etc.).
 
 ## Preview
 

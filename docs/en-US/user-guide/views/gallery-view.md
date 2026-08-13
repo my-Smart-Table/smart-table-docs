@@ -29,9 +29,9 @@ Gallery view displays records as cards, with each card showing a cover image and
 
 - The table's **primary field** is used as the card title by default.
 - The following field types can be selected as the title:
-  - Single line text
+  - Single Line Text
   - Number
-  - Single select
+  - Single Select
   - Formula
 - Formula fields are calculated and displayed in real time.
 
@@ -74,4 +74,4 @@ For the best display effect, it is recommended to create a dedicated attachment 
 ## Next Steps
 
 - [Form View](/en-US/user-guide/views/form-view.html)
-- [Grid View](/en-US/user-guide/views/table-view.html)
+- [Table View](/en-US/user-guide/views/table-view.html)

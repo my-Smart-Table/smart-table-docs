@@ -94,7 +94,7 @@ Formula fields support multiple result formats:
 - **Number**: Configure decimal places and thousands separator.
 - **Currency**: Select currency symbol (¥, $, etc.).
 - **Percentage**: Automatically multiplied by 100 and displayed with %.
-- **Date/DateTime**: Select date display format.
+- **Date/Date Time**: Select date display format.
 
 ::: tip Format Selection
 You can still change the format after saving the formula. If the formula returns a date timestamp, select a date format to avoid displaying a long number.

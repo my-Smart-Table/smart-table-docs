@@ -16,17 +16,17 @@ Create a table named "Project Tasks" with the following core fields:
 
 | Field Name | Field Type | Description |
 | --- | --- | --- |
-| Task Name | Single-line text | A short title for the task or requirement, used as the record title. |
-| Task Type | Single select | Options: Requirement, Bug, Optimization, Other. |
-| Priority | Single select | Options: Urgent, High, Medium, Low. |
+| Task Name | Single Line Text | A short title for the task or requirement, used as the record title. |
+| Task Type | Single Select | Options: Requirement, Bug, Optimization, Other. |
+| Priority | Single Select | Options: Urgent, High, Medium, Low. |
 | Assignee | Member | The specific executor, supports multiple selection. |
-| Status | Single select | Options: To Do, In Progress, Pending Review, Done, Cancelled. |
-| Project | Single select | Used to distinguish different projects, e.g., "Website Redesign", "App v2.0". |
+| Status | Single Select | Options: To Do, In Progress, Pending Review, Done, Cancelled. |
+| Project | Single Select | Used to distinguish different projects, e.g., "Website Redesign", "App v2.0". |
 | Parent Task | Link | Links to this table to establish task hierarchy. |
 | Planned Start Date | Date | The estimated start date of the task. |
 | Due Date | Date | The estimated completion date of the task. |
 | Progress | Number | Expressed as a percentage (0-100) of current completion. |
-| Task Description | Multi-line text | Supplementary details, acceptance criteria, or notes. |
+| Task Description | Long Text | Supplementary details, acceptance criteria, or notes. |
 | Attachments | Attachment | Upload requirement documents, design drafts, test reports, etc. |
 
 If there are complex dependencies between projects, you can also create a "Project Info" table and associate tasks with projects via a link field for cross-table statistics.
@@ -41,7 +41,7 @@ Configure the following views to manage projects from multiple dimensions:
 - Sort order: Priority descending, Due date ascending
 - Purpose: Visually inspect the distribution of tasks across "To Do → In Progress → Pending Review → Done".
 
-### Gantt Chart View
+### Gantt View
 
 - Start date field: Planned Start Date
 - End date field: Due Date
@@ -68,7 +68,7 @@ Configure the following views to manage projects from multiple dimensions:
 ## Brief Operation Steps
 
 1. Create a new table in the Base and name it "Project Tasks".
-2. Add the fields listed above and configure single-select options for "Status", "Priority", and "Task Type".
+2. Add the fields listed above and configure Single Select options for "Status", "Priority", and "Task Type".
 3. Create Kanban, Gantt, and Calendar views, and set the default view as needed.
 4. Enter the initial task data and drag tasks across the Kanban board to update status.
 5. Go to the "Workflow" module and configure automation rules such as due reminders and status change notifications.
