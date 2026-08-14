@@ -122,4 +122,13 @@ SmartTable 已被多个行业的团队用于构建灵活的业务系统。以下
     </div>
   </div>
 <!---案例结束 --->
+<!---案例开始 --->  
+  <div class="customer-card">
+    <div class="customer-logo" style="background-color: #8b5cf6;">长恒</div>
+    <div class="customer-info">
+      <h3>山西长恒科技有限公司</h3>
+      <p>使用 SmartTable 管理内部商贸数据共享，实现高效安全的数据协同管理。</p>
+    </div>
+  </div>
+<!---案例结束 --->
 </div>

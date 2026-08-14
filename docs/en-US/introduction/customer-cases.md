@@ -116,4 +116,11 @@ SmartTable is used by teams across multiple industries to build flexible busines
       <p>Uses SmartTable for customer information registration and integrates it with internal business systems to enable data collaboration.</p>
     </div>
   </div>
+  <div class="customer-card">
+    <div class="customer-logo" style="background-color: #8b5cf6;">CH</div>
+    <div class="customer-info">
+      <h3>Shanxi Changheng Technology Co., Ltd.</h3>
+      <p>Uses SmartTable to manage internal trade data sharing, achieving efficient and secure collaborative data management.</p>
+    </div>
+  </div>
 </div>
