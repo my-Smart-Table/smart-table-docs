@@ -98,3 +98,4 @@ When a link field is configured as bidirectional, removing the link to a record 
 - **Field caching**: Target table field definitions are cached for 5 minutes. If the sub-table columns are not updated after the target table structure changes, refresh the page.
 - **Permission requirements**: Adding linked records requires create permission on the target table, and editing sub-table records requires edit permission on the target table.
 - **Empty state**: When an expanded row has no linked records, the sub-table shows "No linked records", but you can still add links through the toolbar.
+- **Grouped view and master-detail display cannot coexist**: In grouped view, the sub-table capability is disabled (consistent with the existing handling in tree view), but grouped data displays normally. The master-detail effect cannot be shown in the table; you can use details or link fields to display it instead.

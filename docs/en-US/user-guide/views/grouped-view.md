@@ -70,6 +70,12 @@ Grouped view can be combined with table view filtering, sorting, and column free
 It is recommended to place grouping fields at the far left of the table and freeze that column so the grouping structure remains clear with large amounts of data.
 :::
 
+## Notes
+
+- Grouped view does not support multi-select, batch operations, export, and other operations.
+- Grouped view does not support nested grouping beyond 3 levels at most.
+- **Grouped view and master-detail display cannot coexist**: In grouped view, the sub-table capability is disabled (consistent with the existing handling in tree view), but grouped data displays normally. The master-detail effect cannot be shown in the table; you can use details or link fields to display it instead.
+
 ## Next Steps
 
 - [Gallery View](/en-US/user-guide/views/gallery-view.html)
