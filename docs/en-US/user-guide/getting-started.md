@@ -12,7 +12,7 @@ Download the latest release package, extract it and start with one click:
 # Windows PowerShell
 .\start.bat
 
-# Linux/macOS
+# Linux/macOS (to be provided, use Docker for now)
 ./start.sh
 ```
 

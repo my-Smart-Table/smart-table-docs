@@ -4,11 +4,11 @@ SmartTable 提供开箱即用的一键启动包，无需安装任何外部依赖
 
 ## 下载启动包
 
-前往项目 [GitHub Releases](https://github.com/ldbinac/smart_table/releases) 页面，下载对应操作系统的一键启动包：
+前往项目 [GitHub Releases](https://github.com/ldbinac/smart_table/releases) 或[Gitee Release](https://gitee.com/binac/smart_table/releases)页面，下载对应操作系统的一键启动包：
 
 - Windows：`smarttable-windows-x64.zip`
-- Linux：`smarttable-linux-x64.tar.gz`
-- macOS：`smarttable-macos-x64.tar.gz`（Apple Silicon 用户请选择 `arm64` 版本）
+- Linux：`smarttable-linux-x64.tar.gz`（待提供，先用docker）
+- macOS：`smarttable-macos-x64.tar.gz`（Apple Silicon 用户请选择 `arm64` 版本）（待提供，先用docker）
 
 ## 启动服务
 

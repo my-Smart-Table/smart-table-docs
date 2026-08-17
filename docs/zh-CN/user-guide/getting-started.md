@@ -12,7 +12,7 @@
 # Windows PowerShell
 .\start.bat
 
-# Linux/macOS
+# Linux/macOS（待提供，先用docker）
 ./start.sh
 ```
 

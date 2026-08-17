@@ -4,11 +4,11 @@ SmartTable provides an out-of-the-box one-click startup package. No external dep
 
 ## Download the Startup Package
 
-Go to the project [GitHub Releases](https://github.com/ldbinac/smart_table/releases) page and download the startup package for your operating system:
+Go to the project [GitHub Releases](https://github.com/ldbinac/smart_table/releases) or [Gitee Releases](https://gitee.com/binac/smart_table/releases) page and download the startup package for your operating system:
 
 - Windows: `smarttable-windows-x64.zip`
-- Linux: `smarttable-linux-x64.tar.gz`
-- macOS: `smarttable-macos-x64.tar.gz` (Apple Silicon users please choose the `arm64` version)
+- Linux: `smarttable-linux-x64.tar.gz` (to be provided, use Docker for now)
+- macOS: `smarttable-macos-x64.tar.gz` (Apple Silicon users please choose the `arm64` version) (to be provided, use Docker for now)
 
 ## Start the Service
 
