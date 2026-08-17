@@ -7,7 +7,7 @@
 - Node.js 18+
 - pnpm 9+
 - PostgreSQL 14+ 或 SQLite
-- Redis 6+（可选，用于缓存和队列）
+- Redis 6+（用于缓存和队列）
 
 ## 安装步骤
 

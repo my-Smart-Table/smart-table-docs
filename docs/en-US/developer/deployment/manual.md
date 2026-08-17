@@ -7,7 +7,7 @@ If you want more flexible control over the deployment environment, you can choos
 - Node.js 18+
 - pnpm 9+
 - PostgreSQL 14+ or SQLite
-- Redis 6+ (optional, for caching and queues)
+- Redis 6+ (for caching and queues)
 
 ## Installation Steps
 

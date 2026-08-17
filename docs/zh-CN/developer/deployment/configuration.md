@@ -29,26 +29,11 @@ DATABASE_URL=postgresql://user:password@localhost:5432/smarttable
 
 | 环境变量 | 说明 | 默认值 |
 |---------|------|--------|
-| `REDIS_URL` | Redis 连接地址 | 可选 |
+| `REDIS_URL` | Redis 连接地址 | `redis://localhost:6379/0` |
 | `CACHE_TTL` | 缓存过期时间（秒） | `3600` |
 
-## 安全配置
 
-### JWT 配置
 
-| 环境变量 | 说明 | 默认值 |
-|---------|------|--------|
-| `JWT_ACCESS_TOKEN_EXPIRE_MINUTES` | 访问令牌过期时间 | `30` |
-| `JWT_REFRESH_TOKEN_EXPIRE_DAYS` | 刷新令牌过期时间 | `7` |
-
-### 邮件配置
-
-| 环境变量 | 说明 | 默认值 |
-|---------|------|--------|
-| `SMTP_HOST` | SMTP 服务器地址 | 可选 |
-| `SMTP_PORT` | SMTP 端口 | `587` |
-| `SMTP_USER` | SMTP 用户名 | 可选 |
-| `SMTP_PASSWORD` | SMTP 密码 | 可选 |
 
 ## 高级配置
 

@@ -29,26 +29,8 @@ DATABASE_URL=postgresql://user:password@localhost:5432/smarttable
 
 | Environment Variable | Description | Default Value |
 |---------|------|--------|
-| `REDIS_URL` | Redis connection address | Optional |
+| `REDIS_URL` | Redis connection address | `redis://localhost:6379/0` |
 | `CACHE_TTL` | Cache expiration time (seconds) | `3600` |
-
-## Security Configuration
-
-### JWT Configuration
-
-| Environment Variable | Description | Default Value |
-|---------|------|--------|
-| `JWT_ACCESS_TOKEN_EXPIRE_MINUTES` | Access token expiration time | `30` |
-| `JWT_REFRESH_TOKEN_EXPIRE_DAYS` | Refresh token expiration time | `7` |
-
-### Email Configuration
-
-| Environment Variable | Description | Default Value |
-|---------|------|--------|
-| `SMTP_HOST` | SMTP server address | Optional |
-| `SMTP_PORT` | SMTP port | `587` |
-| `SMTP_USER` | SMTP username | Optional |
-| `SMTP_PASSWORD` | SMTP password | Optional |
 
 ## Advanced Configuration
 
