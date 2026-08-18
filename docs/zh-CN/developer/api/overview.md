@@ -1,12 +1,12 @@
-> API的接入功能待实现
-
 # API 概览
 
-SmartTable 提供完整的 RESTful API，方便与其他系统集成。
+SmartTable 提供完整的 RESTful Open API，便于第三方应用与系统对接。所有接口均基于标准 HTTP 协议，返回 JSON 格式数据。
 
-## API 基础
+## 基础说明
 
 ### 基础 URL
+
+所有 API 均以前缀 `/api/v1` 开头：
 
 ```
 https://your-domain.com/api/v1
@@ -14,78 +14,88 @@ https://your-domain.com/api/v1
 
 ### 认证方式
 
-所有 API 请求需要在 Header 中携带认证令牌：
+所有 API 请求需在 Header 中携带通过 OAuth2 获取的访问令牌（详见 [认证](./authentication.md)）：
 
 ```http
-Authorization: Bearer <your-token>
+Authorization: Bearer <access_token>
 ```
 
 ### 响应格式
 
-所有响应均为 JSON 格式：
+所有响应均为 JSON 格式，统一包含 `code`、`msg` 字段；`data` 为业务数据：
 
 ```json
 {
-  "success": true,
-  "data": { ... },
-  "message": "操作成功"
+  "code": 0,
+  "msg": "success",
+  "data": { }
 }
 ```
 
-## API 分类
+> `code = 0` 表示成功，非 0 表示失败，失败信息见 `msg`。
 
-### 表格 API
+### 分页
 
-- 获取表格列表
-- 创建/更新/删除表格
-- 获取表格结构
-
-### 记录 API
-
-- 获取记录列表
-- 创建/更新/删除记录
-- 批量操作
-
-### 字段 API
-
-- 获取字段列表
-- 创建/更新/删除字段
-- 字段类型配置
-
-### 工作流 API
-
-- 触发工作流
-- 查询执行状态
-- 工作流管理
-
-## 请求限制
-
-- 默认每分钟 100 次请求
-- 支持批量请求优化
-- 建议使用缓存
-
-## 错误处理
-
-### 错误响应格式
+列表类接口统一使用 `page`（页码，从 1 开始）与 `page_size`（每页数量，默认 20）参数，响应中包含 `total`（总条数）、`page`、`page_size`：
 
 ```json
 {
-  "success": false,
-  "error": {
-    "code": "INVALID_TOKEN",
-    "message": "认证令牌无效"
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "items": [ ],
+    "total": 100,
+    "page": 1,
+    "page_size": 20
   }
 }
 ```
 
-### 常见错误码
+### 时间格式
 
-- `INVALID_TOKEN`: 认证失败
-- `PERMISSION_DENIED`: 权限不足
-- `NOT_FOUND`: 资源不存在
-- `VALIDATION_ERROR`: 参数验证失败
+所有时间字段统一使用 UTC，ISO 8601 格式：
+
+```
+2026-01-01T12:00:00Z
+```
+
+## API 分类
+
+- [认证](./authentication.md)：OAuth2 客户端模式获取访问令牌
+- [数据表 API](./table.md)：数据表的查询、创建、更新、删除
+- [记录 API](./record.md)：记录的增删改查与批量操作
+- [字段 API](./field.md)：字段的查询、创建、更新、删除与类型配置
+- [工作流 API](./workflow.md)：工作流的触发与执行查询
+
+## 错误处理
+
+接口调用失败时，响应 `code` 非 0，`msg` 给出错误描述，`data` 通常为 `null`：
+
+```json
+{
+  "code": 40100,
+  "msg": "invalid_client",
+  "data": null
+}
+```
+
+### 错误码表
+
+| 错误码 | 含义 |
+| --- | --- |
+| 40000 | 参数错误 |
+| 40100 | 客户端认证失败（client_id / client_secret 错误） |
+| 40101 | 授权类型不支持 |
+| 40102 | 访问令牌缺失或格式错误 |
+| 40103 | 访问令牌无效或已过期 |
+| 40104 | 刷新令牌无效或已过期 |
+| 40300 | 权限不足（scope 不匹配或无权访问资源） |
+| 40400 | 资源不存在 |
+| 40900 | 资源冲突 |
+| 42900 | 请求过于频繁（触发限流） |
+| 50000 | 服务器内部错误 |
 
 ## 下一步
 
-- [认证](/zh-CN/developer/api/authentication)
-- [数据表 API](/zh-CN/developer/api/table)
+- [认证](./authentication.md)
+- [数据表 API](./table.md)

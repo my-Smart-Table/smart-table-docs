@@ -33,6 +33,18 @@ export default defineConfig({
         }
         return defaultRender(tokens, idx, options, env, self)
       }
+
+      // 将 ```mermaid 代码块渲染为 <Mermaid> 组件（源码以 base64 传递，避免属性转义问题）
+      const defaultFence = md.renderer.rules.fence!
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        const info = token.info.trim().split(/\s+/)[0]
+        if (info === 'mermaid') {
+          const encoded = Buffer.from(token.content, 'utf-8').toString('base64')
+          return `<Mermaid encoded="${encoded}"></Mermaid>`
+        }
+        return defaultFence(tokens, idx, options, env, self)
+      }
     }
   },
 
@@ -73,7 +85,7 @@ export default defineConfig({
               { text: '架构', link: '/zh-CN/developer/architecture.html' },
               { text: '开发', link: '/zh-CN/developer/development/environment.html' },
               { text: '部署', link: '/zh-CN/developer/deployment/one-click.html' },
-              { text: 'API', link: '/zh-CN/developer/api/overview.html' }
+              { text: '应用接入', link: '/zh-CN/developer/app-integration/oauth2-integration.html' }
             ]
           },
           { text: '更新日志', link: '/zh-CN/changelog.html' },
@@ -243,14 +255,12 @@ export default defineConfig({
                 ]
               },
               {
-                text: 'API',
-                collapsed: true,
+                text: '应用接入',
+                collapsed: false,
                 items: [
-                  { text: 'API 概览', link: 'api/overview.html' },
-                  { text: '认证', link: 'api/authentication.html' },
-                  { text: '数据表 API', link: 'api/table.html' },
-                  { text: '记录 API', link: 'api/record.html' },
-                  { text: '工作流 API', link: 'api/workflow.html' }
+                  { text: 'OAuth2 第三方应用接入', link: 'app-integration/oauth2-integration.html' },
+                  { text: '开放 API', link: 'app-integration/open-api.html' },
+                  { text: '实战示例', link: 'app-integration/oauth2-practice-examples.html' }
                 ]
               },
               {
@@ -333,7 +343,7 @@ export default defineConfig({
               { text: 'Architecture', link: '/en-US/developer/architecture.html' },
               { text: 'Development', link: '/en-US/developer/development/environment.html' },
               { text: 'Deployment', link: '/en-US/developer/deployment/one-click.html' },
-              { text: 'API', link: '/en-US/developer/api/overview.html' }
+              { text: 'App Integration', link: '/en-US/developer/app-integration/oauth2-integration.html' }
             ]
           },
           { text: 'Changelog', link: '/en-US/changelog.html' },
@@ -503,14 +513,12 @@ export default defineConfig({
                 ]
               },
               {
-                text: 'API',
-                collapsed: true,
+                text: 'App Integration',
+                collapsed: false,
                 items: [
-                  { text: 'API Overview', link: 'api/overview.html' },
-                  { text: 'Authentication', link: 'api/authentication.html' },
-                  { text: 'Table API', link: 'api/table.html' },
-                  { text: 'Record API', link: 'api/record.html' },
-                  { text: 'Workflow API', link: 'api/workflow.html' }
+                  { text: 'OAuth2 Third-Party Integration', link: 'app-integration/oauth2-integration.html' },
+                  { text: 'Open API', link: 'app-integration/open-api.html' },
+                  { text: 'Integration Examples', link: 'app-integration/oauth2-practice-examples.html' }
                 ]
               },
               {
@@ -587,7 +595,7 @@ export default defineConfig({
           { text: '架构', link: '/zh-CN/developer/architecture.html' },
           { text: '开发', link: '/zh-CN/developer/development/environment.html' },
           { text: '部署', link: '/zh-CN/developer/deployment/one-click.html' },
-          { text: 'API', link: '/zh-CN/developer/api/overview.html' }
+          { text: '应用接入', link: '/zh-CN/developer/app-integration/oauth2-integration.html' }
         ]
       },
       { text: '更新日志', link: '/zh-CN/changelog.html' },

@@ -112,6 +112,29 @@
   border-top: 1px solid var(--vp-c-divider);
 }
 
+/* Mermaid 流程图 */
+.mermaid-block {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background-color: var(--vp-c-bg-soft);
+  overflow-x: auto;
+  text-align: center;
+}
+
+.mermaid-block svg {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.mermaid-error {
+  color: var(--vp-c-danger-1);
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
 /* 语言切换下拉 */
 .VPFlyout .menu {
   border-radius: 10px;
