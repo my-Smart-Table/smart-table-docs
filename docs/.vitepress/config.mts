@@ -607,10 +607,6 @@ export default defineConfig({
       provider: 'local'
     },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/ldbinac/smart_table' }
-    ],
-
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2026 SmartTable Team'
