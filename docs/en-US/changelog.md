@@ -2,6 +2,57 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.5 (2026-08-19)
+
+This release focuses on **internationalization & multi-language framework**, **third-party app integration & audit system**, **date field enhancements**, and **table feature optimizations**. Built a frontend/backend i18n framework covering the complete feature UI, with a language switcher and automatic system-language detection; added OAuth2 third-party app integration with complete application audit logs; introduced a unified DateInput component, text-format formula fields and unified number display; added a table change-history audit dialog, member-name and formula-result export, and shared-form formula field display; and fixed a batch of issues.
+
+### New Features & Improvements
+
+#### 🌐 Internationalization & Multi-Language ⭐
+
+- ⭐ **Frontend/Backend i18n Framework**: Built the frontend/backend internationalization framework skeleton with unified multi-language key management and loading
+- ⭐ **Language Switcher**: New language switcher component with manual switching and automatic system-language detection
+- **Multi-UI Localization**: Localized the auth page covering the complete system UI copy
+- **View Internationalization**: Added view i18n support; default table view name and description now support localization
+- **English Templates**: Template preview now supports English translation with new English templates
+- **English Copy Updates**: Updated English copy for field types and component names
+
+#### 🔌 Third-Party App Integration ⭐
+
+- ⭐ **Third-Party App Integration**: Added OAuth2 third-party app integration with open API authentication
+- ⭐ **Application Audit Log**: Implemented complete application audit logging of key third-party app operations
+- ⭐ **App Integration Docs**: Added app integration documentation detailing the integration flow and usage examples
+
+#### 📅 Date Input & Field Format
+
+- ⭐ **Unified DateInput Component**: New unified DateInput date component supporting custom date formats
+- **Formula Field Text Format**: Formula fields can now display in text format
+- **Unified Number Display**: Unified number field display format
+
+#### 📝 Table Capabilities & Export
+
+- ⭐ **Table Change-History Audit Dialog**: New table change-history audit dialog for tracing record changes
+- **Export Enhancements**: Export now includes member names and formula results
+- **Link Field Editor**: Updated link field editor implementation
+- **Shared Form Formula**: Shared forms support formula field display and submit filtering
+
+#### 🔐 Account & Form Experience
+
+- **Change-Password Dialog**: New change-password dialog component
+- **Anonymous/Authenticated Submit**: Support anonymous form submission as well as authenticated submission for non-anonymous scenarios
+- **Version Display**: Feedback dialog now shows the current version number at the bottom
+
+### Bug Fixes
+
+- Fixed master-detail data invisibility caused by master-detail config under grouped views
+- Fixed residual field edit state
+- Fixed switch-cell display on new rows and lock concurrent-save issues
+- Unified UUID column type for PostgreSQL compatibility
+- Added idempotency checks to migration scripts, fixing legacy schema drift
+- Fixed dashboard deletion issue
+- Fixed rich-text length validation in shared forms
+- Fixed invalid custom upload directory in packaged mode
+
 ## v1.6.4 (2026-08-12)
 
 This release focuses on **master-detail tables & tree hierarchy**, **in-app notification system**, **workflow custom script nodes**, **collaborative editing & concurrency control**, and **permission model tightening**.

@@ -5,7 +5,7 @@ docs/.vitepress/.temp
 /.vitepress/
 
 # Build logs
-build-verify.log
+*.log
 
 # Dependencies
 node_modules
