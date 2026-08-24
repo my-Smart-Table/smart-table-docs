@@ -258,7 +258,7 @@ export default defineConfig({
                 text: '应用接入',
                 collapsed: false,
                 items: [
-                  { text: 'OAuth2 第三方应用接入', link: 'app-integration/oauth2-integration.html' },
+                  { text: '第三方应用接入', link: 'app-integration/oauth2-integration.html' },
                   { text: '开放 API', link: 'app-integration/open-api.html' },
                   { text: '实战示例', link: 'app-integration/oauth2-practice-examples.html' }
                 ]
@@ -516,7 +516,7 @@ export default defineConfig({
                 text: 'App Integration',
                 collapsed: false,
                 items: [
-                  { text: 'OAuth2 Third-Party Integration', link: 'app-integration/oauth2-integration.html' },
+                  { text: 'Third-Party Integration', link: 'app-integration/oauth2-integration.html' },
                   { text: 'Open API', link: 'app-integration/open-api.html' },
                   { text: 'Integration Examples', link: 'app-integration/oauth2-practice-examples.html' }
                 ]

@@ -2,7 +2,7 @@
 
 This page records the version update history of SmartTable.
 
-## v1.6.5 (2026-08-19)
+## v1.6.5 (2026-08-24)
 
 This release focuses on **internationalization & multi-language framework**, **third-party app integration & audit system**, **date field enhancements**, and **table feature optimizations**. Built a frontend/backend i18n framework covering the complete feature UI, with a language switcher and automatic system-language detection; added OAuth2 third-party app integration with complete application audit logs; introduced a unified DateInput component, text-format formula fields and unified number display; added a table change-history audit dialog, member-name and formula-result export, and shared-form formula field display; and fixed a batch of issues.
 
