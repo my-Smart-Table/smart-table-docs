@@ -42,6 +42,7 @@ services:
       - smarttable_data:/app/data
       - smarttable_uploads:/app/uploads
       - smarttable_redis:/data/redis
+      - ./logs:/app/logs
     restart: unless-stopped
 
 volumes:
@@ -135,6 +136,128 @@ Key variables are documented in `.env.example` and `smarttable-backend/.env.exam
 
 For a full list, see [Configuration](/en-US/developer/deployment/configuration.html).
 
+## Viewing Logs
+
+Inside the container, Supervisor manages three processes: `nginx`, `app-server` and `redis`. Logs are organized in four layers:
+
+| Layer | Location | Contents |
+| --- | --- | --- |
+| Container stdout | `docker logs` | Container startup, database migration, Supervisor output |
+| Supervisor process logs | `/var/log/supervisor/*.log` inside the container | Backend stack traces, per-process output |
+| Application logs | `/app/logs/smarttable.log` (can be mounted to `./logs` on the host) | Business logs written by the Flask `app.logger` |
+| Nginx logs | `/var/log/nginx/` inside the container | HTTP access records, reverse proxy errors |
+
+### 1. Container Stdout
+
+```bash
+docker logs smarttable                 # Full log
+docker logs -f smarttable              # Follow in real time
+docker logs --tail=200 smarttable      # Last 200 lines
+docker logs --previous smarttable      # Logs of the previous run after a crash
+docker logs --since 30m smarttable     # Last 30 minutes
+```
+
+When starting with Docker Compose:
+
+```bash
+docker compose -f docker-compose.yml logs -f smarttable
+docker compose -f docker-compose.full.yml logs -f          # Full deployment, also streams postgres / redis / minio
+```
+
+If the container keeps restarting, check its state first and read the previous run with `--previous`:
+
+```bash
+docker ps -a
+```
+
+### 2. Backend Process Logs (Supervisor)
+
+These are the real runtime logs of the backend service, including exception stack traces:
+
+```bash
+# Backend process
+docker exec smarttable tail -f /var/log/supervisor/app-server.err.log   # Errors and stack traces
+docker exec smarttable tail -f /var/log/supervisor/app-server.out.log   # Runtime output, Eventlet request logs
+
+# Other processes
+docker exec smarttable tail -f /var/log/supervisor/nginx.err.log
+docker exec smarttable tail -f /var/log/supervisor/redis.err.log
+docker exec smarttable tail -f /var/log/supervisor/supervisord.log      # Process restart records
+
+docker exec smarttable ls -lh /var/log/supervisor/                      # List all log files
+```
+
+Check and manage process status (the backend can be restarted without restarting the container):
+
+```bash
+docker exec smarttable supervisorctl status
+docker exec smarttable supervisorctl restart app-server
+```
+
+### 3. Application Logs
+
+In production mode Flask writes to `/app/logs/smarttable.log` inside the container: 10 MB per file, 10 rotated files kept (`smarttable.log.1` ~ `smarttable.log.10`).
+
+If the log directory is mounted, you can read it directly on the host:
+
+```yaml
+volumes:
+  - ./logs:/app/logs
+```
+
+```bash
+tail -f ./logs/smarttable.log
+grep "ERROR" ./logs/smarttable.log
+```
+
+If it is not mounted (for example when starting from the official image), read it inside the container or copy it out:
+
+```bash
+docker exec smarttable tail -f /app/logs/smarttable.log
+docker cp smarttable:/app/logs/smarttable.log ./smarttable.log
+```
+
+### 4. Nginx Access Logs
+
+Useful for investigating 4xx / 5xx responses and API latency. The log format includes `rt=` (total request time) and `urt=` (upstream response time):
+
+```bash
+docker exec smarttable tail -f /var/log/nginx/access.log
+docker exec smarttable tail -f /var/log/nginx/error.log
+```
+
+### 5. Changing the Log Level
+
+Set `DEBUG` in `.env` and recreate the container for more verbose output:
+
+```bash
+LOG_LEVEL=DEBUG
+```
+
+```bash
+docker compose -f docker-compose.yml up -d --force-recreate
+```
+
+### 6. Windows (PowerShell) Commands
+
+```powershell
+docker logs -f --tail=100 smarttable 2>&1 | Select-String -Pattern "ERROR|Traceback"
+Get-Content .\logs\smarttable.log -Tail 100 -Wait          # equivalent to tail -f
+docker exec smarttable tail -f /var/log/supervisor/app-server.err.log
+```
+
+### Recommended Troubleshooting Order
+
+1. `docker ps -a` — check the container state and whether it is stuck in `Restarting`.
+2. `docker logs --tail=100 smarttable` — check whether startup hangs at database migration or initialization.
+3. `docker exec smarttable supervisorctl status` — find out which process exited abnormally.
+4. Inspect the matching `/var/log/supervisor/*.err.log`.
+5. Inspect the business logs in `./logs/smarttable.log`.
+
+::: tip Operation logs are not stored in files
+User operation logs (who changed which record) are stored in the database. View them on the **Operation Logs** page in the admin console or through `/api/admin/operation-logs`; they are not part of the log files above.
+:::
+
 ## Troubleshooting
 
 ### Port Conflict
@@ -148,7 +271,7 @@ ports:
 
 ### Database Connection Failure
 
-Check `DATABASE_URL` and make sure the database container or file path is reachable.
+Check `DATABASE_URL` and make sure the database container or file path is reachable. See [Viewing Logs](#viewing-logs) for how to read the backend logs and locate the detailed error.
 
 ### Real-time Collaboration
 
