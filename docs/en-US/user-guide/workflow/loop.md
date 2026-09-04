@@ -786,3 +786,25 @@ If context overwriting still occurs, it may be because an exception was swallowe
 | `{{instance}}` | dict | Current workflow instance information | All types |
 
 > **Field drilling note**: `{{loop.current_data.field_id}}` is only available when the data source is `find_records_all`, because in this case `current_data` is a complete record dictionary containing all fields. For other data source types (`find_records_column`, `trigger_field`, `webhook_array`), `current_data` is a single value and does not support drilling. The frontend `LoopVarInserter` component automatically controls the display of field drilling options based on the data source type.
+
+---
+
+## Appendix: How to Get Node IDs and Field IDs
+
+Both loop bodies and template variables (such as `{{loop.current_data.<field_id>}}` and `{{node_outputs.<node_id>.result}}`) use node IDs or field IDs as reference keys. The configuration UI already displays these IDs in multiple places and supports click-to-copy, so there is no need to capture them via network inspection or by inspecting the DOM.
+
+### A.1 Node ID
+
+- On the workflow canvas, the bottom-right corner of a node card shows the current node's ID (in the form `node_xxx`) next to the node type label, rendered in small monospace text.
+- Hover over it to see the full ID; **click the ID to copy it to the clipboard**.
+- In the loop node's **Data Source** dropdown, each option is labeled uniformly as `Node Name (Node ID)`, so you can directly copy the ID of an upstream node such as `find_records` or `webhook` and paste it into `data_source.node_id`.
+
+### A.2 Field ID
+
+- In the **Field Management** dialog, each field in the list shows its ID (in the form `fld_xxx`) to the right of the field name, rendered in small monospace text.
+- **Click the ID to copy it**; you can paste it directly when using it for loop field drilling, e.g. `{{loop.current_data.<field_id>}}`.
+- In the field-drilling dropdown of the **Insert Loop Variable** control, each option is labeled uniformly as `Field Name (Field ID)`, making it easy to copy directly.
+
+### A.3 Copyable Template Variable Syntax
+
+Below the template input boxes of loop body child nodes (Update Record, Create Record, Send Email, Webhook, etc.), the UI lists the reference syntax available in the current context (such as `{{record.<field_id>}}`, `{{node_outputs.<node_id>.result}}`, `{{loop.current_data.<field_id>}}`). **Click any entry to copy the full syntax**, then paste it into the template and replace the placeholder with a real ID.

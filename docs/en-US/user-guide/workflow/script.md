@@ -1071,11 +1071,27 @@ The database migration involved in adding the `'script'` node type:
 | `src/utils/__tests__/workflowNodeType.spec.ts` | Node registry tests | 10 |
 | `src/services/api/__tests__/workflowApiService.spec.ts` | API service tests | 22 |
 
+
 ---
 
-## Document Version
+## Appendix: How to Get Node IDs and Field IDs
 
-| Version | Date | Change Description |
-|---------|------|--------------------|
-| 1.1 | 2026-08-12 | Synced the complete Script node documentation: added configuration panel details (4.2), error handling and retry strategy (4.4), in-loop-body case (5.3), and appendix API/error codes/toolchain/migration/test suite (Chapter 7); added a configuration panel screenshot after "Adding a Script Node" |
-| 1.0 | 2026-08-01 | Initial version covering the complete functionality of the Script node |
+Workflow template variables (such as `{{node_outputs.<node_id>.result.field}}` and `{{record.<field_id>}}`) all use node IDs or field IDs as reference keys. The configuration UI already displays these IDs in multiple places and supports click-to-copy, so there is no need to capture them via network inspection or by inspecting the DOM.
+
+### A.1 Node ID
+
+- On the workflow canvas, the bottom-right corner of a node card shows the current node's ID (in the form `node_xxx`) next to the node type label, rendered in small monospace text.
+- Hover over it to see the full ID; **click the ID to copy it to the clipboard**.
+- In the dropdown options of the Script node's **Input Source** and **Branch Routing**, as well as the field mapping of Update/Create Record nodes, each option is labeled uniformly as `Node Name (Node Type · Node ID)`, so you can directly copy the ID of the node you need.
+
+### A.2 Field ID
+
+- In the **Field Management** dialog, each field in the list shows its ID (in the form `fld_xxx`) to the right of the field name, rendered in small monospace text.
+- **Click the ID to copy it**; you can paste it directly when using it in a template variable such as `{{record.<field_id>}}`.
+- In the field dropdowns of workflow nodes, each option is labeled uniformly as `Field Name (Field ID)`, making it easy to copy directly.
+
+### A.3 Copyable Template Variable Syntax
+
+Below the template input boxes of nodes such as Update Record, Create Record, Send Email, and Webhook, the UI lists the reference syntax available in the current context (such as `{{record.<field_id>}}`, `{{node_outputs.<node_id>.result}}`, `{{loop.item}}`). **Click any entry to copy the full syntax**, then paste it into the template and replace the placeholder with a real ID.
+
+> Tip: Inside loop body child nodes, the **Insert Loop Variable** button also provides snippets such as `{{loop.current_data.<field_id>}}`, whose field dropdowns likewise display field IDs.
