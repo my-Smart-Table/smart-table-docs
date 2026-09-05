@@ -209,6 +209,7 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: '字段类型概览', link: 'field-types.html' },
+                  { text: '字段类型转换规则', link: 'field-types/field-type-conversion.html' },
                   { text: '关联字段', link: 'field-types/link-field.html' },
                   { text: '查找字段', link: 'field-types/lookup-field.html' },
                   { text: '公式字段', link: 'field-types/formula-field.html' }
@@ -467,6 +468,7 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: 'Field Types Overview', link: 'field-types.html' },
+                  { text: 'Field Type Conversion Rules', link: 'field-types/field-type-conversion.html' },
                   { text: 'Link Field', link: 'field-types/link-field.html' },
                   { text: 'Lookup Field', link: 'field-types/lookup-field.html' },
                   { text: 'Formula Field', link: 'field-types/formula-field.html' }

@@ -35,6 +35,57 @@ SmartTable provides a rich set of field types across 9 categories. Each type is 
 Pick the type that matches how the data will be entered, displayed, and calculated. For example, use **Single Select** for statuses, **Link** for relationships, and **Formula** for computed values.
 :::
 
+## Changing the Field Type of an Existing Field
+
+After a field is created, you can still change its **field type**. The system automatically determines the allowed conversion scope based on **whether the field already contains data**, and safely migrates existing values to avoid silent data loss.
+
+### 1. Field has no data: free conversion
+
+When a field has not yet been written to, it can be freely converted to any other type (subject to the universal restrictions below).
+
+> Empty-value rule: `null`, an empty string, or an empty array are treated as "no data"; `0` and `false` are valid business values and count as having data.
+
+### 2. Field has data: lossless only (one exception: Date ↔ Date Time)
+
+When a field already contains data, only **lossless conversions** are allowed — the target type must fully preserve the original value. Beyond that, exactly one lossy conversion is permitted:
+
+- `Date` → `Date Time`: **lossless** — the time part is auto-completed (e.g., `2023-05-01` → `2023-05-01T00:00:00Z`).
+- `Date Time` → `Date`: **lossy** — only the date part is kept and the time part is discarded, **unrecoverably**. A confirmation dialog clearly states "the time part will be discarded and cannot be recovered" before the conversion can proceed.
+
+All other lossy conversions are forbidden (e.g., truncating long text, dropping options when converting multi-select to single select, resolving references to names), so data is never changed unexpectedly without your knowledge.
+
+### 3. Lossless conversion rules (field has data)
+
+| From | Can convert to | Data handling |
+| --- | --- | --- |
+| Single Line Text | Long Text, Rich Text | Original value preserved |
+| Long Text | Rich Text | Original value preserved |
+| Single Select | Multi Select | Single value wrapped as array `[value]` |
+| Email / Phone / URL / Barcode | Single Line Text, Long Text, Rich Text | Original string preserved |
+| Number / Currency / Percent / Rating / Duration | Each other; or text types | Value preserved, only display format changes |
+| Percent (Progress) | Number | Value preserved |
+| Date | Date Time (with `T00:00:00Z`); or text types | Date / original value preserved |
+| Member | Single Line Text, Long Text, Rich Text | Member ID preserved (no longer linked to a member) |
+| Formula | Other types (frozen as a static value) | Current computed result is fixed and stops recalculating |
+
+> When a reference type (Member, Single/Multi Select) is converted to text, the **original ID string is preserved** (strictly lossless). Resolving it to a name or option label is lossy and is never done; the UI shows a notice: "the ID is kept and the link to the member/option is removed."
+
+### 4. Pre-conversion value compatibility check
+
+Even when a conversion is on the allowlist, all existing values are validated against the target type before saving. If any record cannot be carried by the target type and cannot be migrated losslessly, the system **rejects the entire conversion** and returns the number of incompatible records plus samples — values are never silently rewritten or cleared.
+
+### 5. Prohibited conversions
+
+The following types are prohibited in both directions and appear greyed-out with a reason in the type selector:
+
+- **System-maintained types**: Created By, Created Time, Updated By, Updated Time, Auto Number.
+- **Reference / computed types**: Link, Lookup, Rollup, Button.
+- **Target is Formula**: a formula requires an expression, so converting another field "into" a formula is forbidden.
+- **Primary field restriction**: the primary field (used as the record title) may only be converted among text types. **Exception**: a primary auto-number field with data may be demoted to a text type (single/long/rich text); the reverse (primary text → auto-number) remains forbidden.
+- **Text → Phone/Email/URL**: when a single/long/rich text field already has data, converting it to Phone, Email, or URL is forbidden, otherwise existing text may fail the target format validation and produce invalid data. (Empty fields are not restricted.)
+
+> For the full decision order, lossless/lossy allowlists, and reason mapping, see [Field Type Conversion Rules](/en-US/user-guide/field-types/field-type-conversion.html).
+
 ## Common Configuration
 
 Most fields support the following settings:
@@ -112,6 +163,7 @@ System fields are managed automatically:
 
 ## Related Links
 
+- [Field Type Conversion Rules](/en-US/user-guide/field-types/field-type-conversion.html)
 - [Link Field](/en-US/user-guide/field-types/link-field.html)
 - [Lookup Field](/en-US/user-guide/field-types/lookup-field.html)
 - [Formula Field](/en-US/user-guide/field-types/formula-field.html)
