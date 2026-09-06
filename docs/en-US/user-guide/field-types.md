@@ -30,6 +30,7 @@ SmartTable provides a rich set of field types across 9 categories. Each type is 
 | **System Types** | Auto Number | Auto-increment with prefix/suffix/date format/padding |
 | **Others** | Rating | Star rating component |
 | **Others** | Progress | Progress bar/percentage display |
+| **Geolocation** | Geolocation | Structured province/city/district, country/region, or lat-lng coordinates, with map picking and multi-language support |
 
 ::: tip Choosing a Field Type
 Pick the type that matches how the data will be entered, displayed, and calculated. For example, use **Single Select** for statuses, **Link** for relationships, and **Formula** for computed values.
@@ -161,11 +162,23 @@ System fields are managed automatically:
 | Updated Time | Timestamp of the last modification |
 | Auto Number | Auto-incrementing ID with optional prefix, suffix, date format, and padding |
 
+## Geolocation Field
+
+Used to record structured geographic information. It supports cascading Chinese province/city/district selection, country/region selection, detailed addresses, latitude/longitude coordinates, and map picking, with Chinese/English switching that follows the interface language.
+
+**Key configuration**:
+- Choose an **Address format** when creating the field: `Province`, `Province + City`, `Province / City / District`, `Province / City / District + Detail`, `Country / Region`, `Lat-Lng`, `Map Picker`.
+- Values are stored as a structured JSON object (with `province`/`city`/`district`/`detail`/`country`/`region`/`lng`/`lat` fields), making them easy to filter, aggregate, and export.
+- Double-click a cell in the table view to edit inline; cascading formats (province/city/district, country/region) auto-commit when the last level is selected.
+
+> For detailed usage, per-format steps, address auto-recognition, multi-language, and map picking, see [Geolocation Field](/en-US/user-guide/field-types/geo-field.html).
+
 ## Related Links
 
 - [Field Type Conversion Rules](/en-US/user-guide/field-types/field-type-conversion.html)
 - [Link Field](/en-US/user-guide/field-types/link-field.html)
 - [Lookup Field](/en-US/user-guide/field-types/lookup-field.html)
 - [Formula Field](/en-US/user-guide/field-types/formula-field.html)
+- [Geolocation Field](/en-US/user-guide/field-types/geo-field.html)
 - [Table Operations](/en-US/user-guide/table-operations.html)
 - [Workflow Automation](/en-US/user-guide/workflow.html)

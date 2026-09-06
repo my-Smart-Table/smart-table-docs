@@ -212,7 +212,8 @@ export default defineConfig({
                   { text: '字段类型转换规则', link: 'field-types/field-type-conversion.html' },
                   { text: '关联字段', link: 'field-types/link-field.html' },
                   { text: '查找字段', link: 'field-types/lookup-field.html' },
-                  { text: '公式字段', link: 'field-types/formula-field.html' }
+                  { text: '公式字段', link: 'field-types/formula-field.html' },
+                  { text: '地理位置字段', link: 'field-types/geo-field.html' }
                 ]
               },
               {
@@ -471,7 +472,8 @@ export default defineConfig({
                   { text: 'Field Type Conversion Rules', link: 'field-types/field-type-conversion.html' },
                   { text: 'Link Field', link: 'field-types/link-field.html' },
                   { text: 'Lookup Field', link: 'field-types/lookup-field.html' },
-                  { text: 'Formula Field', link: 'field-types/formula-field.html' }
+                  { text: 'Formula Field', link: 'field-types/formula-field.html' },
+                  { text: 'Geolocation Field', link: 'field-types/geo-field.html' }
                 ]
               },
               {
