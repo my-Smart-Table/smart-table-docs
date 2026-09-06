@@ -133,6 +133,18 @@ Validated contact fields. URLs are clickable and open in a new tab.
 ### Attachment
 Upload images, documents, and other files. Supports previews, thumbnails, and downloads.
 
+#### PDF Preview
+PDF attachments support an inline preview so you can read documents without downloading them:
+
+- **Double-click to open**: Double-clicking a PDF attachment in a cell opens the preview dialog, which is always centered in the browser viewport regardless of whether the attachment column is scrolled out of view.
+- **Page-by-page rendering**: Multi-page PDFs are stacked vertically and scaled to fit the preview area (standard A4 ratio). Scroll up/down to browse pages, with behavior matching the official pdf.js viewer.
+- **Zoom and rotate**: Zoom in/out (±) and rotate pages to inspect details.
+- **Page navigation**: Previous/next buttons and direct page-number input with smooth scrolling to the target page.
+- **Download**: A download entry in the preview window lets you save the current PDF locally.
+- **Thumbnail and icon**: PDF attachments show a centered "PDF" label icon in the cell for quick identification.
+
+> The previewer is powered by pdf.js and is ideal for contracts, scans, and report documents.
+
 ## Computed and Relational Fields
 
 ### Formula
