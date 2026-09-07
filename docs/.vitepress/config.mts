@@ -85,7 +85,8 @@ export default defineConfig({
               { text: '架构', link: '/zh-CN/developer/architecture.html' },
               { text: '开发', link: '/zh-CN/developer/development/environment.html' },
               { text: '部署', link: '/zh-CN/developer/deployment/one-click.html' },
-              { text: '应用接入', link: '/zh-CN/developer/app-integration/oauth2-integration.html' }
+              { text: '应用接入', link: '/zh-CN/developer/app-integration/oauth2-integration.html' },
+              { text: '插件开发', link: '/zh-CN/developer/plugins/developer-guide.html' }
             ]
           },
           { text: '更新日志', link: '/zh-CN/changelog.html' },
@@ -263,6 +264,14 @@ export default defineConfig({
                   { text: '第三方应用接入', link: 'app-integration/oauth2-integration.html' },
                   { text: '开放 API', link: 'app-integration/open-api.html' },
                   { text: '实战示例', link: 'app-integration/oauth2-practice-examples.html' }
+                ]
+              },
+              {
+                text: '插件开发',
+                collapsed: false,
+                items: [
+                  { text: '插件开发者指南', link: 'plugins/developer-guide.html' },
+                  { text: '插件体系架构设计', link: 'plugins/architecture.html' }
                 ]
               },
               {
@@ -599,7 +608,8 @@ export default defineConfig({
           { text: '架构', link: '/zh-CN/developer/architecture.html' },
           { text: '开发', link: '/zh-CN/developer/development/environment.html' },
           { text: '部署', link: '/zh-CN/developer/deployment/one-click.html' },
-          { text: '应用接入', link: '/zh-CN/developer/app-integration/oauth2-integration.html' }
+          { text: '应用接入', link: '/zh-CN/developer/app-integration/oauth2-integration.html' },
+          { text: '插件开发', link: '/zh-CN/developer/plugins/developer-guide.html' }
         ]
       },
       { text: '更新日志', link: '/zh-CN/changelog.html' },
