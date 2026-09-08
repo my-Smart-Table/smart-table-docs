@@ -8,6 +8,7 @@ SmartTable 是一款基于 **Vue 3 + Flask** 构建的开源智能多维表格�
 - **多视图**：同一套数据可用表格、看板、甘特图、日历、画廊、表单、分组等多种方式呈现。
 - **低代码自动化**：通过可视化工作流和公式字段，减少重复性手工操作。
 - **实时协作**：基于 WebSocket 的多人实时编辑，支持在线状态、视图同步、单元格锁定和冲突检测。
+- **可扩展插件**：通过 UI 插件（iframe 沙箱 + Vue 模板）与脚本插件（受限子进程）扩展表格能力，插件可读取表格勾选记录进行批处理。
 
 ## 主要能力概览
 
@@ -20,6 +21,7 @@ SmartTable 是一款基于 **Vue 3 + Flask** 构建的开源智能多维表格�
 | **工作流自动化** | 可视化工作流设计器，支持定时触发、记录创建/更新触发，以及创建记录、更新记录、Webhook、条件分支等节点。 |
 | **协作与分享** | Base 分享、表单分享、仪表盘分享、成员角色管理和实时协作编辑。 |
 | **文档管理** | 支持基于 Quill 的富文本编辑和 Markdown 编写，支持 PDF 导出和版本历史。 |
+| **插件体系** | UI 插件在 iframe 沙箱中以 Vue 模板编写，脚本插件在受限子进程运行；支持上传安装、全局/Base 两级启停、两级配置、勾选数据传入、运行日志与回滚。详见[插件开发](/zh-CN/developer/plugins/developer-guide.html)。 |
 
 ::: tip 快速上手
 如果您是第一次使用 SmartTable，建议先阅读[快速开始](/zh-CN/user-guide/getting-started.html)，了解如何创建第一个 Base 和数据表。
@@ -31,6 +33,7 @@ SmartTable 是一款基于 **Vue 3 + Flask** 构建的开源智能多维表格�
 - **后端**：Flask + SQLAlchemy + Alembic
 - **数据库**：SQLite（默认）/ PostgreSQL（生产推荐）
 - **实时通信**：WebSocket（Socket.IO），可选启用
+- **插件沙箱**：UI 插件为 iframe（opaque origin，宿主注入 Vue 3 运行时）；脚本插件为受限 Python 子进程（模块白名单 + 危险内建禁用）
 
 更多架构细节可参考[架构设计](/zh-CN/developer/architecture.html)。
 

@@ -16,6 +16,7 @@ SmartTable covers the full data lifecycle:
 | Record Management | Add, edit, delete, and batch-update records; open record details and track change history. |
 | View Management | Build 6+ view types, each with independent filters, sorts, groups, and frozen columns. |
 | Document Management | Write rich-text or Markdown documents, export to PDF, and keep version history. |
+| Plugin System | Extend tables with UI plugins (sandboxed iframe + Vue templates) and script plugins (restricted subprocess), including install/enable, two-level config, selected-record input, run logs and rollback. |
 
 ## Supported Views
 

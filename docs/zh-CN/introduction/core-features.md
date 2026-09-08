@@ -1,6 +1,6 @@
 # 核心功能
 
-SmartTable 围绕「数据管理 + 视图呈现 + 流程自动化 + 团队协作」四个维度提供了一整套功能，满足从小型项目管理到复杂业务系统的需求。
+SmartTable 围绕「数据管理 + 视图呈现 + 流程自动化 + 团队协作 + 插件扩展」五个维度提供了一整套功能，满足从小型项目管理到复杂业务系统的需求。
 
 ## 多维表格管理
 
@@ -75,6 +75,22 @@ SmartTable 支持 **[27 种字段类型](/zh-CN/user-guide/field-types.html)**�
 
 详情可参考[工作流自动化](/zh-CN/user-guide/workflow.html)。
 
+## 插件体系（可扩展能力）
+
+SmartTable 提供插件机制，把表格能力延伸到系统之外，同时保持清晰的安全边界：
+
+- **双形态插件**
+  - **UI 插件**：在 iframe 沙箱中运行（`sandbox="allow-scripts"`，opaque origin，无法访问宿主 Cookie / localStorage / DOM），宿主注入 Vue 3 运行时，可用标准 Vue 模板语法（`v-model`、`v-for`、`@click`、数据响应式）开发，零构建单文件即可分发。
+  - **脚本插件**：在受限子进程中运行（模块白名单 + 危险内建禁用），数据操作按**触发者身份**由宿主代理执行并鉴权。
+- **生命周期管理**：上传安装、全局启停、Base 级安装/启停/移除、升级、回滚历史版本、卸载——全部由管理员在插件管理页完成；**Base 页面不提供安装入口，打开即用**。
+- **两级配置**：`global` 与 `base` 作用域配置（base 深合并 global），写入时按插件声明的 `configSchema` 校验。
+- **双层权限**：插件 manifest 权限声明 + 用户 RBAC，deny by default，宿主逐方法鉴权。
+- **勾选数据通道**：表格勾选记录以「打开时快照」方式传入插件（仅记录 ID，上限 1000，含全选/截断标记）；扩展点可声明 `requiresSelection` / `maxSelection`，不满足时宿主禁用入口并提示。
+- **安全与稳定**：短时签名 URL 加载沙箱、zip 路径穿越与 zip bomb 防护、脚本超时与并发限制、连续失败自动置 error。
+- **运行日志**：记录状态、耗时、输出、结果与异常堆栈，支持按 Base 查询、结果弹窗与日志详情。
+
+详情可参考[插件开发者指南](/zh-CN/developer/plugins/developer-guide.html)与[插件体系架构设计](/zh-CN/developer/plugins/architecture.html)。
+
 ## 协作与分享
 
 SmartTable 提供完整的协作能力：
@@ -109,6 +125,7 @@ SmartTable 提供完整的协作能力：
 | **文档管理** | 基于 Quill 的富文本编辑和 Markdown 编写，支持 PDF 导出和版本历史。 |
 | **邮件系统（可选）** | 自定义 SMTP 服务器、邮件模板、异步发送队列和发送日志。 |
 | **Webhook 投递（可选）** | Webhook 配置、重试策略、测试功能和投递记录查看。 |
+| **插件体系** | UI 插件（iframe 沙箱 + Vue 模板）与脚本插件（受限子进程），支持安装启停、两级配置、勾选数据传入、运行日志与版本回滚。 |
 
 ## 相关链接
 

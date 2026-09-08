@@ -1,6 +1,6 @@
 # SmartTable 插件体系架构设计
 
-> 版本：1.0-draft ｜ 分支：feat-plugin ｜ 关联文档：[插件开发者指南](./developer-guide.html)
+>  关联文档：[插件开发者指南](./developer-guide.html)
 
 ## 一、概述
 

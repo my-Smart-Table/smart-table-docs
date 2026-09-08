@@ -1,6 +1,6 @@
 # Core Features
 
-SmartTable provides a complete set of tools for personal productivity and team collaboration. This page summarizes the main capabilities you will use every day.
+SmartTable provides a complete set of tools for personal productivity, team collaboration and plugin-based extensibility. This page summarizes the main capabilities you will use every day.
 
 ## Multiple Views
 
@@ -55,6 +55,20 @@ The visual workflow engine (new in v1.6.0) helps you automate repetitive tasks:
 - **Management** — Pause, resume, edit, and bind workflows to tables.
 
 Read more in [Workflow Automation](/en-US/user-guide/workflow.html).
+
+## Plugin System (Extensibility)
+
+SmartTable ships with a plugin mechanism that extends the table beyond built-in features while keeping clear security boundaries:
+
+- **Two plugin types**
+  - **UI plugins** run inside a sandboxed iframe (`sandbox="allow-scripts"`, opaque origin — no access to host cookies, localStorage or DOM). The host injects a Vue 3 runtime, so plugins can be written with standard Vue template syntax (`v-model`, `v-for`, `@click`, reactive data) as a single file — no build step required.
+  - **Script plugins** run in a restricted subprocess (module allowlist, dangerous builtins removed); data operations are proxied and authorized as the triggering user.
+- **Lifecycle**: upload/install, global enable/disable, base-level install/enable/remove, upgrade, rollback to a previous version, and uninstall — all from the plugin management page. Base pages have no install entry: enabled plugins are ready to use.
+- **Two-level configuration**: `global` and `base` scopes (base is deep-merged over global), validated against the plugin's `configSchema`.
+- **Two-layer permissions**: plugin manifest declarations plus user RBAC, deny by default, enforced per method on the host side.
+- **Selection channel**: records selected in the table are passed to the plugin as an open-time snapshot (IDs only, capped at 1000, with select-all/truncated flags). Extension points may declare `requiresSelection` / `maxSelection`; the host disables the entry with a hint when unsatisfied.
+- **Safety**: short-lived signed URLs for the sandbox, zip path-traversal and zip-bomb protection, script timeouts and concurrency limits, automatic `error` state after consecutive failures.
+- **Run logs**: status, duration, output, result and stack traces, queryable per base with a result dialog and log detail view.
 
 ## Collaboration & Sharing
 

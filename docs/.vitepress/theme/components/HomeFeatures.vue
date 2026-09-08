@@ -14,7 +14,8 @@ const features = computed(() => isEnglish.value
       { icon: '🔗', title: 'Rich Field Types', details: 'Supports 20+ field types including text, number, date, link, formula and more' },
       { icon: '🔒', title: 'Data Privatization', details: 'Your data, your control. Deploy on-premise or in private networks for high security requirements.' },
       { icon: '📈', title: 'Visual Dashboard', details: 'Powerful customizable visual dashboard with data visualization support (including large-screen mode).' },
-      { icon: '📚', title: 'Document Knowledge Base', details: 'Rich-text editor (Markdown supported) for building internal documentation and knowledge base.' }
+      { icon: '📚', title: 'Document Knowledge Base', details: 'Rich-text editor (Markdown supported) for building internal documentation and knowledge base.' },
+      { icon: '🧩', title: 'Plugin System', details: 'UI plugins run in a sandboxed iframe with Vue templates; script plugins run in a restricted subprocess — with install/enable, two-level config, selected-records input and run logs.' }
     ]
   : [
       { icon: '🔒', title: '数据私有化', details: '我的数据我做主，不受限于特定平台的服务，高安全需求内网也可部署使用' },
@@ -23,19 +24,24 @@ const features = computed(() => isEnglish.value
       { icon: '📊', title: '多视图支持', details: '表格、看板、甘特图、日历等多种视图，满足不同场景需求' },
       { icon: '📈', title: '可视化仪表盘', details: '优秀的自定义可视化仪表盘，数据可视化展示（支持大屏模式）' },
       { icon: '📚', title: '文档知识库', details: '支持富文本模式编写（Markdown 格式也支持），构建内部文档知识库' },
-      { icon: '🔄', title: '实时协作', details: '支持多人实时协作编辑，数据同步无延迟' }
+      { icon: '🔄', title: '实时协作', details: '支持多人实时协作编辑，数据同步无延迟' },
+      { icon: '🧩', title: '插件体系（可扩展）', details: 'UI 插件在 iframe 沙箱中用 Vue 模板编写，脚本插件在受限子进程运行；支持安装启停、两级配置、勾选数据传入与运行日志' }
     ])
 
 const docLinks = computed(() => isEnglish.value
   ? [
       { icon: '🚀', title: 'Get Started', details: 'Deploy SmartTable in 5 minutes and create your first table', link: '/en-US/user-guide/getting-started.html' },
       { icon: '📖', title: 'User Guide', details: 'Learn table operations, views, field types and collaboration', link: '/en-US/user-guide/table-operations.html' },
-      { icon: '🛠️', title: 'Developer Docs', details: 'Docker deployment, API docs and architecture reference', link: '/en-US/developer/deployment/docker.html' }
+      { icon: '⚙️', title: 'Workflow Automation', details: 'Triggers, node orchestration and versioning — let the system run repetitive business logic', link: '/en-US/user-guide/workflow.html' },
+      { icon: '🛠️', title: 'Developer Docs', details: 'Docker deployment, API docs and architecture reference', link: '/en-US/developer/deployment/docker.html' },
+      { icon: '🧩', title: 'Plugin Development', details: 'UI plugins in a sandboxed iframe, script plugins in a restricted subprocess, selection channel and run logs', link: '/en-US/developer/plugins/developer-guide.html' }
     ]
   : [
       { icon: '🚀', title: '快速开始', details: '5 分钟部署 SmartTable，创建第一个数据表', link: '/zh-CN/user-guide/getting-started.html' },
       { icon: '📖', title: '用户指南', details: '深入了解表格操作、视图、字段类型和协作功能', link: '/zh-CN/user-guide/table-operations.html' },
-      { icon: '🛠️', title: '开发者文档', details: 'Docker 部署、API 文档、架构设计参考', link: '/zh-CN/developer/deployment/docker.html' }
+      { icon: '⚙️', title: '工作流自动化', details: '触发器、节点编排与版本管理，把重复性业务交给系统自动执行', link: '/zh-CN/user-guide/workflow.html' },
+      { icon: '🛠️', title: '开发者文档', details: 'Docker 部署、API 文档、架构设计参考', link: '/zh-CN/developer/deployment/docker.html' },
+      { icon: '🧩', title: '插件开发', details: '双形态插件、沙箱安全边界、两级配置、勾选数据通道与运行日志', link: '/zh-CN/developer/plugins/developer-guide.html' }
     ])
 </script>
 

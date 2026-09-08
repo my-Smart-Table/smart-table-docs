@@ -354,7 +354,8 @@ export default defineConfig({
               { text: 'Architecture', link: '/en-US/developer/architecture.html' },
               { text: 'Development', link: '/en-US/developer/development/environment.html' },
               { text: 'Deployment', link: '/en-US/developer/deployment/one-click.html' },
-              { text: 'App Integration', link: '/en-US/developer/app-integration/oauth2-integration.html' }
+              { text: 'App Integration', link: '/en-US/developer/app-integration/oauth2-integration.html' },
+              { text: 'Plugin Development', link: '/en-US/developer/plugins/developer-guide.html' }
             ]
           },
           { text: 'Changelog', link: '/en-US/changelog.html' },
@@ -532,6 +533,14 @@ export default defineConfig({
                   { text: 'Third-Party Integration', link: 'app-integration/oauth2-integration.html' },
                   { text: 'Open API', link: 'app-integration/open-api.html' },
                   { text: 'Integration Examples', link: 'app-integration/oauth2-practice-examples.html' }
+                ]
+              },
+              {
+                text: 'Plugin Development',
+                collapsed: false,
+                items: [
+                  { text: 'Plugin Developer Guide', link: 'plugins/developer-guide.html' },
+                  { text: 'Plugin Architecture', link: 'plugins/architecture.html' }
                 ]
               },
               {
