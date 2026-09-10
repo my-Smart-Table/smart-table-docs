@@ -2,6 +2,60 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.6 (2026-09-10)
+
+This release focuses on the **plugin extension system**, **geolocation field**, **form enhancements**, and **workflow & dashboard optimizations**. It introduces a plugin development extension architecture with frontend/backend sample plugins, supporting table row-selection data passing and extension-point constraints; adds a new geolocation field; shared forms now support field-level defaults & readonly config, fields-per-row layout and field order adjustment; the workflow update-record node supports syncing linked tables; and a batch of issues has been fixed.
+
+### New Features & Improvements
+
+#### 🧩 Plugin Extension System ⭐
+
+- ⭐ **Plugin Extension Architecture**: Implemented the project plugin development extension system with frontend and backend sample plugins
+- ⭐ **Plugin Data Passing**: Support passing table row-selection data to plugins with extension-point selection constraints
+- **Plugin Docs & Samples**: Updated the plugin development guide, rebuilt samples with Vue template rendering, and added the hello-panel sample plugin
+
+#### 📍 Geolocation Field ⭐
+
+- ⭐ **Geolocation Field**: New geolocation field component and configuration, with Tianmap (Tianditu) service support
+
+#### 📝 Form Enhancements
+
+- ⭐ **Field-Level Defaults & Readonly**: Shared forms support field-level default values and readonly configuration
+- **Fields-per-Row Layout**: Form views and shared forms support configurable fields per row
+- **Field Order Adjustment**: Shared forms support reordering fields and display visible fields in configured order
+- **Linked Field Support**: Creating records now supports selecting and writing linked fields; anonymous shared forms can read linked fields
+
+#### 🔧 Field & Data Handling
+
+- **Type Conversion Constraints**: Added restrictions and confirmation for converting existing field types
+- **Attachment Preview**: Added PDF preview and image fullscreen viewing
+
+#### ⚙️ Workflow & Dashboard
+
+- **Workflow**: The update-record node supports syncing updates to linked tables
+- **Dashboard**: Numeric components support custom font size, color, alignment and labels
+
+#### 🛠 Admin & Account
+
+- **Platform Entry Domain**: System settings now support a platform entry domain, used by email notifications and in-site messages
+- **Registration Hint**: The registration hint is shown dynamically based on the registration switch
+
+### Bug Fixes
+
+- Fixed PostgreSQL migration failure; switched the driver to psycopg for Python 3.14 compatibility
+- Fixed stale optimistic-lock baseline and permission check errors on document save
+- Fixed Chinese full-text search matching failure when no fields are specified
+- Fixed keyboard and clipboard conflicts in long-text and rich-text editors
+- Fixed inability to clear field default values
+- Fixed record handling issues in master-detail scenarios
+- Fixed wrong change-password API path causing request failures
+- Added online-status heartbeat and expiration cleanup, fixing ghost-online issues
+- Fixed captcha and submit button being squeezed in multi-column shared form layouts
+- Fixed incorrect return value when test email sending succeeds
+- Fixed missing plugin context on routes without a tableId
+- Removed foreign-key cascade deletion of record history to preserve audit log integrity
+- **Global Table Search Failure**: Fixed global search failures after table changes and when linked fields exist
+
 ## v1.6.5 (2026-08-24)
 
 This release focuses on **internationalization & multi-language framework**, **third-party app integration & audit system**, **date field enhancements**, and **table feature optimizations**. Built a frontend/backend i18n framework covering the complete feature UI, with a language switcher and automatic system-language detection; added OAuth2 third-party app integration with complete application audit logs; introduced a unified DateInput component, text-format formula fields and unified number display; added a table change-history audit dialog, member-name and formula-result export, and shared-form formula field display; and fixed a batch of issues.
