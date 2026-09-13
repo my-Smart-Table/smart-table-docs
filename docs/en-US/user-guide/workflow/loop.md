@@ -27,6 +27,7 @@ The following node types can be added inside a loop body (the `condition` branch
 |----------|------|-------------|
 | `webhook` | Webhook | Call an external HTTP endpoint |
 | `send_email` | Send Email | Send an email to specified recipients |
+| `notify` | Internal Message | Send an in-app message to specified people |
 | `update_record` | Update Record | Update records in a data table |
 | `create_record` | Create Record | Create new records in a target data table |
 | `find_records` | Find Records | Query records in a data table |

@@ -36,8 +36,13 @@ Workflows are bound to a base or a specific table. You can pause, resume, edit, 
 | Create Record | Creates a record in a target table with static values or reference expressions |
 | Update Record | Updates fields on the source record with static values or expressions |
 | Webhook Node | Calls an external HTTP endpoint using an existing config or inline config |
+| Send Email Node | Sends email to specified addresses with custom content or preset templates |
+| Internal Message Node | Sends in-app messages to specified people with multiple recipient sources; no email service required |
 | Condition Node | Branches the workflow based on AND/OR condition combinations |
-| Node Sorting | Drag nodes to adjust execution order |
+
+### Node Sorting
+
+In the workflow designer you can drag nodes to change their execution order, giving you flexible control over the business process.
 
 ::: tip Reference Expressions
 Use reference expressions to pull values from the trigger record or related records. For example, map the trigger record's assignee into a newly created task.

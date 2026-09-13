@@ -90,6 +90,8 @@ The following actions automatically generate in-app notifications:
 | Approval routing and result | The initiator and related approvers | Approval |
 | Workflow execution notification | Recipients configured in the workflow | Workflow |
 
+The "Workflow execution notification" row is produced by the [Internal Message Node](/en-US/user-guide/workflow/notify.html) in workflow automation. That node supports five recipient sources — specific members, member field, workflow trigger user, record creator, and all space members — and sends in-app messages only, without going through the email channel. See [Internal Message Node](/en-US/user-guide/workflow/notify.html) for details.
+
 ## 5. Administrator Features
 
 System administrators can review the operational status of in-app notifications in the admin area:

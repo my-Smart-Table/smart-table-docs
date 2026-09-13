@@ -35,6 +35,8 @@ SmartTable 的工作流自动化引擎（v1.6.0 新增）可以帮助您将重�
 | **创建记录节点** | 在目标数据表自动创建记录，支持字段值映射（静态值或引用表达式）。 |
 | **更新记录节点** | 自动更新源记录或目标记录的字段值，支持静态值和表达式。 |
 | **Webhook 节点** | 调用外部 HTTP 接口，支持选择已有 Webhook 配置或内联配置。 |
+| **发送邮件节点** | 向指定邮箱发送邮件，支持自定义内容与系统预设模板。 |
+| **站内信通知节点** | 向指定人员发送站内消息，支持多种接收人来源，无需邮件服务配置。 |
 | **条件节点** | 根据条件走不同分支，支持 AND/OR 条件组合。 |
 
 ### 节点排序
@@ -101,6 +103,7 @@ SmartTable 为每个工作流保存版本快照：
 - [更新记录节点](/zh-CN/user-guide/workflow/update-record.html)
 - [查找记录节点](/zh-CN/user-guide/workflow/find-records.html)
 - [发送邮件节点](/zh-CN/user-guide/workflow/send-email.html)
+- [站内信通知节点](/zh-CN/user-guide/workflow/notify.html)
 - [Webhook 节点](/zh-CN/user-guide/workflow/webhook.html)
 - [条件节点](/zh-CN/user-guide/workflow/condition.html)
 - [循环节点](/zh-CN/user-guide/workflow/loop.html)
