@@ -38,6 +38,15 @@ This section collects common issues and solutions you may encounter when deployi
 3. If real-time collaboration is not needed, disable it in system settings or set `ENABLE_REALTIME=false`.
 4. Use `redis-cli ping` to test whether Redis is reachable.
 
+### Will data be lost after upgrading from an older version?
+
+**Solution**:
+
+1. On first startup after an upgrade, the database migration (Alembic) runs automatically; existing data will not be lost.
+2. Still, it is recommended to back up `data/` (database), `uploads/` (attachments) and `config/.env` (configuration) before upgrading.
+3. When upgrading the Docker image, keep the `smarttable_data`, `smarttable_uploads` and `smarttable_redis` volumes to preserve your data.
+4. Since v1.6.6 the PostgreSQL driver is psycopg, so `DATABASE_URL` must use the `postgresql+psycopg://` prefix.
+
 ### PostgreSQL mode fails to create tables or migrate
 
 **Symptom**: After switching to PostgreSQL, errors such as `relation does not exist` or migration failures appear.
@@ -71,6 +80,15 @@ This section collects common issues and solutions you may encounter when deployi
 1. Administrators can enable or disable registration in "System Management → System Settings".
 2. If registration is disabled, users can only be created manually by an administrator.
 3. Check whether the current user has the administrator role.
+
+### Editors (EDITOR) cannot create fields, workflows or dashboards
+
+**Symptom**: Editor-role users cannot find field management or workflow entries, or receive permission errors.
+
+**Solution**:
+
+1. Since v1.6.4, field-related and management operations (field management, workflows, tables, documents, dashboards, etc.) require the ADMIN role or above.
+2. Ask the Base owner to promote the user to admin in member management, or let an admin perform the operation.
 
 ## Tables & Fields
 
@@ -127,6 +145,15 @@ This section collects common issues and solutions you may encounter when deployi
 2. Confirm the group field value corresponding to the target column matches the card's intended value.
 3. Check whether the current user has edit permission for the table.
 
+### Multiple users on the same LAN are rate-limited when submitting a shared form
+
+**Symptom**: When several users submit the same shared form at the same time, some receive a "too many requests" prompt.
+
+**Solution**:
+
+1. Since v1.6.4, the share form rate limit is counted per share token (100 requests / 15 minutes per form) instead of per client IP, so multiple users behind the same LAN no longer interfere with each other.
+2. If the limit is still triggered (e.g. high-frequency automated submission), retry later or integrate via the Open API instead.
+
 ### Large tables load slowly
 
 **Symptom**: When there are tens of thousands of records, the table first screen takes several seconds or longer to load.
@@ -144,10 +171,20 @@ This section collects common issues and solutions you may encounter when deployi
 
 **Solution**:
 
-1. Check the "File count limit" and "File size limit" of the attachment field; the default single file limit is 10MB.
+1. Check the "File count limit" and "File size limit" of the attachment field; the server-side single file limit is 50MB.
 2. Confirm the upload directory has write permissions; Docker deployment requires persistent storage volume.
 3. v1.6.3 supports single-click thumbnail preview of full image; if preview fails, check whether the browser blocked the popup.
 4. Check backend logs for MIME type or file content security validation failures.
+
+### Geo location field is missing or the map picker is empty
+
+**Symptom**: The geo location field type cannot be found, or the map picker component appears blank.
+
+**Solution**:
+
+1. The geo location field (added in v1.6.6) is based on the Tianditu map service. Configure `TIANDITU_KEY` in the server environment variables (apply at https://console.tianditu.gov.cn).
+2. Without `TIANDITU_KEY`, the frontend automatically hides map-related entries; refresh the page after configuring.
+3. For private deployments, replace the Tianditu service address via `TIANDITU_API_BASE`.
 
 ## Workflow
 
@@ -186,6 +223,16 @@ This section collects common issues and solutions you may encounter when deployi
 3. Confirm the recipient server can access the network where SmartTable is deployed (especially important for intranet deployments).
 4. Check whether Webhook headers and body templates are rendered correctly to avoid request dropping due to variable resolution failure.
 
+### Custom script node fails or produces no output
+
+**Symptom**: A workflow Python script node (added in v1.6.4) errors out or returns an empty result.
+
+**Solution**:
+
+1. Scripts run in a server-side sandbox as an isolated subprocess with a restricted environment. Use the "Test Run" button in the node configuration panel to verify script logic first.
+2. Script results have a size limit (about 1MB); avoid constructing or returning oversized objects in scripts.
+3. Check Python syntax and variable references, and inspect the "Execution Logs" for error details.
+
 ## Real-time Collaboration
 
 ### Online users not shown or collaboration status abnormal
@@ -211,6 +258,16 @@ This section collects common issues and solutions you may encounter when deployi
 2. Confirm SMTP service is enabled for the mailbox; some providers require a separate authorization code.
 3. Check email sending logs to see if messages were blocked by the provider or sent to spam.
 4. For enterprise email, confirm there are no sending rate limits or IP whitelist restrictions.
+
+### No notifications received
+
+**Symptom**: No notification is received for collaboration invitations, approvals, etc.
+
+**Solution**:
+
+1. Since v1.6.4, notifications are delivered primarily via in-app messages (the bell icon in the top-right corner). Check there first.
+2. If in-app messages arrive but emails do not, check the SMTP configuration in the admin console under System Settings and use the test send feature.
+3. Since v1.6.6, links in email notifications are generated from the "Platform entry domain" setting; if links point to the wrong address, configure it in System Settings.
 
 ## Performance & Browser
 
@@ -245,3 +302,17 @@ This section collects common issues and solutions you may encounter when deployi
 1. Click the "Issue Feedback" button in the top-right corner, fill in the description, and attach screenshots and logs.
 2. Submit via GitHub Issues: [https://github.com/ldbinac/smart_table/issues](https://github.com/ldbinac/smart_table/issues)
 3. Follow the WeChat official account "程序员吕洞宾" for the latest updates.
+
+### How to switch the interface language
+
+**Solution**:
+
+1. Since v1.6.5, both Chinese and English interfaces are supported. Switch manually via the language selector in the top-right corner.
+2. If not selected manually, the system automatically detects the browser language.
+
+### How to develop or install plugins
+
+**Solution**:
+
+1. v1.6.6 introduced the plugin extension system, allowing table capabilities to be extended via plugins. The project ships with frontend and backend sample plugins (hello-panel).
+2. See the developer documentation: [Plugin Architecture](/en-US/developer/plugins/architecture) and [Plugin Developer Guide](/en-US/developer/plugins/developer-guide).
