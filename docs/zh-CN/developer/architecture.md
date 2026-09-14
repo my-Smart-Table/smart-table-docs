@@ -21,7 +21,7 @@ SmartTable 采用前后端分离架构，前端基于 Vue 3 构建用户界面�
 | 本地数据库 | Dexie | ^3.2.7 | IndexedDB 封装 |
 | WebSocket | socket.io-client | ^4.8.3 | 实时通信 |
 | 工具库 | lodash-es, @vueuse/core | - | 工具函数集 |
-| 富文本 | tinyeditor | ^4.0.0 | 富文本编辑器（1.4+） |
+| 富文本 | @opentiny/fluent-editor | ^4.1.2 | 富文本编辑器（1.4+） |
 | 电子表格 | xlsx | ^0.18.5 | Excel 解析生成 |
 | 构建工具 | Vite | ^8.0.1 | 极速构建工具 |
 | 测试框架 | Vitest | ^3.2.4 | 单元测试 |
@@ -40,14 +40,15 @@ SmartTable 采用前后端分离架构，前端基于 Vue 3 构建用户界面�
 | CORS | Flask-CORS | 4.0.0 | 跨域支持 |
 | 缓存 | Flask-Caching（+ Redis 可选） | 2.1.0 | 缓存加速 |
 | WebSocket | Flask-SocketIO | 5.3.6 | 实时通信 |
-| 异步支持 | eventlet | 0.36.1 | 异步处理 |
+| PostgreSQL 驱动 | psycopg (3) | 3.2.13 | PostgreSQL 适配 |
+| 异步支持 | eventlet | 0.39.1 | 异步处理 |
 | 数据序列化 | marshmallow | 3.20.1 | 数据验证序列化 |
 | 导入导出 | pandas, openpyxl, xlrd | 2.1.4 / 3.1.2 / 2.0.1 | 数据处理 |
 | 图片处理 | Pillow | 10.4.0 | 图片缩略图 |
 | 对象存储 | MinIO（可选） | - | 文件对象存储 |
 | 加密 | cryptography | 42.0.5 | 加密算法 |
 | API 文档 | Flasgger | 0.9.7b2 | Swagger UI |
-| WSGI 服务器 | Eventlet WSGI Server | 0.36.1 | 生产服务器 |
+| WSGI 服务器 | Eventlet WSGI Server | 0.39.1 | 生产服务器 |
 | 部署 | Docker, Nginx | - | 容器化部署 |
 
 ### 数据存储方案

@@ -35,7 +35,7 @@ This section collects common issues and solutions you may encounter when deployi
 
 1. Docker deployment includes Redis by default. For manual deployment, Redis must be installed and started separately.
 2. Check whether `REDIS_URL` in `.env` or environment variables is configured correctly.
-3. If real-time collaboration is not needed, disable it in system settings or set `COLLABORATION_ENABLED=false`.
+3. If real-time collaboration is not needed, disable it in system settings or set `ENABLE_REALTIME=false`.
 4. Use `redis-cli ping` to test whether Redis is reachable.
 
 ### PostgreSQL mode fails to create tables or migrate
@@ -46,8 +46,8 @@ This section collects common issues and solutions you may encounter when deployi
 
 1. Confirm the database has been created in advance and the user has permissions to create tables and extensions.
 2. Alembic will automatically run migrations on first startup; make sure the working directory is correct (run from `smarttable-backend`).
-3. If migration versions are inconsistent, manually run `flask db upgrade`.
-4. Check that the `DATABASE_URL` format is correct, e.g., `postgresql://user:pass@host:5432/dbname`.
+3. If migration versions are inconsistent, manually run `python run.py migrate`.
+4. Check that the `DATABASE_URL` format is correct, e.g., `postgresql+psycopg://user:pass@host:5432/dbname`.
 
 ## Login & Permissions
 

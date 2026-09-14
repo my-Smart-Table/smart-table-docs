@@ -9,7 +9,7 @@ This guide explains how to deploy SmartTable with Docker. Docker is the fastest 
 
 ## Quick Deploy with the Official Image
 
-The simplest deployment uses the official image:
+The official image automatically adapts to the current architecture (linux/amd64, linux/arm64):
 
 ```bash
 docker run -d \
@@ -19,12 +19,6 @@ docker run -d \
   -v smarttable_uploads:/app/uploads \
   -v smarttable_redis:/data/redis \
   ygbinac/smarttable:latest
-```
-
-For ARM architectures, use the ARM64 tag:
-
-```bash
-ygbinac/smarttable:1.4.1-arm64
 ```
 
 ### Docker Compose (Official Image)
@@ -64,7 +58,7 @@ To build and run from source:
 ```bash
 # Clone the repository
 git clone https://github.com/ldbinac/smart_table.git
-cd smart-table-spec
+cd smart_table
 
 # Copy environment variables
 cp .env.example .env
@@ -85,8 +79,9 @@ Access URLs after startup:
 | Service | URL |
 |---------|-----|
 | Frontend | `http://localhost` |
-| Backend API | `http://localhost:5000/api` |
-| API Docs | `http://localhost:5000/apidocs` |
+| Backend API | `http://localhost/api` |
+
+> The unified image only exposes port 80; Nginx inside the container proxies `/api` to the backend on port 5000, which is not mapped to the host. The Swagger API docs (`/apidocs`) are only reachable in a standalone backend deployment where port 5000 is directly accessible.
 
 ## Production Deployment
 
@@ -96,28 +91,25 @@ For production, use the full stack with PostgreSQL and Redis:
 docker-compose -f docker-compose.full.yml up -d
 ```
 
-Or use the development PostgreSQL + Redis configuration:
-
-```bash
-docker-compose -f docker-compose.dev.yml up -d
-```
-
 ## Docker Compose Service Architecture
 
 ```
-smart-table-spec/
-├── docker-compose.yml              # Development (SQLite)
+smart_table/
+├── docker-compose.yml              # Simple deploy (SQLite + embedded Redis)
 ├── docker-compose.full.yml         # Production (PostgreSQL + Redis + MinIO)
-├── docker-compose.dev.yml          # Development (PostgreSQL + Redis)
-├── Dockerfile                      # Frontend build + Nginx
+├── Dockerfile                      # Frontend build + backend + Nginx + Supervisor
 ├── smarttable-backend/
-│   ├── Dockerfile                  # Backend application
-│   └── docker-compose.yml          # Backend standalone orchestration
+│   ├── Dockerfile                  # Backend application (standalone)
+│   └── docker-compose.yml          # Backend standalone orchestration (PostgreSQL + Redis)
 └── docker/
     ├── nginx/
     │   └── nginx.conf              # Nginx configuration
-    └── supervisor/
-        └── supervisord.conf        # Process manager configuration
+    ├── supervisor/
+    │   └── supervisord.conf        # Process manager configuration
+    ├── redis/
+    │   └── redis.conf              # Redis configuration
+    ├── server_runner.py            # Eventlet WSGI launcher
+    └── entrypoint.sh               # Container entrypoint script
 ```
 
 ## Environment Variables
@@ -128,11 +120,13 @@ Key variables are documented in `.env.example` and `smarttable-backend/.env.exam
 |----------|-------------|---------|----------|
 | `SECRET_KEY` | Flask secret key | — | Yes (production) |
 | `JWT_SECRET_KEY` | JWT secret key | — | Yes (production) |
-| `DATABASE_URL` | Database connection | `sqlite:///smarttable.db` | No |
+| `DATABASE_URL` | Database connection | `sqlite:///data/smarttable.db` | No |
 | `REDIS_URL` | Redis address | `redis://localhost:6379/0` | No |
 | `ENABLE_REALTIME` | Enable real-time collaboration | `false` | No |
-| `MAIL_SERVER` | SMTP server | — | If using email |
-| `MINIO_ENDPOINT` | MinIO address | — | If using object storage |
+| `CORS_ORIGINS` | Allowed cross-origin origins (comma separated) | Local origins | Recommended (production) |
+| `LOG_LEVEL` | Log level | `INFO` | No |
+
+> Note: SMTP email settings are not environment variables — they are maintained in the admin console under System Settings. The MinIO variables (`MINIO_ENDPOINT` etc.) have no implemented functionality yet and can be ignored.
 
 For a full list, see [Configuration](/en-US/developer/deployment/configuration.html).
 

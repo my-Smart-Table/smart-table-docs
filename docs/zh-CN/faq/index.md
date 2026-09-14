@@ -35,7 +35,7 @@
 
 1. Docker 部署已内嵌 Redis，若手动部署需单独安装并启动 Redis。
 2. 检查 `.env` 或环境变量中的 `REDIS_URL` 是否配置正确。
-3. 如果不需要实时协作功能，可在系统设置中关闭协作开关，或设置 `COLLABORATION_ENABLED=false`。
+3. 如果不需要实时协作功能，可在系统设置中关闭协作开关，或设置 `ENABLE_REALTIME=false`。
 4. 使用 `redis-cli ping` 测试 Redis 是否可达。
 
 ### PostgreSQL 模式下表创建失败或迁移报错
@@ -46,8 +46,8 @@
 
 1. 确认数据库已提前创建，且用户拥有创建表和扩展的权限。
 2. 首次启动时 Alembic 会自动执行迁移，确保运行目录正确（应在 `smarttable-backend` 目录下执行）。
-3. 若迁移版本不一致，可手动执行 `flask db upgrade`。
-4. 检查 `DATABASE_URL` 格式是否正确，例如：`postgresql://user:pass@host:5432/dbname`。
+3. 若迁移版本不一致，可手动执行 `python run.py migrate`。
+4. 检查 `DATABASE_URL` 格式是否正确，例如：`postgresql+psycopg://user:pass@host:5432/dbname`。
 
 ## 登录与权限
 

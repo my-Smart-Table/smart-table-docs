@@ -21,7 +21,9 @@ pnpm install
 pnpm run dev
 ```
 
-访问 `http://localhost:5173`
+访问 `http://localhost:3000`
+
+> Vite 开发服务器已在 `vite.config.ts` 中配置代理：`/api` 与 `/uploads` 请求会自动转发到 `http://localhost:5000`，因此前端开发时需要同时启动后端服务（见下文）。
 
 #### 构建生产版本
 
@@ -50,30 +52,40 @@ pnpm run test:coverage
 
 ### 后端服务
 
-#### 使用 Docker Compose（推荐）
+#### 使用 Docker Compose
+
+**方式一：统一镜像（SQLite，推荐快速体验与前端开发）**——在项目根目录执行，单个容器包含前端、后端与内嵌 Redis：
+
+```bash
+# 在项目根目录（smart_table）
+cp .env.example .env
+
+# 构建并启动
+docker compose up -d
+
+# 访问 http://localhost
+```
+
+**方式二：后端独立编排（PostgreSQL + Redis）**——在 `smarttable-backend` 目录执行：
 
 ```bash
 cd smarttable-backend
 
 # 复制环境变量配置文件
 cp .env.example .env
-# 编辑 .env 文件配置数据库连接等（默认使用 SQLite）
+# 编辑 .env，配置 PostgreSQL 连接（DATABASE_URL）
 
-# 启动所有服务（SQLite 模式）
-docker-compose up -d
-
-# 或使用 PostgreSQL + Redis（适合生产环境）
-# v1.4.0 优化：Docker 部署内嵌 Redis，无需额外启动 Redis 容器
-docker-compose -f docker-compose.dev.yml up -d
+# 启动 PostgreSQL + Redis + 后端
+docker compose up -d
 
 # 执行数据库迁移
-docker-compose exec backend flask db upgrade
+docker compose exec backend python run.py migrate
 
 # 查看日志
-docker-compose logs -f backend
+docker compose logs -f backend
 
-# 访问 API 文档
-# http://localhost:5000/apidocs  (Swagger UI)
+# 访问 API 文档（Swagger UI）
+# http://localhost:5000/apidocs
 ```
 
 #### 本地开发
@@ -94,16 +106,14 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # 复制环境变量配置文件
+# 也可复制为 config/.env（run.py 会优先加载 config/.env，其次加载 .env）
 cp .env.example .env
 # 默认使用 SQLite，无需修改 DATABASE_URL
 
-# 初始化数据库
-flask db upgrade
+# 初始化/迁移数据库
+python run.py migrate
 
-# 启动开发服务器（默认不启用实时协作）
-flask run --reload
-
-# 或使用 run.py 启动（支持更多选项）
+# 启动开发服务器（默认不启用实时协作，FLASK_DEBUG=True 时支持热重载）
 python run.py
 
 # 启用实时协作功能
@@ -121,6 +131,6 @@ python run.py --enable-realtime
 ✅ **数据迁移**: Alembic 数据库迁移工具\
 ✅ **API 文档**: 完整的 Swagger/OpenAPI 文档（Flasgger）\
 ✅ **实时协作**: 可选的 WebSocket 实时协作功能（通过 `--enable-realtime` 启用）\
-✅ **邮件系统**: 可选的 SMTP 邮件发送功能\
-✅ **对象存储**: 可选的 MinIO 文件存储\
+✅ **邮件系统**: 可选的 SMTP 邮件发送功能（SMTP 配置在管理后台「系统设置」中维护）\
+✅ **对象存储**: MinIO 文件存储（规划中，尚未实现，当前使用本地文件系统）\
 ✅ **安全防护**: XSS 防护、速率限制、安全响应头

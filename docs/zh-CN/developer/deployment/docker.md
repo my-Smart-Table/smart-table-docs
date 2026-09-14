@@ -65,7 +65,7 @@ docker-compose up -d
 
 ```bash
 git clone https://github.com/ldbinac/smart_table.git
-cd smart-table-spec
+cd smart_table
 ```
 
 ### 2. 配置环境变量
@@ -92,37 +92,38 @@ docker-compose logs -f
 ### 4. 访问应用
 
 - 前端应用：http://localhost
-- 后端 API：http://localhost:5000/api
-- API 文档：http://localhost:5000/apidocs
+- 后端 API：http://localhost/api
+
+> 统一镜像只对外暴露 80 端口，由容器内 Nginx 将 `/api` 反向代理到后端 5000 端口；后端 5000 端口未映射到宿主机。Swagger API 文档（`/apidocs`）仅在独立后端部署（后端 5000 端口直接可访问）时可用。
 
 ## 生产环境部署（PostgreSQL + Redis）
 
 对于生产环境或多用户并发场景，建议使用 PostgreSQL 和 Redis：
 
 ```bash
-# 使用生产环境完整配置
+# 使用生产环境完整配置（PostgreSQL + Redis + MinIO）
 docker-compose -f docker-compose.full.yml up -d
-
-# 或使用开发环境 PostgreSQL + Redis 配置
-docker-compose -f docker-compose.dev.yml up -d
 ```
 
 ## Docker Compose 服务架构
 
 ```
-smart-table-spec/
-├── docker-compose.yml              # 开发环境（SQLite）
+smart_table/
+├── docker-compose.yml              # 简单部署（SQLite + 内嵌 Redis）
 ├── docker-compose.full.yml         # 生产环境（PostgreSQL + Redis + MinIO）
-├── docker-compose.dev.yml          # 开发环境（PostgreSQL + Redis）
-├── Dockerfile                      # 前端构建 + Nginx
+├── Dockerfile                      # 前端构建 + 后端 + Nginx + Supervisor
 ├── smarttable-backend/
-│   ├── Dockerfile                  # 后端应用
-│   └── docker-compose.yml          # 后端独立编排
+│   ├── Dockerfile                  # 后端应用（独立部署）
+│   └── docker-compose.yml          # 后端独立编排（PostgreSQL + Redis）
 └── docker/
     ├── nginx/
     │   └── nginx.conf              # Nginx 配置
-    └── supervisor/
-        └── supervisord.conf        # 进程管理配置
+    ├── supervisor/
+    │   └── supervisord.conf        # 进程管理配置
+    ├── redis/
+    │   └── redis.conf              # Redis 配置
+    ├── server_runner.py            # Eventlet WSGI 启动脚本
+    └── entrypoint.sh               # 容器入口脚本
 ```
 
 ## 环境变量配置说明
@@ -133,22 +134,30 @@ smart-table-spec/
 | --- | --- | --- | --- |
 | `SECRET_KEY` | Flask 密钥 | - | 生产环境必填 |
 | `JWT_SECRET_KEY` | JWT 密钥 | - | 生产环境必填 |
-| `DATABASE_URL` | 数据库连接 | `sqlite:///smarttable.db` | 否 |
+| `DATABASE_URL` | 数据库连接 | `sqlite:///data/smarttable.db` | 否 |
 | `REDIS_URL` | Redis 地址 | `redis://localhost:6379/0` | 否 |
 | `ENABLE_REALTIME` | 启用实时协作 | `false` | 否 |
-| `MAIL_SERVER` | SMTP 服务器 | - | 邮件功能需要 |
-| `MINIO_ENDPOINT` | MinIO 地址 | - | 对象存储需要 |
+| `CORS_ORIGINS` | 允许的跨域来源（逗号分隔） | 本地地址 | 生产环境建议配置 |
+| `LOG_LEVEL` | 日志级别 | `INFO` | 否 |
+
+> 说明：SMTP 邮件配置不通过环境变量设置，而是在管理后台「系统设置」中维护；MinIO 对象存储相关变量（`MINIO_ENDPOINT` 等）目前尚未实现对应功能，可忽略。
 
 完整的配置说明请参考 [.env.example](https://github.com/ldbinac/smart_table/blob/main/.env.example) 和 [smarttable-backend/.env.example](https://github.com/ldbinac/smart_table/blob/main/smarttable-backend/.env.example)。
 
 ## 启用实时协作
 
-如需在 Docker 中启用实时协作功能，在 `docker-compose.yml` 或 `.env` 中添加：
+如需在 Docker 中启用实时协作功能，在 `docker-compose.yml` 或 `.env` 中添加 `ENABLE_REALTIME=true`，并按部署方式配置 SocketIO 消息队列：
 
 ```yaml
+# 简单部署（内嵌 Redis，连接容器本地）
 environment:
   - ENABLE_REALTIME=true
-  - SOCKETIO_MESSAGE_QUEUE=redis://redis:6379/1
+  - SOCKETIO_MESSAGE_QUEUE=redis://localhost:6379/2
+
+# 完整部署（docker-compose.full.yml，Redis 为独立容器且设置了密码）
+environment:
+  - ENABLE_REALTIME=true
+  - SOCKETIO_MESSAGE_QUEUE=redis://:${REDIS_PASSWORD:-redis123}@redis:6379/2
 ```
 
 ## 查看日志

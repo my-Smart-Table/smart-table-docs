@@ -1,54 +1,73 @@
 # Configuration
 
-SmartTable supports flexible configuration through environment variables and configuration files.
+SmartTable is configured through environment variables (or a `.env` file). For Docker deployment use the `.env.example` / `.env.full.example` templates in the project root; for local development use `smarttable-backend/.env.example` (copy it to `smarttable-backend/.env` or `smarttable-backend/config/.env`).
 
 ## Basic Configuration
 
-### Application Configuration
+### Application
 
 | Environment Variable | Description | Default Value |
 |---------|------|--------|
-| `APP_ENV` | Running environment | `development` |
-| `APP_PORT` | Service port | `3000` |
-| `APP_HOST` | Service host | `0.0.0.0` |
-| `APP_SECRET_KEY` | Application secret key | Required |
+| `FLASK_ENV` | Running environment (development / testing / production) | `development` |
+| `FLASK_HOST` | Listen address | `0.0.0.0` |
+| `FLASK_PORT` | Listen port | `5000` |
+| `LOG_LEVEL` | Log level (DEBUG / INFO / WARNING / ERROR) | `INFO` |
 
-### Database Configuration
+### Security
 
 | Environment Variable | Description | Default Value |
 |---------|------|--------|
-| `DATABASE_URL` | Database connection string | Required |
-| `DATABASE_POOL_SIZE` | Connection pool size | `20` |
+| `SECRET_KEY` | Flask session secret | Required in production |
+| `JWT_SECRET_KEY` | JWT signing secret | Required in production |
+| `JWT_ACCESS_TOKEN_EXPIRES` | Access token lifetime (seconds) | `86400` |
 
-Example:
+Generate a strong secret: `python -c "import secrets; print(secrets.token_hex(32))"`
+
+### Database
+
+| Environment Variable | Description | Default Value |
+|---------|------|--------|
+| `DATA_DIR` | Data directory | `data` |
+| `DATABASE_URL` | Database connection string | `sqlite:///data/smarttable.db` |
+
+Example (PostgreSQL, note the `psycopg` driver):
+
 ```env
-DATABASE_URL=postgresql://user:password@localhost:5432/smarttable
+DATABASE_URL=postgresql+psycopg://user:password@localhost:5432/smarttable
 ```
 
-### Cache Configuration
-
-| Environment Variable | Description | Default Value |
-|---------|------|--------|
-| `REDIS_URL` | Redis connection address | `redis://localhost:6379/0` |
-| `CACHE_TTL` | Cache expiration time (seconds) | `3600` |
-
-## Advanced Configuration
+After changing the database, run the migration again: `python run.py migrate`.
 
 ### File Storage
 
 | Environment Variable | Description | Default Value |
 |---------|------|--------|
-| `STORAGE_TYPE` | Storage type (local/s3) | `local` |
-| `STORAGE_LOCAL_PATH` | Local storage path | `./uploads` |
-| `S3_BUCKET` | S3 bucket name | Optional |
-| `S3_REGION` | S3 region | Optional |
+| `UPLOAD_FOLDER` | Upload directory | `uploads` |
 
-### Webhook Configuration
+Attachments are stored on the local file system; MinIO object storage is a planned extension and is not implemented yet.
+
+## Cache & Real-time Collaboration
 
 | Environment Variable | Description | Default Value |
 |---------|------|--------|
-| `WEBHOOK_TIMEOUT` | Webhook timeout (seconds) | `30` |
-| `WEBHOOK_RETRY_COUNT` | Webhook retry count | `3` |
+| `REDIS_URL` | Redis connection address | `redis://localhost:6379/0` |
+| `ENABLE_REALTIME` | Enable real-time collaboration (WebSocket) | `false` |
+| `SOCKETIO_MESSAGE_QUEUE` | SocketIO message queue Redis address | `redis://localhost:6379/2` |
+| `SOCKETIO_PING_TIMEOUT` | SocketIO ping timeout (seconds) | `60` |
+| `SOCKETIO_PING_INTERVAL` | SocketIO ping interval (seconds) | `25` |
+
+## Other Settings
+
+| Environment Variable | Description | Default Value |
+|---------|------|--------|
+| `CORS_ORIGINS` | Allowed cross-origin origins (comma separated), recommended in production | Local origins |
+| `TIANDITU_KEY` | Tianditu JS API key; enables the map location picker when set | Empty |
+| `TIANDITU_API_BASE` | Tianditu API base URL | `https://api.tianditu.gov.cn` |
+| `ERROR_SHOW_DETAILS` | Show detailed stack traces in error responses (debug only) | `false` |
+
+> Note: SMTP email settings are not environment variables — log in to the admin console and maintain the SMTP server, port and credentials under System Settings.
+
+For the full list, see [.env.example](https://github.com/ldbinac/smart_table/blob/main/.env.example) and [smarttable-backend/.env.example](https://github.com/ldbinac/smart_table/blob/main/smarttable-backend/.env.example).
 
 ## Related Links
 

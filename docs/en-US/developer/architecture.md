@@ -21,7 +21,7 @@ This document introduces SmartTable's system architecture, technology stack, and
 | HTTP Client | axios | ^1.14.0 | API requests |
 | Local Database | Dexie | ^3.2.7 | IndexedDB wrapper |
 | WebSocket | socket.io-client | ^4.8.3 | Real-time collaboration |
-| Rich Text | tinyeditor | ^4.0.0 | Rich text editing |
+| Rich Text | @opentiny/fluent-editor | ^4.1.2 | Rich text editing |
 | Spreadsheet | xlsx | ^0.18.5 | Excel parsing/generation |
 | Testing | Vitest | ^3.2.4 | Unit testing |
 
@@ -39,14 +39,15 @@ This document introduces SmartTable's system architecture, technology stack, and
 | CORS | Flask-CORS | 4.0.0 | Cross-origin support |
 | Caching | Flask-Caching (+ Redis) | 2.1.0 | Cache acceleration |
 | WebSocket | Flask-SocketIO | 5.3.6 | Real-time communication |
-| Async | eventlet | 0.36.1 | Async processing |
+| PostgreSQL Driver | psycopg (3) | 3.2.13 | PostgreSQL adapter |
+| Async | eventlet | 0.39.1 | Async processing |
 | Serialization | marshmallow | 3.20.1 | Validation/serialization |
 | Import/Export | pandas, openpyxl, xlrd | 2.1.4 / 3.1.2 / 2.0.1 | Data processing |
 | Images | Pillow | 10.4.0 | Thumbnails |
 | Object Storage | MinIO (optional) | — | File storage |
 | Encryption | cryptography | 42.0.5 | Encryption algorithms |
 | API Docs | Flasgger | 0.9.7b2 | Swagger UI |
-| WSGI Server | Eventlet WSGI Server | 0.36.1 | Production server |
+| WSGI Server | Eventlet WSGI Server | 0.39.1 | Production server |
 | Deployment | Docker, Nginx | — | Containerized deployment |
 
 ## Data Storage Options
