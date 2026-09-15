@@ -112,7 +112,7 @@ permissions: {
   "tables":  "read" | "write",     // schema read/write (write includes create/delete table)
   "storage": true,                 // plugin-owned KV storage
   "config":  true,                 // read own configuration (implicitly granted)
-  "network": ["api.example.com"]   // outbound domain allowlist (reserved; host proxy in first release)
+  "network": ["api.example.com"]   // allowlist of third-party domains reachable via the host proxy (delivered: UI via network.fetch SDK, scripts via /proxy API)
 }
 ```
 
@@ -128,8 +128,12 @@ Design decision: **object-based graded** permissions instead of a flat string ar
 | `side-panel` | Right drawer | Hosts the iframe sandbox rendering the plugin UI |
 | `base-menu` | Base top extension menu | Menu item click opens the side panel |
 | `record-detail-block` | Bottom block of the record detail drawer | Hosts the iframe sandbox |
+| `home-menu` | Home page global extension menu | Global-scoped entry, no Base install needed (menu item click opens the side panel) |
+| `dashboard-widget` | Dashboard custom widget area | Hosts the iframe sandbox rendering the plugin widget |
 
 Extension points are registered declaratively; the host renders them from the manifest and plugins never (and cannot) manipulate host DOM directly.
+
+> **`toolbar-button` and `side-panel` form an "entry ↔ content" pairing**: `side-panel` has no entry independent of `toolbar-button`; declare the two together (see Developer Guide §2.2). The other extension points (`base-menu` / `record-detail-block` / `home-menu` / `dashboard-widget`) each have their own independent host entry and are not subject to this constraint.
 
 **Optional selection dependency declarations** (apply to that extension point entry):
 
@@ -506,8 +510,8 @@ When the marketplace is added: the host adds a "Browse Marketplace" page → fet
 
 | Phase | Scope |
 |-------|-------|
-| P1 (this release) | Manifest specification, lifecycle APIs, two-layer RBAC, frontend iframe sandbox + handshake RPC, backend script sandbox, two-level config, management page skeleton, two sample plugins, developer guide |
-| P2 | Event subscription (rpc.subscribe), network permission proxy (host sends allowlisted domain requests on behalf of plugins), scheduled script triggers and plugin service identity |
+| P1 (this release) | Manifest specification, lifecycle APIs, two-layer RBAC, frontend iframe sandbox + handshake RPC, backend script sandbox, two-level config, management page skeleton, two sample plugins, developer guide; **full extension points delivered** (incl. home menu `home-menu`, dashboard widget `dashboard-widget`), **in-package static assets (assets) and custom backend endpoints (endpoints)**, **third-party network proxy** (UI via `network.fetch` SDK, scripts via `/proxy` API, with SSRF protection) |
+| P2 | Event subscription (rpc.subscribe), scheduled script triggers and plugin service identity |
 | P3 | Marketplace (index protocol implementation + signature verification + marketplace page), inter-plugin dependencies |
 
 ---

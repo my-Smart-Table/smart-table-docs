@@ -112,7 +112,7 @@ permissions: {
   "tables":  "read" | "write",     // 表结构读写（write 含创建/删除表）
   "storage": true,                 // 插件自有 KV 存储
   "config":  true,                 // 读取自身配置（隐含授予）
-  "network": ["api.example.com"]   // 允许请求的域名白名单（首期宿主代理实现预留，文档级定义）
+  "network": ["api.example.com"]   // 允许经宿主代理外联的第三方域名白名单（已实现：UI 经 network.fetch SDK，脚本经 /proxy API）
 }
 ```
 
@@ -128,8 +128,12 @@ permissions: {
 | `side-panel` | 右侧 Drawer | 承载 iframe 沙箱渲染插件 UI |
 | `base-menu` | Base 顶部扩展菜单 | 菜单项点击打开 side-panel |
 | `record-detail-block` | 记录详情抽屉底部区块 | 承载 iframe 沙箱 |
+| `home-menu` | 首页全局扩展菜单 | 全局作用域入口，无需 Base 安装（菜单项点击打开 side-panel） |
+| `dashboard-widget` | 仪表盘自定义组件区 | 承载 iframe 沙箱渲染插件组件 |
 
 扩展点为声明式注册，宿主按清单渲染，插件无需（也无法）直接操作宿主 DOM。
+
+> **`toolbar-button` 与 `side-panel` 是「入口 ↔ 内容」的配对关系**：`side-panel` 没有独立于 `toolbar-button` 的入口，二者须成对声明（详见开发者指南 §2.2）。其余扩展点（`base-menu` / `record-detail-block` / `home-menu` / `dashboard-widget`）均有各自独立的宿主入口，不受此约束。
 
 **勾选依赖声明**（可选，作用于该扩展点入口）：
 
@@ -506,8 +510,8 @@ plugins              全局插件记录
 
 | 阶段 | 内容 |
 |------|------|
-| P1（本次） | 清单规范、生命周期 API、双层 RBAC、前端 iframe 沙箱 + 握手 RPC、后端脚本沙箱、两级配置、管理页骨架、两个示例插件、开发者指南 |
-| P2 | 事件订阅（rpc.subscribe）、网络权限代理（宿主代发白名单域名请求）、定时脚本触发与插件服务身份 |
+| P1（本次） | 清单规范、生命周期 API、双层 RBAC、前端 iframe 沙箱 + 握手 RPC、后端脚本沙箱、两级配置、管理页骨架、两个示例插件、开发者指南；**全扩展点落地**（含首页菜单 `home-menu`、仪表盘组件 `dashboard-widget`）、**包内静态资源（assets）与自定义后端接口（endpoints）**、**第三方网络代理**（UI 经 `network.fetch` SDK，脚本经 `/proxy` API，含 SSRF 防护） |
+| P2 | 事件订阅（rpc.subscribe）、定时脚本触发与插件服务身份 |
 | P3 | 插件市场（index 协议实现 + 签名验签 + 市场页面）、插件间依赖 |
 
 ---
