@@ -256,7 +256,11 @@ Notes:
 - If you don't use Vue, you can render into `#app` yourself — SDK capabilities are independent of the template approach;
 - When `window.Vue` is missing, show a clear message (the host loader injects the vendor runtime).
 
-A complete runnable example is in `examples/plugins/hello-panel/` (v1.2.0, a multi-file composite example): declares all 6 extension point types (the entry branches rendering from `ui.getContext()`), multiple `assets` style/script injection (`styles/main.css` + `styles/theme.css`, `vendor/helpers.js`), `SDK.assetUrl` references an in-package image (`images/logo.png`), two custom backend endpoints (`endpoints/echo.py` / `stats.py` via `backend.call`), `network.fetch` reaching the GitHub API through the host proxy, plus batch-filling on the selection snapshot (`records:write`) and `storage` memory. A script plugin example is in `examples/plugins/batch-clean/`.
+A complete runnable example is in `examples/plugins/hello-all/` (composite example): declares all 6 extension point types (the entry branches rendering from `ui.getContext()`), multiple `assets` style/script injection (`styles/main.css` + `styles/theme.css`, `vendor/helpers.js`), `SDK.assetUrl` references an in-package image (`images/logo.png`), two custom backend endpoints (`endpoints/echo.py` / `stats.py` via `backend.call`), `network.fetch` reaching the GitHub API through the host proxy, plus batch-filling on the selection snapshot (`records:write`) and `storage` memory.
+
+A minimal single-extension-point example is in `examples/plugins/hello-panel/` (`toolbar-button` + `side-panel` only, zero-build single file, demonstrating batch-fill on the selection snapshot).
+
+Standalone examples per extension point (each plugin focuses on one extension point for easy copy-paste): `examples/plugins/hello-base-menu/` (`base-menu`), `examples/plugins/hello-record-detail-block/` (`record-detail-block`), `examples/plugins/hello-home-menu/` (`home-menu`, global scope), `examples/plugins/hello-dashboard-widget/` (`dashboard-widget`). A script plugin example is in `examples/plugins/batch-clean/`.
 
 ### 3.5 Third-party Network Proxy (network.fetch)
 
