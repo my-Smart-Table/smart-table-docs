@@ -173,13 +173,18 @@ Global status (`plugins.status`): `installed` (installed, not enabled) / `enable
 |-----------|-----|---------|-------|
 | Upload/install/upgrade/rollback/uninstall | `POST /api/plugins/upload` etc. | **System Admin** (`User.is_admin`) | Plugin packages are global resources |
 | Global enable/disable | `PUT /api/plugins/<id>/status` | System Admin | Global kill switch |
-| Base-level install/enable/disable | `POST/PUT /api/plugins/<id>/installations` | **Base Owner/Admin** (`BaseMember.MemberRole`) | Independent decision per Base. **Only meaningful for UI plugins**: installations exist solely for Base distribution and mounting (registry `isEffective` + sandbox loader URL check). Script runs are governed by RBAC + the global switch and do not consume installations; the management page offers no Base install entry for them |
-| Config read/write | `GET/PUT /api/plugins/<id>/config` | Base Owner/Admin (base scope) / System Admin (global scope) | Validated by configSchema |
+| Base-level install/enable/disable | `POST/PUT /api/plugins/<id>/installations` | **Base creator** (`Base.owner_id`) | Independent decision per Base, **independent of the caller's member role in that Base**; prerequisite: the plugin has been installed and **globally enabled** by a system admin (otherwise 403 `plugin_not_enabled`). **Only meaningful for UI plugins**: installations exist solely for Base distribution and mounting (registry `isEffective` + sandbox loader URL check). Script runs are governed by RBAC + the global switch and do not consume installations; the management page offers no Base install entry for them |
+| Config read/write | `GET/PUT /api/plugins/<id>/config` | Base creator (base scope) / System Admin (global scope) | Validated by configSchema |
 | Manual script run | `POST /api/plugins/<id>/run` | Base Editor and above (on that Base) | Proxied as the triggering user |
 
 When the global status is `disabled`/`error`, Base-level `enabled` has no effect — the registry only mounts plugins that are "globally enabled and Base-level enabled".
 
-**Management UI convention (implementation and product decision)**: the **UI entry points for all management operations are centralized on the global plugin management page** (`/admin/plugins`, `PluginManage.vue`) — upload, global enable/disable, **Base-level install/enable/remove** (the "Base Installation" block on each card, operating on the Base selected in the filter area), and two-level configuration (the "Config" dialog with global/base tabs). **Base editing pages provide no plugin install/management UI**; they only consume "effectively enabled" plugins (registry mounting) and the run entry. API permissions for Base Owner/Admin remain unchanged — only the UI surface is consolidated onto the management page.
+**Management UI convention (implementation and product decision)**: the UI entry points are centralized on the **plugin management page** (`/plugins`, `PluginManage.vue`) — the page is open to **every signed-in user** and renders capabilities by identity:
+
+- System admins: upload packages, global enable/disable, rollback, uninstall, global config, script run and run logs;
+- Base creators: **install/enable/remove** in the card's "Base Installation" block (for the Base they created and selected in the dropdown) plus Base-level config.
+
+**Base editing pages provide no plugin install/management UI**; they only consume "effectively enabled" plugins (registry mounting) and the run entry. The API-level "Base creator" check is the final guarantee — a non-creator is rejected even when bypassing the UI (the legacy `/admin/plugins` path redirects to `/plugins`).
 
 ### 3.3 Installation Flow
 
@@ -219,7 +224,7 @@ manifest declaration (request) ──▶ grantor confirmation at install ──�
 ```
 
 1. **Declaration**: the plugin statically declares required permissions in the manifest; runtime requests are not allowed (avoids "phishing-style" incremental escalation);
-2. **Grant**: system admins see the permission summary at upload; Base Owner/Admin see it again at Base-level enablement — two independent decisions;
+2. **Grant**: system admins see the permission summary at upload; the Base creator sees it again at Base-level install/enablement — two independent decisions;
 3. **Check**: the host bridge (frontend RPC bridge / backend stdio proxy loop) compares each method call against the manifest permissions;
 4. **Deny and audit**: violations return `PERMISSION_DENIED` and are written to run/audit logs (with plugin_id, method, triggering user).
 
@@ -357,7 +362,7 @@ Restricted builtins + import allowlist is **"controlled execution", not a strong
 | GET | `/api/plugins/<id>/versions` | Logged-in user | Version list |
 | GET/PUT | `/api/plugins/<id>/config` | See 3.2 | Config read/write (scope parameter) |
 | GET | `/api/plugins/<id>/installations` | Base member | Base-level installation status |
-| POST/PUT/DELETE | `/api/plugins/<id>/installations` | Base Owner/Admin | Base-level install/enable/remove (**UI plugins only**: POST/PUT return 400 `PLUGIN_TYPE_NOT_INSTALLABLE` for script plugins; DELETE remains for cleaning up existing relations) |
+| POST/PUT/DELETE | `/api/plugins/<id>/installations` | Base creator | Base-level install/enable/remove (**UI plugins only**: POST/PUT return 400 `PLUGIN_TYPE_NOT_INSTALLABLE` for script plugins; DELETE remains for cleaning up existing relations). POST/PUT additionally require the plugin to be globally enabled |
 | POST | `/api/plugins/<id>/run` | Base Editor+ | Manual script run |
 | GET | `/api/plugins/<id>/run-logs` | Base Owner/Admin | Run logs |
 | GET | `/api/plugins/<id>/versions/<v>/loader.html` | Logged-in user (session) | UI plugin sandbox loader |
@@ -420,7 +425,7 @@ Key points:
 | Scope | Storage | Write permission | Purpose |
 |-------|---------|------------------|---------|
 | `global` | `plugin_configs(scope=global)` | System Admin | Global defaults |
-| `base` | `plugin_configs(scope=base, base_id=...)` | Base Owner/Admin | Base overrides (UI: the "Config" dialog base tab on the plugin management page, maintained per selected Base) |
+| `base` | `plugin_configs(scope=base, base_id=...)` | Base creator | Base overrides (UI: the "Config" dialog base tab on the plugin management page, maintained per selected Base) |
 
 Read rule: Base-level configuration is deep-merged over the global level (Base keys override same-named global keys).
 
