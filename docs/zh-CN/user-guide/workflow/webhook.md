@@ -39,7 +39,7 @@ Webhook 节点支持两种配置方式：
 | 请求头 | 示例值 |
 | --- | --- |
 | Content-Type | application/json |
-| Authorization | Bearer {{token}} |
+| Authorization | Bearer `{{token}}` |
 | X-API-Key | your-api-key |
 
 ### 请求体模板

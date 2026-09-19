@@ -39,7 +39,7 @@ Configure HTTP request headers, for example:
 | Header | Example Value |
 | --- | --- |
 | Content-Type | application/json |
-| Authorization | Bearer {{token}} |
+| Authorization | Bearer `{{token}}` |
 | X-API-Key | your-api-key |
 
 ### Request Body Template

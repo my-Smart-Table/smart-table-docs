@@ -2,6 +2,52 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.7 (2026-09-19)
+
+This release focuses on **plugin system**, **notification enhancements**, and **lookup & relation field optimization**. Introduced a complete plugin system covering all extension points and capabilities, with multiple sample plugins and extension-point tooling scripts; added an in-app (站内信) notification node to workflows and improved bell notification interaction and state management; lookup fields now support comparing against the current record and filter matching for select/text fields; tree views support leaf-node filtering and sorting with grouping disabled, and several interaction issues were fixed; and fixed issues including document editing, view duplication, relation-field export, formula-field conversion, and PDF preview cross-origin.
+
+### New Features & Improvements
+
+#### 🔌 Plugin System ⭐
+
+- ⭐ **Full Extension Points**: Completed the plugin system with all extension points and capabilities, enabling feature extension via plugins
+- ⭐ **Sample Plugins & Tooling**: Added multiple sample plugins for extension points along with supporting tooling scripts for easier secondary development
+- **Plugin Management Opened**: The plugin management page is now available to all logged-in users
+- **Error Internationalization**: Unified internationalization of plugin error messages
+
+#### 🔔 Notification Enhancements
+
+- ⭐ **Workflow In-App Notification Node**: Added an in-app (站内信) notification node to workflows, allowing direct in-app message sending within a flow
+- **Bell Notification Optimization**: Improved bell notification interaction and state management
+- **Style Isolation**: Cleaned in-app message HTML to prevent style pollution; fixed detail-drawer style scoping
+
+#### 🔍 Lookup & Relation Optimizations
+
+- ⭐ **Compare Against Current Record**: Lookup fields support filter comparison against the current record
+- **Select/Text Filter Matching**: Lookup fields support filter matching for select-type and text fields
+- **Aggregation Conversion**: Optimized numeric and date aggregation conversion
+- **Batch Relation Fetch**: Batch-fetch relation data with tree loading-state display
+
+#### 🌳 Tree View Enhancements
+
+- ⭐ **Leaf Filter & Sort**: Tree views support leaf-node filtering and sorting, with grouping disabled
+- **Search Fix**: Fixed lost search results after tree search and table rebuild
+- **"+" Button Offset**: Fixed the scrolling offset of the tree view "+" button
+
+#### 🐳 Deployment & Dependency Optimization
+
+- **PDF Preview CORS**: Fixed cross-origin interception of PDF preview
+- **Dependency Compatibility**: Downgraded psycopg to 3.2.13 and upgraded eventlet to resolve their compatibility conflict
+- **Docker Optimization**: Corrected related docs and config samples; optimized Docker image build and deployment config
+
+### Bug Fixes
+
+- Fixed document editors being unable to edit documents
+- Fixed style abnormality issues when the document title toolbar is set to a string
+- Fixed view duplication errors
+- Fixed errors when converting a number field to a formula field
+- Fixed relation-field export showing record IDs instead of names
+
 ## v1.6.6 (2026-09-10)
 
 This release focuses on the **plugin extension system**, **geolocation field**, **form enhancements**, and **workflow & dashboard optimizations**. It introduces a plugin development extension architecture with frontend/backend sample plugins, supporting table row-selection data passing and extension-point constraints; adds a new geolocation field; shared forms now support field-level defaults & readonly config, fields-per-row layout and field order adjustment; the workflow update-record node supports syncing linked tables; and a batch of issues has been fixed.
@@ -1234,7 +1280,7 @@ Complete backend file upload pipeline and access proxy:
   - invitation (Member invitation)
   - share\_notification (Share notification)
 - WYSIWYG HTML editor
-- Supports variable interpolation ({{username}}, {{verification\_url}}, etc. - 12 variables)
+- Supports variable interpolation (`{{username}}`, `{{verification_url}}`, etc. - 12 variables)
 - Real-time preview rendering effect
 
 **Async Email Queue**:

@@ -73,7 +73,7 @@ The table has an "Assignee" (member field) and a "Task name" field. Notify the a
 | Recipient source | Member field |
 | Member field | Assignee |
 | Message title | New task: `{{trigger.record.<task_name_field_id>}}` |
-| Message body | You have a new pending task "{{trigger.record.<task_name_field_id>}}". Please handle it in time. |
+| Message body | You have a new pending task "`{{trigger.record.<task_name_field_id>}}`". Please handle it in time. |
 
 ### Example 2: Notify the creator and the trigger user after a change
 
