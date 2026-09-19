@@ -137,13 +137,18 @@ Documents can be exported to PDF with one click for offline sharing or archiving
 
 ## Permissions
 
-Document permissions follow the Base permission system:
+Document permissions follow the Base permission system. The table below lists what each role can do with documents and their versions:
 
-| Role | Document Permissions |
-| --- | --- |
-| Owner / Admin | Create, edit, delete, and view all documents |
-| Editor | Create, edit, and view authorized documents |
-| Commenter / Viewer | View documents only |
+| Role | Create Doc | Edit / Save Doc | Delete Doc | Create Version | Restore Version | Delete Version | View |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Owner / Admin | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ (all documents) |
+| Editor | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ (authorized documents) |
+| Commenter / Viewer | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ (view only) |
+
+::: tip Note
+- **Editors** can only edit and save document content, and restore historical versions (roll back content). They **cannot create or delete documents**, nor **manually create or delete versions**.
+- Creating/deleting documents and creating/deleting versions are management actions that require **Admin (or higher)** permissions.
+:::
 
 ## Next Steps
 
