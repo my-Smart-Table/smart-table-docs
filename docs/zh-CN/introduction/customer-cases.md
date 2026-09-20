@@ -131,4 +131,13 @@ SmartTable 已被多个行业的团队用于构建灵活的业务系统。以下
     </div>
   </div>
 <!---案例结束 --->
+<!---案例开始 --->  
+  <div class="customer-card">
+    <div class="customer-logo" style="background-color: #f97316;">街道办</div>
+    <div class="customer-info">
+      <h3>佛山市顺德区XX街道办</h3>
+      <p>以 SmartTable 为底座，搭建内部小型业务系统，实现办公数据协同管理，打通各科室之间的数据流转与共享。</p>
+    </div>
+  </div>
+<!---案例结束 --->
 </div>

@@ -123,4 +123,11 @@ SmartTable is used by teams across multiple industries to build flexible busines
       <p>Uses SmartTable to manage internal trade data sharing, achieving efficient and secure collaborative data management.</p>
     </div>
   </div>
+  <div class="customer-card">
+    <div class="customer-logo" style="background-color: #f97316;">SD</div>
+    <div class="customer-info">
+      <h3>XX Subdistrict Office, Shunde District, Foshan City</h3>
+      <p>Built an internal small business system on top of SmartTable to enable collaborative office-data management, connecting data flows and sharing across departments.</p>
+    </div>
+  </div>
 </div>
