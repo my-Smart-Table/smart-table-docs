@@ -88,6 +88,24 @@ Views let the same table appear in different ways without changing the underlyin
 | Freeze columns | Lock key columns to the left while scrolling. |
 | Hide / show fields | Customize which fields appear in the current view. |
 
+## Import & Export
+
+### Importing Data
+
+You can import data from Excel, CSV, or JSON files. During import you can choose to append to an existing table or create a new table.
+
+#### Relation Field Auto-Matching
+
+When the imported data contains a **link field** column, you can specify a **Match Field** (usually the primary field of the linked table). During import, the system looks up records in the target table by the Excel column value and automatically creates the links, then shows link-matching statistics (Linked / Unmatched / Duplicate matches) in the result.
+
+#### Member Name Resolution
+
+When the imported data contains a **member field** column, the system resolves members by name: it matches the names in the column to the corresponding user IDs and establishes member associations, then shows member-matching statistics (Matched / Unmatched) in the result.
+
+### Exporting Data
+
+You can export the current view's data to Excel, CSV, or JSON, with customizable field ranges.
+
 ## Next Steps
 
 - [Field Types](/en-US/user-guide/field-types.html)

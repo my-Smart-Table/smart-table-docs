@@ -25,6 +25,13 @@ Use table view when you need to:
 - Open the view filter panel to add multiple conditions.
 - Combine conditions with **AND** or **OR** logic.
 
+Advanced filtering now supports field-type-specific operators:
+
+- **Member fields**: `is any of` / `is none of` / `contains` / `not contains` / `is empty` / `is not empty`, with multi-member selection.
+- **Link fields**: `is any of` / `is none of` / `is empty` / `is not empty`, filter by linked records.
+- **Lookup fields**: depending on aggregation/source type, supports equals, not equals, contains, greater/less than, empty/non-empty, etc.
+- **Formula fields**: operators are dispatched automatically based on the formula result type (number / date / text).
+
 ## Grouping
 
 - Group records by one or more fields.

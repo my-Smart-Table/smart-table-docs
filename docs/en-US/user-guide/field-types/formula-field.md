@@ -44,7 +44,23 @@ The system automatically parses and associates the corresponding fields when sav
 
 ## Built-in Functions
 
-The SmartTable formula engine provides **47 built-in functions** covering the following categories:
+The SmartTable formula engine provides **47 built-in functions** and supports common operators (addition, subtraction, multiplication, division, parentheses), covering the following categories and operators:
+
+### Operators
+
+In addition to functions, the formula helper also provides common **operators**, shown under the "Operators" category; click to insert them into an expression:
+
+| Operator | Symbol | Description | Example |
+| --- | --- | --- | --- |
+| ADD | ＋ | Addition: adds two numeric values | `{Unit Price} + {Shipping Fee}` |
+| SUBTRACT | － | Subtraction: subtracts the second value from the first | `{Total Revenue} - {Total Cost}` |
+| MULTIPLY | × | Multiplication: multiplies two numeric values | `{Unit Price} * {Quantity}` |
+| DIVIDE | ÷ | Division: divides the first by the second (fails when divisor is 0) | `{Total Amount} / {Quantity}` |
+| PARENTHESES | ( ) | Parentheses: control precedence; expressions inside are evaluated first | `({Field A} + {Field B}) * 2` |
+
+::: tip Tip
+Operators are displayed in the formula helper as symbols (＋ － × ÷ ( )). Parentheses can be used to change evaluation order, e.g. sum first then multiply by a factor.
+:::
 
 ### Math Functions
 
