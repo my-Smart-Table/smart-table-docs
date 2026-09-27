@@ -26,6 +26,15 @@ Each base can contain multiple tables.
 | Duplicate | Copy the table structure and optionally its data. |
 | Delete | Remove the table from the base. |
 
+### Organizing Tables into Folders
+
+When a base contains many tables, you can use **folders** to group and organize them. The sidebar shows folders and tables in a tree structure for easy categorization and quick access.
+
+- **Create / rename**: Click **New Folder** in the table area and enter a name (required, up to 100 characters). Right-click a folder and choose **Rename Folder** to change its name.
+- **Move tables**: Right-click a table and choose **Move to Folder** to place it into a folder; choose **Remove from Folder** to move it back to **Ungrouped**.
+- **Delete folder**: Only **empty folders** can be deleted. If a folder still contains tables, the deletion is blocked with a "Folder is not empty" hint.
+- **Collapse state**: Folders can be expanded or collapsed, and the collapsed state is persisted for your next visit.
+
 ::: tip Import Tip
 You can create a new table by importing an Excel, CSV, or JSON file. Multi-sheet Excel files are supported.
 :::
