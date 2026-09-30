@@ -20,7 +20,7 @@ SmartTable provides a rich set of field types across 9 categories. Each type is 
 | **Contact Types** | Email | Email address input and validation |
 | **Contact Types** | URL | URL link with click-to-navigate |
 | **Media Types** | Attachment | File upload/download with image preview and thumbnails |
-| **Computed Types** | Formula | 47 built-in functions with field references and nested calculations |
+| **Computed Types** | Formula | 76 built-in functions with field references, cross-table column references, and nested calculations |
 | **Relation Types** | Link | Table relationships supporting one-to-one/one-to-many/many-to-many |
 | **Lookup Types** | Lookup | Cross-table queries with aggregation (sum/avg/count/etc.) |
 | **System Types** | Created By | Auto-record record creator |
@@ -148,7 +148,7 @@ PDF attachments support an inline preview so you can read documents without down
 ## Computed and Relational Fields
 
 ### Formula
-Calculate values using 47 built-in functions. Reference other fields and nest functions for math, text, date, logic, and statistics.
+Calculate values using 76 built-in functions. Reference other fields and nest functions for math, text, date, logic, and statistics. Use `[Table].[Field]` column references to aggregate data from other tables in the same Base. See [Formula Field](/en-US/user-guide/field-types/formula-field.md).
 
 ```javascript
 {Unit Price} * {Quantity}

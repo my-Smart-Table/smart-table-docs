@@ -28,7 +28,7 @@ SmartTable offers 27 field types across 10 categories. See [Field Types](/en-US/
 | Selection | Single Select, Multi Select, Checkbox |
 | People & Contact | Member, Phone, Email, URL |
 | Media | Attachment (images, files, thumbnails) |
-| Computed | Formula with 47 built-in functions |
+| Computed | Formula with 76 built-in functions and cross-table column references |
 | Relation | Link, Lookup with aggregation |
 | System | Created By, Created Time, Updated By, Updated Time, Auto Number |
 | Geolocation | Geolocation (province/city/district, country/region, lat-lng, map picker, multi-language) |
@@ -41,7 +41,7 @@ Work with large datasets using advanced data tools:
 - **Filtering** — Combine multiple conditions with AND/OR logic and 20+ operators.
 - **Sorting** — Sort by multiple fields and drag to change priority.
 - **Grouping** — Group by up to 3 fields with group-level statistics.
-- **Formula Engine** — Reference fields and nest 47 functions for math, text, date, logic, and statistics.
+- **Formula Engine** — Reference fields and nest 76 functions for math, text, date, logic, and statistics, with `[Table].[Field]` cross-table column references and conditional aggregation.
 - **Streaming Data Loading** — First screen renders in seconds for 10,000+ rows; remaining pages load asynchronously in the background.
 - **Import & Export** — Move data in and out using Excel, CSV, or JSON.
 
