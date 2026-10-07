@@ -4,7 +4,7 @@ This page records the version update history of SmartTable.
 
 ## v1.6.8 (2026-10-05)
 
-This release focuses on **formula engine enhancements**, **Excel import optimization**, **filter & grouping capabilities**, **data-table folder management**, and **dashboard enhancements**. The formula engine adds five operators (addition, subtraction, multiplication, division, and parentheses), supports cross-table whole-column references, and introduces aggregate functions such as COUNTIF/SUMIF/AVERAGEIF/FILTER and logical functions IFERROR/NA/ERROR; Excel import now supports automatic relation-field matching and member-name resolution; member, relation, and other field types gain filtering, relation & lookup fields support grouping, and date filtering is extended to date-time fields; a new data-table folder feature supports grouping tables; dashboards support design/preview mode switching; and issues including document loading state on repeated clicks and dashboard share title internationalization were fixed.
+This release focuses on **formula engine enhancements**, **Excel import optimization**, **filter & grouping capabilities**, **data-table folder management**, **dashboard enhancements**, and **member management enhancements**. The formula engine adds five operators (addition, subtraction, multiplication, division, and parentheses), supports cross-table whole-column references, and introduces aggregate functions such as COUNTIF/SUMIF/AVERAGEIF/FILTER and logical functions IFERROR/NA/ERROR; Excel import now supports automatic relation-field matching and member-name resolution; member, relation, and other field types gain filtering, relation & lookup fields support grouping, and date filtering is extended to date-time fields; a new data-table folder feature supports grouping tables; dashboards support design/preview mode switching; member management now uses a member selector instead of an email input, with improved add validation; and issues including document loading state on repeated clicks, dashboard share title internationalization, and type errors when string-formatted numbers participate in formula calculations were fixed.
 
 ### New Features & Improvements
 
@@ -39,6 +39,11 @@ This release focuses on **formula engine enhancements**, **Excel import optimiza
 - **Submit & Enter to Create**: Multiple forms now support submit and Enter-key triggering to create records, speeding up data entry
 - **Member Default Auto-Fill**: In shared forms, the member field default value is automatically filled with the current user
 
+#### 👥 Member Management Enhancements
+
+- **Member Selector Replaces Email Input**: The email input in member management is replaced with a member selector that supports searching members by name or email, making member addition easier
+- **Validation & Duplicate Hints**: Added form validation and friendly duplicate-member check hints, preventing duplicate additions and improving the interaction
+
 #### 🐳 Backend & Deployment Optimization
 
 - **Migration Initialization Optimization**: Optimized the migration initialization logic for a brand-new database, improving the stability of first-time startup
@@ -47,6 +52,7 @@ This release focuses on **formula engine enhancements**, **Excel import optimiza
 
 - Fixed the issue where repeatedly clicking a document left the loading state unable to reset
 - Fixed the internationalization title issue in dashboard sharing
+- Fixed the type error that occurred when string-formatted numbers participated in formula calculations
 - Fixed the NoSuchTableError that occurred when replaying the migration chain in a SQLite environment, caused by some tables not being defined in the migration scripts
 
 ## v1.6.7 (2026-09-19)
