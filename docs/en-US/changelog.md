@@ -2,6 +2,53 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.8 (2026-10-05)
+
+This release focuses on **formula engine enhancements**, **Excel import optimization**, **filter & grouping capabilities**, **data-table folder management**, and **dashboard enhancements**. The formula engine adds five operators (addition, subtraction, multiplication, division, and parentheses), supports cross-table whole-column references, and introduces aggregate functions such as COUNTIF/SUMIF/AVERAGEIF/FILTER and logical functions IFERROR/NA/ERROR; Excel import now supports automatic relation-field matching and member-name resolution; member, relation, and other field types gain filtering, relation & lookup fields support grouping, and date filtering is extended to date-time fields; a new data-table folder feature supports grouping tables; dashboards support design/preview mode switching; and issues including document loading state on repeated clicks and dashboard share title internationalization were fixed.
+
+### New Features & Improvements
+
+#### 🧮 Formula Engine Enhancements ⭐
+
+- ⭐ **New Formula Operators**: Added five operators — addition, subtraction, multiplication, division, and parentheses (+ - * / and parentheses), categorized and displayed in the formula helper for more intuitive formula authoring
+- ⭐ **Cross-Table Column References**: Supports `[TableName].[FieldName]` whole-column references, allowing direct reference of an entire column from another table in aggregation and similar scenarios
+- ⭐ **New Aggregate Functions**: Added aggregate/conditional functions such as COUNTIF, SUMIF, AVERAGEIF, and FILTER for easier conditional statistics
+- ⭐ **New Logical Functions**: Added three logical functions — IFERROR, NA, and ERROR — to catch formula errors, return an N/A marker, or actively raise an error
+
+#### 📥 Excel Import Enhancements
+
+- **Auto Relation-Field Matching**: Excel import now automatically matches relation fields, reducing manual mapping
+- **Member Name Resolution**: Import supports resolving member names into member fields — just fill in a name and it lands as a member
+
+#### 🔍 Filter & Grouping Enhancements
+
+- **Filter for Member/Relation Fields**: Member, relation, and other field types now support filtering
+- **Grouping for Relation & Lookup Fields**: Relation and lookup fields now support grouping
+- **Date-Time Field Filtering**: Date filtering logic is enhanced to support date-time fields
+
+#### 📁 Data-Table Folder Management
+
+- **Group Tables**: Added a data-table folder feature that supports grouping tables, keeping multi-table scenarios tidy
+
+#### 📊 Dashboard Enhancements
+
+- **Design/Preview Mode Switch**: Dashboards now support switching between design mode and preview mode, separating editing from viewing
+
+#### 📝 Form Enhancements
+
+- **Submit & Enter to Create**: Multiple forms now support submit and Enter-key triggering to create records, speeding up data entry
+- **Member Default Auto-Fill**: In shared forms, the member field default value is automatically filled with the current user
+
+#### 🐳 Backend & Deployment Optimization
+
+- **Migration Initialization Optimization**: Optimized the migration initialization logic for a brand-new database, improving the stability of first-time startup
+
+### Bug Fixes
+
+- Fixed the issue where repeatedly clicking a document left the loading state unable to reset
+- Fixed the internationalization title issue in dashboard sharing
+- Fixed the NoSuchTableError that occurred when replaying the migration chain in a SQLite environment, caused by some tables not being defined in the migration scripts
+
 ## v1.6.7 (2026-09-19)
 
 This release focuses on **plugin system**, **notification enhancements**, and **lookup & relation field optimization**. Introduced a complete plugin system covering all extension points and capabilities, with multiple sample plugins and extension-point tooling scripts; added an in-app (站内信) notification node to workflows and improved bell notification interaction and state management; lookup fields now support comparing against the current record and filter matching for select/text fields; tree views support leaf-node filtering and sorting with grouping disabled, and several interaction issues were fixed; and fixed issues including document editing, view duplication, relation-field export, formula-field conversion, and PDF preview cross-origin.
