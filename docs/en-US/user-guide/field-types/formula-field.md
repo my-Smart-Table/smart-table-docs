@@ -257,6 +257,42 @@ The first formula averages amounts ≥ 200 (**expected result: 300**); the secon
 
 Row-level calculation and cross-table aggregation combine freely: the current row's quantity times unit price, plus the entire Amount column of the Sales table.
 
+## Referencing Lookup Fields
+
+Formulas can reference **lookup fields** via row-level `{Field Name}` syntax: the server computes the lookup field's result first, then evaluates the formula, keeping the formula value consistent with the lookup field's display value.
+
+### Value Shapes
+
+The value shape of a lookup field in a formula depends on its aggregation setting:
+
+| Lookup Aggregation | Returned Shape | Behavior in Formulas |
+| --- | --- | --- |
+| SUM / COUNT / AVG / MAX / MIN and other aggregations | Single value (may be a text-form number, e.g. `"3.5"`) | Automatically converted to a number in arithmetic operations |
+| Original values | Array (values of multiple linked source records) | Not suitable for direct arithmetic; aggregate first with `SUM` / `MAX`, etc. |
+
+### Converting with VALUE
+
+When a lookup field returns a text-form number, it is recommended to convert it explicitly with the `VALUE` function for clearer semantics and more stable results across the frontend and backend:
+
+```
+{Estimated Hours} - VALUE({Project Progress})
+```
+
+`VALUE` strips currency symbols (¥, $, etc.) and thousand separators before converting to a number; text that cannot be converted returns a blank value.
+
+### Examples
+
+- Remaining hours: `{Estimated Hours} - VALUE({Project Progress})`
+- Scale a lookup result: `VALUE({Customer Rating}) * 2`
+
+::: tip Syntax Tolerance
+Function names are case-insensitive (`value(...)` equals `VALUE(...)`); accidentally typed full-width parentheses `（）` and commas `，` are parsed as half-width automatically.
+:::
+
+::: warning Difference from Column References
+Lookup fields **support row-level references** (`{Lookup Field Name}`), but **do not support column references** (`[Table].[Lookup Field]` yields no values — evaluation degrades to 0 / blank).
+:::
+
 ## Result Formatting
 
 Formula fields support several result formats:
@@ -300,6 +336,9 @@ IF({Progress} = 100, "Done", IF({Progress} > 0, "In Progress", "Not Started"))
 
 **Q: The cross-table reference always returns 0?**
 A: Check: ① the referenced table must be **in the same Base** (cross-Base is not supported); ② table/field names must match the actual names (renames do not propagate into formulas); ③ the referenced column must not be a formula, lookup or link field; ④ refresh the page after fixing — formula values are recomputed by the server in real time.
+
+**Q: Referencing a lookup field in a formula fails or returns unexpected results?**
+A: Row-level references (`{Lookup Field}`) are supported — the server computes the lookup result first, then evaluates the formula. If the lookup returns a text-form number (e.g. `"3.5"`), convert it explicitly with `VALUE({Lookup Field})`; when using "original values" mode (array result), aggregate first with `SUM` / `MAX`. Note that column references (`[Table].[Lookup Field]`) are not supported yet.
 
 **Q: The formula shows `#ERROR`?**
 A: `#ERROR` means evaluation failed. Common causes: division by zero (use `IFERROR({a}/{b}, 0)`), misspelled function names, or wrong argument count/types. Hover over a function in the helper to see its correct syntax and examples.
