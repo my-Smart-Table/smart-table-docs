@@ -74,7 +74,8 @@ SmartTable ships with a plugin mechanism that extends the table beyond built-in 
 
 SmartTable is built for teams:
 
-- **Sharing** — Share an entire base, a form view, or a dashboard with fine-grained permissions.
+- **Sharing** — Share an entire base, a single table, a form view, or a dashboard with fine-grained permissions.
+- **Table Sharing** — Share a single table via a link; joiners can access it with Editor/Commenter/Viewer permissions without joining the base, with view scope, validity period, and joined-user management.
 - **Member Management** — Invite members and assign roles from Owner to Viewer.
 - **Real-time Collaboration** — Optional WebSocket collaboration with presence, view sync, cell locking, conflict detection, and offline replay.
 - **Request Tracking** — Full-chain request IDs and standardized API responses.
