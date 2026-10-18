@@ -67,6 +67,27 @@ Each base has its own member list. You can invite users by email or username and
 | Commenter | Can view and add comments |
 | Viewer | Read-only access |
 
+### Transferring Ownership
+
+Base ownership can be transferred to another user, which is useful for handovers and organizational changes. Only the **current owner** can perform the transfer:
+
+1. Open the member management dialog and click the **Transfer Ownership** button on the owner row.
+2. Search and select the target user by name or email (the user doesn't have to be an existing base member).
+3. Choose what happens to your own access after the transfer:
+   - **Keep my collaboration permission**: pick a role among Admin / Editor / Commenter / Viewer; the previous owner will be downgraded to that role.
+   - **Don't keep my collaboration permission**: the previous owner immediately loses all access to the base.
+4. Click **Transfer** to confirm.
+
+After the transfer:
+
+- The target user becomes the new owner immediately, with full control (including transferring ownership again and deleting the base).
+- The previous owner is downgraded to the selected role or removed from the base, depending on the configuration chosen at transfer time.
+- Both parties receive in-app and email notifications.
+
+::: warning Caution
+The transfer takes effect immediately and cannot be undone — the new owner must transfer it back if you want ownership restored. If you choose not to keep your collaboration permission, you lose access to the base immediately.
+:::
+
 ## Real-time Collaborative Editing
 
 When real-time collaboration is enabled, multiple users can edit the same table at the same time:

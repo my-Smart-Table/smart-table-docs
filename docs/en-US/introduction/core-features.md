@@ -76,7 +76,7 @@ SmartTable is built for teams:
 
 - **Sharing** — Share an entire base, a single table, a form view, or a dashboard with fine-grained permissions.
 - **Table Sharing** — Share a single table via a link; joiners can access it with Editor/Commenter/Viewer permissions without joining the base, with view scope, validity period, and joined-user management.
-- **Member Management** — Invite members and assign roles from Owner to Viewer.
+- **Member Management** — Invite members and assign roles from Owner to Viewer; the owner can transfer base ownership to another user.
 - **Real-time Collaboration** — Optional WebSocket collaboration with presence, view sync, cell locking, conflict detection, and offline replay.
 - **Request Tracking** — Full-chain request IDs and standardized API responses.
 - **Local Cache** — IndexedDB caching reduces configuration requests by 90%+.
