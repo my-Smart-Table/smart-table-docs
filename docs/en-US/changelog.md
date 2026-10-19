@@ -2,6 +2,43 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.9 (2026-10-18)
+
+This release focuses on **formula field enhancements**, **configurable system fields**, **attachment preview experience**, **data-table management (ownership transfer / sharing / refresh)**, and **deployment stability**. Formula fields gain date/date-time display formats and pre-save validation with error hints; the four system fields — creator, created time, updater, and updated time — are now configurable for display; attachment image preview supports previous/next navigation; table ownership transfer and data-table sharing are introduced, along with a manual table-data refresh; create/edit dialogs optimize their popup layering to avoid being obscured; and deployment issues around Docker startup config, ARM architecture, and Redis connection are fixed; the issue where the UNIQUE function did not flatten nested arrays is also fixed.
+
+### New Features & Improvements
+
+#### 📋 Data-Table Management Enhancements
+
+- **Table Ownership Transfer**: Added multi-table ownership transfer, allowing a table's ownership to be handed off to another member
+- **Data-Table Sharing**: Added a data-table sharing feature for quickly sharing tables with others for collaboration
+- **Table Data Refresh**: Added a manual table-data refresh action with a prompt, to pull the latest data with one click after updates
+
+#### 🧮 Formula Field Enhancements ⭐
+
+- ⭐ **Date / Date-Time Display Format**: Formula fields now support display formats for date and date-time types, with configurable presentation styles
+- ⭐ **Pre-Save Validation & Error Hints**: Formula fields are now validated before saving, with clear error messages to prevent saving invalid formulas
+
+#### 🕒 System Fields Configurable Display
+
+- **Configurable Creator/Created/Updater/Updated Fields**: Added display configuration for the four system fields — creator, created time, last updater, and updated time — so they can be shown as needed
+
+#### 🖼️ Attachment Preview Enhancements
+
+- **Prev/Next Image Navigation**: Attachment image preview now supports previous/next navigation for browsing images in sequence
+
+### Bug Fixes
+
+- Fixed the issue where the UNIQUE function did not flatten nested arrays, producing incorrect results
+- Create and edit dialogs now use `append-to-body` to avoid being clipped or covered by parent containers
+- Optimized Docker container default startup configuration to avoid errors when starting a bare container
+- Fixed missing `SECRET_KEY` and `JWT_SECRET_KEY` in the Docker default config that caused startup failures
+- Fixed Docker image build/run issues on ARM architecture
+- Added a `run.py` compatibility forwarding stub in the Dockerfile to keep the old startup method working
+- `.dockerignore` now uses `**/` prefixes to match Python cache artifacts in subdirectories
+- Fixed the Redis connection configuration issue in the Docker environment to improve deployment stability
+- Fixed the issue where lookup fields could not be executed within formulas
+
 ## v1.6.8 (2026-10-05)
 
 This release focuses on **formula engine enhancements**, **Excel import optimization**, **filter & grouping capabilities**, **data-table folder management**, **dashboard enhancements**, and **member management enhancements**. The formula engine adds five operators (addition, subtraction, multiplication, division, and parentheses), supports cross-table whole-column references, and introduces aggregate functions such as COUNTIF/SUMIF/AVERAGEIF/FILTER and logical functions IFERROR/NA/ERROR; Excel import now supports automatic relation-field matching and member-name resolution; member, relation, and other field types gain filtering, relation & lookup fields support grouping, and date filtering is extended to date-time fields; a new data-table folder feature supports grouping tables; dashboards support design/preview mode switching; member management now uses a member selector instead of an email input, with improved add validation; and issues including document loading state on repeated clicks, dashboard share title internationalization, and type errors when string-formatted numbers participate in formula calculations were fixed.
