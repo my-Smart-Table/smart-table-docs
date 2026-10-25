@@ -171,7 +171,8 @@ export default defineConfig({
                     text: '协作功能',
                     collapsed: true,
                     items: [
-                      { text: '协作功能', link: 'collaboration.html' }
+                      { text: '协作功能', link: 'collaboration.html' },
+                      { text: '评论与 @提及', link: 'comments.html' }
                     ]
                   },
                   {
@@ -441,7 +442,8 @@ export default defineConfig({
                     text: 'Collaboration',
                     collapsed: true,
                     items: [
-                      { text: 'Collaboration', link: 'collaboration.html' }
+                      { text: 'Collaboration', link: 'collaboration.html' },
+                      { text: 'Comments & @Mentions', link: 'comments.html' }
                     ]
                   },
                   {

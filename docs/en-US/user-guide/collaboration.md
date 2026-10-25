@@ -103,23 +103,42 @@ When real-time collaboration is enabled, multiple users can edit the same table 
 Real-time collaboration is optional and is enabled on the backend with `ENABLE_REALTIME=true` or `--enable-realtime`. See [Docker Deployment](/en-US/developer/deployment/docker.html) for configuration details.
 :::
 
-## Comments and @Mentions
+## Record Comments & @Mentions
 
-You can discuss records directly inside SmartTable:
+SmartTable lets teams discuss records in place: members can comment on a record, reply to others to build a thread, use `@` to mention teammates, and follow important records to receive updates. Comments live in the **Comments** tab at the top of the record detail drawer.
 
-1. Open a record's detail panel.
-2. Add a comment in the comments area.
-3. Type `@username` to mention a team member.
-4. Mentioned users receive a notification.
+### Overview
 
-## Notifications
+- **Record comments** — View and add comments from the record detail drawer, with pagination and chronological ordering.
+- **Replies** — Reply to any comment to build a threaded discussion.
+- **@Mentions** — Type `@name` to mention a member who can access the record; mentioned users are notified.
+- **Follow records** — Follow a record to be notified when it receives new comments.
+- **Notifications** — @mentions, replies, and new comments on followed records trigger in-app and email notifications (configurable in Notification Settings).
 
-Configure notifications to stay informed about:
+> For step-by-step instructions, see the [Comments & @Mentions User Manual](/en-US/user-guide/comments.html).
 
-- Record modifications
-- @mentions
-- Approaching deadlines
-- Workflow execution results
+### Who Can Comment
+
+Comment permissions follow Base member roles and table-share roles:
+
+| Role | Read | Comment | Edit/Delete own | Delete any |
+| --- | :---: | :---: | :---: | :---: |
+| **Owner / Admin** | ✅ | ✅ | ✅ | ✅ |
+| **Editor** | ✅ | ✅ | ✅ | ✅ |
+| **Commenter** | ✅ | ✅ | ✅ | — |
+| **Viewer** | ✅ | — | — | — |
+
+Users who join via a table share get the permissions of the role they joined with (editor / commenter / viewer).
+
+### Notification Settings
+
+Comment-related notifications can be toggled individually in personal Notification Settings (all enabled by default):
+
+- **Notify on @mention** — when you are mentioned in a comment.
+- **Notify on reply** — when someone replies to your comment.
+- **Notify on new record comment** — when a record you follow gets a new comment.
+
+Notifications use an "in-app first" strategy: they are written to the in-app message center, and an email is also sent when an email service is configured. See [In-App Notifications](/en-US/user-guide/notification.html) for other notification types.
 
 ## Request Tracking and Local Cache
 
@@ -130,6 +149,7 @@ SmartTable includes collaboration-supporting infrastructure:
 
 ## Related Links
 
+- [Comments & @Mentions User Manual](/en-US/user-guide/comments.html)
 - [Table Operations](/en-US/user-guide/table-operations.html)
 - [Workflow Automation](/en-US/user-guide/workflow.html)
 - [Docker Deployment](/en-US/developer/deployment/docker.html)
