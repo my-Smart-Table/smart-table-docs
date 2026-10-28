@@ -204,6 +204,13 @@ export default defineConfig({
                       { text: '循环节点', link: 'workflow/loop.html' },
                       { text: '自定义脚本节点', link: 'workflow/script.html' }
                     ]
+                  },
+                  {
+                    text: '认证集成',
+                    collapsed: true,
+                    items: [
+                      { text: '泛微 E10 单点登录', link: 'auth-integration/weaver-e10-sso.html' }
+                    ]
                   }
                 ]
               },
@@ -474,6 +481,13 @@ export default defineConfig({
                       { text: 'Condition Node', link: 'workflow/condition.html' },
                       { text: 'Loop Node', link: 'workflow/loop.html' },
                       { text: 'Script Node', link: 'workflow/script.html' }
+                    ]
+                  },
+                  {
+                    text: 'Auth Integration',
+                    collapsed: true,
+                    items: [
+                      { text: 'Weaver E10 SSO', link: 'auth-integration/weaver-e10-sso.html' }
                     ]
                   }
                 ]
