@@ -47,18 +47,28 @@ Click the **Configure** button in the upper right corner of the form view to ope
 
 <img src="/images/user-guide/basic-features/views/views-form-sharing.png" alt="Form sharing settings" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
 
-Form view supports generating public share links so external users can access and submit data.
+Form view supports generating public share links so external users can access and submit data. In addition to links, QR codes are also available — users can simply scan the code to fill in the form.
 
 ### Creating a Share
 
 1. Click the **Share** button in the form view.
 2. Configure share options:
+   - **Share title**: Title displayed on the landing page and QR code dialog
    - **Allow anonymous submission**: Submit without logging in
    - **Require CAPTCHA**: Require CAPTCHA verification before submission
    - **Expiration date**: Set the validity period of the share link
    - **Maximum submissions**: Limit the total number of submissions
    - **Allowed fields**: Select the fields displayed in the shared form
 3. Click **Create Share**, and the system will generate a share link.
+
+### Sharing Methods
+
+After creating a share, you can distribute the form to others in two ways:
+
+- **Copy Link**: Click **Copy Link** to copy the URL and paste it into emails, messages, or documents.
+- **QR Code**: Click **QR Code** to open a dialog that displays the QR code image, the sharer's name, the share title, and a "Scan to fill form" hint. Click **Download QR Code** to save the QR code as a PNG image — useful for printing, posters, or offline events.
+
+Both sharing methods are also available in the **Shared Forms** list, where each share row provides a **Copy Link** and a **QR Code** button.
 
 ### Managing Shares
 

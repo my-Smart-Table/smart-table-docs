@@ -12,10 +12,22 @@ You can share SmartTable data at several levels:
 |---------------|--------------|
 | Base Sharing | Share the whole base via a link with permission control |
 | Table Sharing | Share a single table via a link without inviting users to the whole base |
-| Form Sharing | Share a form view publicly to collect submissions |
+| Form Sharing | Share a form view publicly to collect submissions — link or QR code |
 | Dashboard Sharing | Share a dashboard publicly for real-time data display |
 
+### Form Sharing
+
 <img src="/images/user-guide/basic-features/collaboration/collaboration-form-sharing.png" alt="Form sharing" style="max-width: 100%; border: 1px solid #e0e0e0; border-radius: 4px;">
+
+Form views can generate public links for data collection:
+
+- Submissions are possible without logging in.
+- Configurable options such as submission limits, CAPTCHA, and expiration.
+- After creating a share, distribute it via **Copy Link** or **QR Code**.
+- The QR code dialog shows the sharer's name, share title, and the QR code image; download as PNG for printing or offline events.
+- The **Shared Forms** list provides both a copy-link button and a QR code button for each share record.
+
+> For full details, see [Form View — Sharing the Form](/en-US/user-guide/views/form-view.html#sharing-the-form).
 
 ### Table Sharing
 
