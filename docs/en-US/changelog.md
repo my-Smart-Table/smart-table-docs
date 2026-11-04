@@ -2,6 +2,80 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.10 (2026-11-04)
+
+This release focuses on **record comments & @mentions**, **form-share QR code**, **version check & auto-update**, and **username login & management**, and includes substantial **performance optimizations**, **security hardening**, and **deployment/migration stability** improvements. It adds record comments with @mentions, form-share QR codes, version detection with auto-update prompts, and username login with management; optimizes list loading and calculation performance, introduces search pushdown pagination and async prefetch, and fixes large-table freezes; hardens script sandbox, SSRF, SQL injection, XSS, CORS, key handling, and login rate limiting; and fixes several table-rendering, migration, and Docker deployment issues.
+
+### ✨ New Features & Improvements
+
+#### 💬 Record Comments & @Mentions ⭐
+
+- ⭐ **Record Comments**: Added record comment functionality, allowing discussions under records
+- ⭐ **@Mentions**: Comments support @mentioning members to notify the right people directly
+
+#### 📱 Form Share QR Code
+
+- **Form Share QR Code**: Added a form-share QR code feature; scanning opens the shared form. QR button and image styling were also optimized
+
+#### 🔄 Version Check & Auto-Update
+
+- **Version Check & Auto-Update Prompt**: Added version detection and auto-update prompts to help users learn about new releases in time
+
+#### 👤 Username Login & Management
+
+- **Username Login**: Login with a username is now supported, in addition to email
+- **User Management**: Added user management for easier account maintenance
+
+### ⚡ Performance Optimizations
+
+- **List Loading & Calculation**: Optimized list loading and calculation performance, and fixed system-field sorting
+- **Search Pushdown Pagination**: Backend search pushdown pagination with related frontend cleanup, reducing load on large-list queries
+- **Async Prefetch**: Async prefetch improves interaction responsiveness
+- **Large-Table Freeze Fix**: Fixed subsequent requests freezing on large tables (1400+ rows)
+
+### 🔒 Security Hardening
+
+- **Disable DEBUG in Production**: DEBUG mode is now forbidden in production to avoid leaking sensitive information
+- **CORS Header Fix**: Fixed the allowed-headers configuration for CORS
+- **SQL LIKE Injection Guard**: Prevented wildcard-injection vulnerabilities in SQL LIKE queries
+- **Dual-Dimension Login Rate Limiter**: Optimized the login rate limiter with a dual-dimension identification strategy for more precise brute-force protection
+- **Default Admin Password Prompt**: Added a security prompt when the default admin password is unchanged, reducing weak-password risk
+- **Secure Environment Defaults**: Fixed the issue where the development environment was used by default when env vars were unset, and enhanced dev key-security warnings
+- **Script Sandbox Hardening**: Added a deep-defense audit guard to the script runner (preventing sandbox escape), plus an environment-variable whitelist and safe exception formatting
+- **SSRF Protection**: Extracted SSRF protection into a standalone utility, applied to Webhook and plugin proxy
+- **Safe HTML Rendering for Notification Logs**: Added safe HTML rendering for notification log content to prevent XSS
+- **Dependency Security Upgrades**: Upgraded requests to 2.32.4 and bumped component versions to fix dependency vulnerabilities
+- **Upload/Download Security**: Forbid uploading HTML/web files and implement a file-download security policy to prevent XSS
+- **Unified Key Security Check**: Added a unified key security check utility
+- **Remove Test-Mode Captcha**: Removed the test-mode captcha to prevent it from being bypassed
+
+### 🐳 Deployment & Migration Optimization
+
+- **Comment Migration down_revision Fix**: Corrected the `down_revision` of the comment migration script to chain onto the comment migration
+- **Username Field Migration Compatibility**: Improved compatibility of the migration script that adds the username field
+- **Cancel Forced SQLite FK**: Cancelled the forced SQLite foreign-key configuration to avoid data loss from unintended cascade deletes
+- **On-Demand Pre-Upgrade Backup**: Pre-upgrade backup and row-count snapshot now support both SQLite and PostgreSQL dialects, triggered on demand to avoid copying the DB file on every startup
+- **Dockerfile Migrations Deletion Fix**: Fixed the Dockerfile deleting `.py` files in the migrations directory after build
+- **Weaver E10 SSO Integration**: Added Weaver E10 single sign-on integration (thanks to [@ssdfcc's PR](https://github.com/ldbinac/smart_table/pull/73))
+
+### 🐛 Bug Fixes
+
+- Fixed the misjudgment of flask-socketio 5.x realtime support
+- Fixed the missing `tableInstance` prefix in `renderWithRecreateCells` within the `onBatchLoaded` callback
+- Fixed 5 TypeScript compile errors in the frontend build (including unused forEach params in VTableView)
+- Fixed occasional 500 errors caused by SQLite concurrency locks
+- Fixed new rows at the table end not showing until a refresh
+- Fixed new-row position errors, missing add button at the end of large tables, and statistic mismatches
+- Fixed new rows polluted by leftover `uniqueMarker` from the addButton virtual row, showing the `__add_button_` marker
+- Fixed PostgreSQL varchar column overflow and realigned the `operation_history` sequence (thanks to [@jonathanwong0086's PR](https://github.com/ldbinac/smart_table/pull/75))
+- Fixed whitelist page redirect logic after login
+- Fixed incorrect return-value judgment in logout logic
+- Cleaned up erroneous config; fixed the SMTP config validation return-value logic
+- Fixed SQLite `batch_alter_table` foreign-key cascade deleting business-table data
+- Fixed PostgreSQL connection startup failure and rooted out the SQLite Alembic transaction issue
+- Fixed the template service's redundant time-type mapping that changed a template's created-time to a time type
+- Fixed SQLite + eventlet compatibility under Docker
+
 ## v1.6.9 (2026-10-18)
 
 This release focuses on **formula field enhancements**, **configurable system fields**, **attachment preview experience**, **data-table management (ownership transfer / sharing / refresh)**, and **deployment stability**. Formula fields gain date/date-time display formats and pre-save validation with error hints; the four system fields — creator, created time, updater, and updated time — are now configurable for display; attachment image preview supports previous/next navigation; table ownership transfer and data-table sharing are introduced, along with a manual table-data refresh; create/edit dialogs optimize their popup layering to avoid being obscured; and deployment issues around Docker startup config, ARM architecture, and Redis connection are fixed; the issue where the UNIQUE function did not flatten nested arrays is also fixed.

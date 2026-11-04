@@ -55,7 +55,7 @@ Fields define the structure of each table. SmartTable supports 26 field types. S
 
 | Task | How To |
 |------|--------|
-| Add a field | Click **+** at the right end of the header row and choose a type. |
+| Add a field | Click choose a type. |
 | Configure | Open the field menu to set validation rules, formatting, default values, and options. |
 | Sort fields | Drag the column header left or right. |
 | Show / hide | Toggle visibility in the view settings. |

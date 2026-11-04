@@ -15,9 +15,11 @@ The official image automatically adapts to the current architecture (linux/amd64
 docker run -d \
   --name smarttable \
   -p 80:80 \
-  -v smarttable_data:/app/data \
-  -v smarttable_uploads:/app/uploads \
-  -v smarttable_redis:/data/redis \
+  -e SECRET_KEY=YouMustChangeThisKey \
+  -e JWT_SECRET_KEY=YouMustChangeThisKey \
+  -v /app/SmartTableData/data:/app/data \
+  -v /app/SmartTableData/uploads:/app/uploads \
+  -v /app/SmartTableData/redis:/data/redis \
   ygbinac/smarttable:latest
 ```
 
@@ -32,17 +34,17 @@ services:
     container_name: smarttable
     ports:
       - "80:80"
+    environment:
+      SECRET_KEY: YouMustChangeThisKey
+      JWT_SECRET_KEY: YouMustChangeThisKey
     volumes:
-      - smarttable_data:/app/data
-      - smarttable_uploads:/app/uploads
-      - smarttable_redis:/data/redis
-      - ./logs:/app/logs
+      - /app/SmartTableData/data:/app/data
+      - /app/SmartTableData/uploads:/app/uploads
+      - /app/SmartTableData/redis:/data/redis
+      - /app/SmartTableData/logs/app/app:/app/logs
+      - /app/SmartTableData/logs/app/nginx:/var/log/nginx
+      - /app/SmartTableData/logs/app/supervisor:/var/log/supervisor
     restart: unless-stopped
-
-volumes:
-  smarttable_data:
-  smarttable_uploads:
-  smarttable_redis:
 ```
 
 Start it with:
