@@ -20,6 +20,7 @@ SmartTable provides a rich set of field types across 9 categories. Each type is 
 | **Contact Types** | Email | Email address input and validation |
 | **Contact Types** | URL | URL link with click-to-navigate |
 | **Media Types** | Attachment | File upload/download with image preview and thumbnails |
+| **Media Types** | Signature | Handwritten / typed signature stored as a PNG attachment. See [Signature Field](/en-US/user-guide/field-types/signature-field.html). |
 | **Computed Types** | Formula | 76 built-in functions with field references, cross-table column references, and nested calculations |
 | **Relation Types** | Link | Table relationships supporting one-to-one/one-to-many/many-to-many |
 | **Lookup Types** | Lookup | Cross-table queries with aggregation (sum/avg/count/etc.) |

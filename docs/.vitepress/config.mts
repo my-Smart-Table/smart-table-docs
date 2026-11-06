@@ -223,7 +223,8 @@ export default defineConfig({
                   { text: '关联字段', link: 'field-types/link-field.html' },
                   { text: '查找字段', link: 'field-types/lookup-field.html' },
                   { text: '公式字段', link: 'field-types/formula-field.html' },
-                  { text: '地理位置字段', link: 'field-types/geo-field.html' }
+                  { text: '地理位置字段', link: 'field-types/geo-field.html' },
+                  { text: '签字字段', link: 'field-types/signature-field.html' }
                 ]
               },
               {
@@ -501,7 +502,8 @@ export default defineConfig({
                   { text: 'Link Field', link: 'field-types/link-field.html' },
                   { text: 'Lookup Field', link: 'field-types/lookup-field.html' },
                   { text: 'Formula Field', link: 'field-types/formula-field.html' },
-                  { text: 'Geolocation Field', link: 'field-types/geo-field.html' }
+                  { text: 'Geolocation Field', link: 'field-types/geo-field.html' },
+                  { text: 'Signature Field', link: 'field-types/signature-field.html' }
                 ]
               },
               {
