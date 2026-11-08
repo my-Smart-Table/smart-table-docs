@@ -20,7 +20,7 @@ SmartTable 围绕「数据管理 + 视图呈现 + 流程自动化 + 团队协作
 
 ## 字段管理
 
-SmartTable 支持 **[27 种字段类型](/zh-CN/user-guide/field-types.html)**，并为每种字段提供独立的配置选项：
+SmartTable 支持 **[26 种字段类型](/zh-CN/user-guide/field-types.html)**，并为每种字段提供独立的配置选项：
 
 | 类别 | 包含字段 |
 | --- | --- |
@@ -30,7 +30,7 @@ SmartTable 支持 **[27 种字段类型](/zh-CN/user-guide/field-types.html)**�
 | 选择类型 | 单选、多选、复选框 |
 | 人员类型 | 成员 |
 | 联系方式 | 电话、邮箱、链接（URL） |
-| 媒体类型 | 附件 |
+| 媒体类型 | 附件、签字（手写/输入签字，PNG 图片附件化存储，详见 [签字字段](/zh-CN/user-guide/field-types/signature-field.html)） |
 | 计算类型 | 公式（76 个内置函数，支持跨表整列引用） |
 | 关联类型 | 关联（Link） |
 | 查找类型 | 查找（Lookup，支持聚合计算） |

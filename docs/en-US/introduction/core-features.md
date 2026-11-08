@@ -18,7 +18,7 @@ SmartTable supports 7 view types. Each view is a different lens on the same tabl
 
 ## Rich Field Types
 
-SmartTable offers 27 field types across 10 categories. See [Field Types](/en-US/user-guide/field-types.html) for full details.
+SmartTable offers 26 field types across 10 categories. See [Field Types](/en-US/user-guide/field-types.html) for full details.
 
 | Category | Examples |
 |----------|----------|
@@ -27,7 +27,7 @@ SmartTable offers 27 field types across 10 categories. See [Field Types](/en-US/
 | Date | Date, Date Time |
 | Selection | Single Select, Multi Select, Checkbox |
 | People & Contact | Member, Phone, Email, URL |
-| Media | Attachment (images, files, thumbnails) |
+| Media | Attachment (images, files, thumbnails), Signature (handwritten or typed, stored as PNG attachment) |
 | Computed | Formula with 76 built-in functions and cross-table column references |
 | Relation | Link, Lookup with aggregation |
 | System | Created By, Created Time, Updated By, Updated Time, Auto Number |
