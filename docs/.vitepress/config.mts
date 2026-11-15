@@ -89,6 +89,11 @@ export default defineConfig({
               { text: '插件开发', link: '/zh-CN/developer/plugins/developer-guide.html' }
             ]
           },
+          {
+            text: '价格',
+            link: '/zh-CN/edition-comparison.html',
+            activeMatch: '/zh-CN/edition-comparison'
+          },
           { text: '更新日志', link: '/zh-CN/changelog.html' },
           { text: '常见问题', link: '/zh-CN/faq/' }
         ],
@@ -641,6 +646,7 @@ export default defineConfig({
           { text: '插件开发', link: '/zh-CN/developer/plugins/developer-guide.html' }
         ]
       },
+      { text: '价格', link: '/zh-CN/edition-comparison.html' },
       { text: '更新日志', link: '/zh-CN/changelog.html' },
       { text: '常见问题', link: '/zh-CN/faq/' },
       { text: 'English', link: '/en-US/' }

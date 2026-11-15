@@ -25,7 +25,7 @@ const actions = computed<Action[]>(() => {
   return [
     { theme: 'alt', text: '产品介绍', link: '/zh-CN/introduction/what-is-smarttable.html' },
     { theme: 'brand', text: '快速开始', link: '/zh-CN/user-guide/getting-started.html' },
-    { theme: 'alt', text: '开发者文档', link: '/zh-CN/developer/architecture.html' }
+    { theme: 'alt', text: '商业授权', link: '/zh-CN/edition-comparison.html' }
   ]
 })
 </script>

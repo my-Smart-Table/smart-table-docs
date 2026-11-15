@@ -2,7 +2,14 @@
 docs/.vitepress/dist
 docs/.vitepress/cache
 docs/.vitepress/.temp
-/.vitepress/
+.vitepress/cache
+.vitepress/.temp
+.vitepress/dist
+.vitepress/node_modules
+.vitepress/dist-verify
+docs/.vitepress/dist-verify/
+
+smoke
 
 # Build logs
 *.log
@@ -20,3 +27,4 @@ node_modules
 # OS
 .DS_Store
 Thumbs.db
+
