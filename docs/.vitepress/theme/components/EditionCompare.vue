@@ -502,7 +502,7 @@ tbody td.ec-cell-feature {
 tbody tr.ec-group-row td {
   background: var(--vp-c-bg-soft);
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   font-size: 0.92rem;
   color: var(--vp-c-text-1);
   padding-top: 12px;
