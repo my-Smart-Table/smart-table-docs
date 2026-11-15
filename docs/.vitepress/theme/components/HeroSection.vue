@@ -19,7 +19,9 @@ const actions = computed<Action[]>(() => {
     return [
       { theme: 'alt', text: 'Product Introduction', link: '/en-US/introduction/what-is-smarttable.html' },
       { theme: 'brand', text: 'Getting Started', link: '/en-US/user-guide/getting-started.html' },
-      { theme: 'alt', text: 'Developer Docs', link: '/en-US/developer/architecture.html' }
+      { theme: 'alt', text: 'Developer Docs', link: '/en-US/developer/architecture.html' },
+      { theme: 'alt', text: 'One-click Deployment', link: '/en-US/developer/deployment/one-click.html' },
+      { theme: 'alt', text: 'Commercial License', link: '/en-US/edition-comparison.html' }
     ]
   }
   return [

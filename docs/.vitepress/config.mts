@@ -373,6 +373,11 @@ export default defineConfig({
               { text: 'Plugin Development', link: '/en-US/developer/plugins/developer-guide.html' }
             ]
           },
+          {
+            text: 'Pricing',
+            link: '/en-US/edition-comparison.html',
+            activeMatch: '/en-US/edition-comparison'
+          },
           { text: 'Changelog', link: '/en-US/changelog.html' },
           { text: 'FAQ', link: '/en-US/faq/' }
         ],
