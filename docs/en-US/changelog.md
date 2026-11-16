@@ -2,6 +2,44 @@
 
 This page records the version update history of SmartTable.
 
+## v1.6.11 (2026-11-15)
+
+This release focuses on **signature fields**, **drag-to-select real-time statistics**, and **sequential import & multilingual support**, along with a batch of **import improvements** and **stability fixes** around relation fields, timezone handling, and migrations. It adds signature fields supporting handwritten and typed signatures, live sum/average statistics when drag-selecting cells in the table view, and a sequential import mode; Excel-based table creation now infers precision for number, currency, and percentage fields from column data; and it fixes issues around relation-field display, re-importing bidirectional relation exports, rollback on failed edits, timezone offsets, and Alembic multi-version / multi-head migration detection.
+
+### ✨ New Features & Improvements
+
+#### ✍️ Signature Field ⭐
+
+- ⭐ **Signature Field**: Added a signature field supporting handwritten and typed signatures, available in tables, forms, record detail/create drawers, and the public form view
+- **Signature Icon**: Updated the signature-field icon to a pointer style to avoid confusion with the edit icon
+
+#### 📊 Drag-to-Select Statistics ⭐
+
+- **Live Numeric Statistics**: Drag to select cells in the table view to see real-time sum and average statistics for the selected numeric columns
+
+#### 📥 Import Experience Enhancements
+
+- **Sequential Import Mode**: Added a sequential import mode that can restrict imported data to strictly follow the order of rows in the Excel file
+- **Excel Precision Inference**: When creating a table from an Excel import, precision for number, currency, and percentage fields is inferred automatically from column data
+
+#### 🌐 Internationalization
+
+- **Copy & Prompt Path Updates**: Updated i18n copy and the workflow-node validation prompt path
+
+### 🐛 Bug Fixes
+
+- Show the API error reason and roll back the edited cell value in the table view when saving fails
+- Unified timezone handling to resolve offset issues in datetime serialization and parsing
+- Fixed duplicate display names in bidirectional relation exports that prevented re-importing
+- Fixed relation fields showing raw record IDs and missing display names for reverse relations
+- Fixed relation fields not syncing when copying records or bulk-creating, which showed an incorrect "N linked records" count
+- Fixed import templates missing the primary field and incorrect datetime example formatting
+
+### 🐳 Deployment & Migration Optimization
+
+- **Multi-Version Alembic Detection Fix**: Fixed the bug where multi-version Alembic upgrade detection was always `True`
+- **Alembic Multi-Head Fix**: Fixed incorrect migration detection logic in multi-head scenarios
+
 ## v1.6.10 (2026-11-04)
 
 This release focuses on **record comments & @mentions**, **form-share QR code**, **version check & auto-update**, and **username login & management**, and includes substantial **performance optimizations**, **security hardening**, and **deployment/migration stability** improvements. It adds record comments with @mentions, form-share QR codes, version detection with auto-update prompts, and username login with management; optimizes list loading and calculation performance, introduces search pushdown pagination and async prefetch, and fixes large-table freezes; hardens script sandbox, SSRF, SQL injection, XSS, CORS, key handling, and login rate limiting; and fixes several table-rendering, migration, and Docker deployment issues.
