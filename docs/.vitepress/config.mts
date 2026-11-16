@@ -216,6 +216,41 @@ export default defineConfig({
                     items: [
                       { text: '泛微 E10 单点登录', link: 'auth-integration/weaver-e10-sso.html' }
                     ]
+                  },
+                  {
+                    text: '打印',
+                    collapsed: true,
+                    items: [
+                      { text: '打印功能', link: 'advanced-features/printing.html' }
+                    ]
+                  },
+                  {
+                    text: '高级权限',
+                    collapsed: true,
+                    items: [
+                      { text: '高级权限', link: 'advanced-features/advanced-permissions.html' }
+                    ]
+                  },
+                  {
+                    text: '应用模式',
+                    collapsed: true,
+                    items: [
+                      { text: '应用模式', link: 'advanced-features/application-mode.html' }
+                    ]
+                  },
+                  {
+                    text: '审批流',
+                    collapsed: true,
+                    items: [
+                      { text: '审批流', link: 'advanced-features/approval-flows.html' }
+                    ]
+                  },
+                  {
+                    text: 'AI 功能',
+                    collapsed: true,
+                    items: [
+                      { text: 'AI 功能', link: 'advanced-features/ai.html' }
+                    ]
                   }
                 ]
               },
@@ -499,6 +534,41 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                       { text: 'Weaver E10 SSO', link: 'auth-integration/weaver-e10-sso.html' }
+                    ]
+                  },
+                  {
+                    text: 'Printing',
+                    collapsed: true,
+                    items: [
+                      { text: 'Printing', link: 'advanced-features/printing.html' }
+                    ]
+                  },
+                  {
+                    text: 'Advanced Permissions',
+                    collapsed: true,
+                    items: [
+                      { text: 'Advanced Permissions', link: 'advanced-features/advanced-permissions.html' }
+                    ]
+                  },
+                  {
+                    text: 'Application Mode',
+                    collapsed: true,
+                    items: [
+                      { text: 'Application Mode', link: 'advanced-features/application-mode.html' }
+                    ]
+                  },
+                  {
+                    text: 'Approval Flows',
+                    collapsed: true,
+                    items: [
+                      { text: 'Approval Flows', link: 'advanced-features/approval-flows.html' }
+                    ]
+                  },
+                  {
+                    text: 'AI Capabilities',
+                    collapsed: true,
+                    items: [
+                      { text: 'AI Capabilities', link: 'advanced-features/ai.html' }
                     ]
                   }
                 ]
