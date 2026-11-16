@@ -8,6 +8,14 @@ Follow our official WeChat public account and send a direct message with "SmartT
 
 ![WeChat Official Account QR Code](/images/wechat_official_account.png)
 
+| Platform             | Account / Link                                                                 |
+| -------------- | ------------------------------------------------------------------------- |
+| 🌐 **GitHub**  | [github.com/ldbinac/smart_table](https://github.com/ldbinac/smart_table) |
+| 🇨🇳 **Gitee** | [gitee.com/binac/smart_table](https://gitee.com/binac/smart_table)       |
+| 🇨🇳 **GitCode** | [gitcode.com/binac/smarttable](https://gitcode.com/binac/smarttable)       |
+| 💬 **WeChatOfficialAccount**   | 程序员吕洞宾                                                                    |
+| 📧 **Email**      | ldengbin@126.com                                                              |
+
 ## Support Us
 
 If this project helps you, consider buying us a coffee ☕

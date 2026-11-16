@@ -118,7 +118,7 @@ const zh = {
   tableTitle: '功能对比明细',
   noteTitle: '版本层级关系',
   noteText:
-    '社区版→ 标准版（ 社区版 + 打印 + 移动端 + 高级权限）→ 专业版（标准版 + 应用模式 + 审批流 + AI 能力）。上层版本始终包含下层全部功能，可随时随业务增长平滑升级。',
+    '社区版→ 标准版（ 社区版 + 标准特性功能）→ 专业版（标准版 + 专业特性功能）。上层版本始终包含下层全部功能，可随时随业务增长平滑升级。',
   choiceTitle: '如何选择',
   faqTitle: '常见问题',
   ctaTitle: '获取商业版',
@@ -267,6 +267,7 @@ const zh = {
         { name: 'SQLite / PostgreSQL / ARM 支持', values: [true, true, true] },
         { name: 'OAuth2 + 开放 API + 审计日志', values: [true, true, true] },
         { name: '安全与邮件配置', desc: '注册开关、密码策略、会话超时、SMTP 模板', values: [true, true, true] },
+        { name: '办公集成', desc: '企业微信、钉钉、飞书、泛微OA等单点集成', values: [false, false, true] },
         { name: '商业技术支持', desc: '按授权协议提供', values: ['—', '✓', '✓'] }
       ]
     }
@@ -343,7 +344,7 @@ const en = {
   tableTitle: 'Feature Comparison',
   noteTitle: 'Edition Hierarchy',
   noteText:
-    'Community Edition → Standard Edition (Community + Printing + Mobile + Advanced Permissions) → Professional Edition (Standard + Application Mode + Approval Flows + AI Capabilities). A higher edition always includes all features of the editions below it and can be upgraded smoothly as your business grows.',
+    'Community Edition → Standard Edition (Community + Standard Features) → Professional Edition (Standard + Professional Features). A higher edition always includes all features of the editions below it and can be upgraded smoothly as your business grows.',
   choiceTitle: 'How to Choose',
   faqTitle: 'FAQ',
   ctaTitle: 'Get the Commercial Edition',
@@ -492,6 +493,7 @@ const en = {
         { name: 'SQLite / PostgreSQL / ARM Support', values: [true, true, true] },
         { name: 'OAuth2 + Open API + Audit Logs', values: [true, true, true] },
         { name: 'Security & Email Configuration', desc: 'Registration switch, password policy, session timeout, SMTP templates', values: [true, true, true] },
+        { name: 'Office Integration', desc: 'Single sign-on integration with WeCom (Enterprise WeChat), DingTalk, Feishu (Lark), Weaver OA, and more', values: [false, false, true] },
         { name: 'Commercial Technical Support', desc: 'Provided per the license agreement', values: ['—', '✓', '✓'] }
       ]
     }

@@ -14,10 +14,12 @@
 | -------------- | ------------------------------------------------------------------------- |
 | 🌐 **GitHub**  | [github.com/ldbinac/smart_table](https://github.com/ldbinac/smart_table) |
 | 🇨🇳 **Gitee** | [gitee.com/binac/smart_table](https://gitee.com/binac/smart_table)       |
+| 🇨🇳 **GitCode** | [gitcode.com/binac/smarttable](https://gitcode.com/binac/smarttable)       |
 | 💬 **微信公众号**   | 程序员吕洞宾                                                                    |
 | 📝 **CSDN**    | 程序员吕洞宾                                                                    |
 | 📘 **稀土掘金**    | 程序员吕洞宾                                                                    |
 | 🧠 **知乎**      | 程序员吕洞宾                                                                    |
+| 📧 **Email**      | ldengbin@126.com                                                              |
 
 ## 支持我们
 
