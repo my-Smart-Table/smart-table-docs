@@ -19,7 +19,12 @@
       >
         <div v-if="plan.featured" class="ec-ribbon">{{ c.ribbon }}</div>
         <h3 class="ec-plan-name">{{ plan.name }}</h3>
-        <div class="ec-plan-price">{{ plan.price }}</div>
+        <div class="ec-plan-price">
+          <span v-if="plan.offerTag" class="ec-offer-tag">{{ plan.offerTag }}</span>
+          <span class="ec-price-num">{{ plan.price }}</span>
+          <span class="ec-price-unit">{{ plan.priceUnit }}</span>
+        </div>
+        <p class="ec-price-note" :class="{ 'ec-price-note--hot': plan.offerTag }">{{ plan.priceNote }}</p>
         <p class="ec-plan-tagline">{{ plan.tagline }}</p>
         <ul class="ec-plan-list">
           <li v-for="item in plan.highlights" :key="item">{{ item }}</li>
@@ -129,7 +134,10 @@ const zh = {
       key: 'community',
       name: '社区版',
       branch: 'feat-plugin（与 dev/main 同步）',
-      price: '免费 · 开源',
+      price: '¥0',
+      priceUnit: '/年',
+      offerTag: '',
+      priceNote: '永久免费 · 开源',
       tagline: '完整的开源多维表格内核，适合个人与团队直接用表格协作',
       highlights: [
         '27 种字段类型 / 7 种视图 / 主从表 / 树形记录',
@@ -146,7 +154,10 @@ const zh = {
       key: 'standard',
       name: '标准版',
       branch: 'feat/field-auth-base',
-      price: '商业授权',
+      price: '¥199',
+      priceUnit: '/年',
+      offerTag: '限时特惠',
+      priceNote: '不限席位、不限记录行数、不限调用次数',
       tagline: '面向小微企业和团队落地场景，社区版基础上增加一般企业级特性',
       highlights: [
         '包含社区版全部功能，品牌定制',
@@ -163,7 +174,10 @@ const zh = {
       key: 'pro',
       name: '专业版',
       branch: 'feat/approval-flows',
-      price: '商业授权',
+      price: '¥399',
+      priceUnit: '/年',
+      offerTag: '限时特惠',
+      priceNote: '不限席位、不限记录行数、不限调用次数',
       tagline: '面向中小型企业和团队落地场景，标准版基础上增加更多企业专业特性',
       highlights: [
         '包含标准版全部功能',
@@ -355,7 +369,10 @@ const en = {
       key: 'community',
       name: 'Community Edition',
       branch: 'feat-plugin (synced with dev/main)',
-      price: 'Free · Open Source',
+      price: '$0',
+      priceUnit: '/year',
+      offerTag: '',
+      priceNote: 'Free forever · open source',
       tagline: 'The complete open-source multi-dimensional table core, ideal for individuals and teams collaborating directly with tables',
       highlights: [
         '27 field types / 7 view types / master-detail / tree records',
@@ -372,7 +389,10 @@ const en = {
       key: 'standard',
       name: 'Standard Edition',
       branch: 'feat/field-auth-base',
-      price: 'Commercial License',
+      price: '$199',
+      priceUnit: '/year',
+      offerTag: 'Limited-time Offer',
+      priceNote: 'Unlimited seats, unlimited records, unlimited API calls',
       tagline: 'For small businesses and teams: adds general enterprise-grade features on top of the Community Edition',
       highlights: [
         'All Community Edition features, brand customization',
@@ -389,7 +409,10 @@ const en = {
       key: 'pro',
       name: 'Professional Edition',
       branch: 'feat/approval-flows',
-      price: 'Commercial License',
+      price: '$399',
+      priceUnit: '/year',
+      offerTag: 'Limited-time Offer',
+      priceNote: 'Unlimited seats, unlimited records, unlimited API calls',
       tagline: 'For small and medium-sized businesses and teams: adds more professional enterprise features on top of the Standard Edition',
       highlights: [
         'All Standard Edition features',
@@ -640,10 +663,39 @@ const en = {
   margin: 4px 0 12px;
 }
 .ec-plan-price {
-  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.ec-offer-tag {
+  flex: none;
+  font-size: 0.72rem;
   font-weight: 700;
+  color: var(--vp-c-white);
+  background: linear-gradient(135deg, #f43f5e, #f97316);
+  padding: 2px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.ec-price-num {
+  font-size: 1.7rem;
+  font-weight: 800;
   color: var(--vp-c-brand-1);
-  margin-bottom: 4px;
+  line-height: 1;
+}
+.ec-price-unit {
+  font-size: 0.82rem;
+  color: var(--vp-c-text-3);
+}
+.ec-price-note {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-3);
+  margin-bottom: 12px;
+}
+.ec-price-note--hot {
+  color: #f43f5e;
+  font-weight: 700;
 }
 .ec-plan-tagline {
   font-size: 0.85rem;
